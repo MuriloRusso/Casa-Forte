@@ -60,3 +60,4 @@ inputThumb.addEventListener('change', function(e){
     }
 
 });	
+

@@ -84,7 +84,7 @@
 
 			<div class="card" id="dados">
 			
-				<form method="post" action="config/my-profile.php">
+				<form method="post" action="config/my-profile.php"  enctype="multipart/form-data">
 
 				<?php 
 					
@@ -104,33 +104,39 @@
 					
 					<div class="form-group">
 
-						<?php
+						<div id="avatar-container">
+
+							<?php
+							
+								if($usuario['avatar'] != ''){
+									
+									$avatar = $usuario['avatar'];
+									
+									$extensao = $usuario['extensao'];
+									
+									print '<img src="img/users/'.$avatar.'.'.$extensao.'" width=250 id="avatarImg">';
+									
+									
+								}
+							
+								else{
+									
+									
+									print '<img src="img/user.png" width=250 id="avatarImg">';
+									
+								}
+							
+							
+							?>
+
+						</div>
 						
-							if($usuario['avatar'] != ''){
-								
-								$avatar = $usuario['avatar'];
-								
-								$extensao = $usuario['extensao'];
-								
-								print '<img src="img/users/'.$avatar.'.'.$extensao.'" width=250>';
-								
-								
-							}
-						
-							else{
-								
-								
-								print '<img src="img/user.png" width=250>';
-								
-							}
-						
-						
-						?>
-						
-						
+						<input type="file" name="avatar" id="avatarInput" accept="image/*" >
 <!--						<input type="file" id="nome" name="nome" value="">-->
 
 					</div>
+
+					<script src="js/upload-avatar.js"></script>
 					
 					<input type="hidden" id="id" name="id" value="<?php echo $usuario['id'] ?>">
 					

@@ -1211,6 +1211,79 @@ form input[type="submit"]{
 	
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*upload*/
+
+#upload{
+	
+	display: none;
+	
+}
+
+.upload{
+	
+	
+	aspect-ratio: 16/9;
+	width: 400px;
+	background-color: #ddd;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #aaa;
+	border: 2px dashed;
+	cursor: pointer;
+	transition: color 300ms ease-in-out,  background 300ms ease-in-out;
+	
+}
+
+.upload:hover{
+	
+	color: #999;
+	background-color: #ccc;
+
+	
+}
+
+.upload:active{
+	border-color: turquoise;
+	color: turquoise;
+	background-color: #eee;
+
+	
+}
+
+
+.upload img{
+	
+	max-width: 100%;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 900px){
 	
 	.container-carrousel-scroll-itens{

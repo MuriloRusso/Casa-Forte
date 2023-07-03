@@ -96,10 +96,59 @@
 
 					</div>
 
-					 <div class="form-group">
+					 <!-- <div class="form-group">
 
 						<label for="capa">Capa do Post:</label>
 						<input type="file" id="capa" name="capa" value="" required>
+
+					</div> -->
+
+					<div>
+
+						<?php 
+
+							if(isset($_GET['id'])){
+
+								print '
+																	
+									<img src="img/posts/'.$post->arquivo.''.$post->extensao.'" id="img-atual">	
+									
+								
+								';
+
+							}
+
+						?>
+						<label  for="upload" class='upload'>
+		
+							<span class="upload-image">	</span>
+
+						</label>					
+						<input name="capa" type="file" accept="image/*" id="upload">
+
+						<?php 
+
+							//  if(isset($_GET['id']) ){
+
+							// 	print '<img src="img/posts/'.$post->arquivo.''.$post->extensao.'" id="img-atual">								
+								
+							// 	<a onclick="alter()" class="btn btn-primary">Alterar Imagem</a>';
+
+							//  }
+
+						?>
+
+						<script>
+
+							// const alter = () => {
+								
+							// 	document.querySelector(`.upload`).click();
+							
+							// 	document.querySelector('#img-atual').style.display = 'none';
+							
+							// }
+
+						</script>
 
 					</div>
 

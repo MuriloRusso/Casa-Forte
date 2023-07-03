@@ -585,7 +585,7 @@ section, footer{
 }
 
 
-#page-post .card{
+#page-post .card, #page-pedido .card{
 	
 	width: auto !important;
 	max-width: 900px;
@@ -594,17 +594,24 @@ section, footer{
 }
 
 
-#page-post .card h2, #page-post .card p{
+#page-post .card h2, #page-post .card p, #page-pedido .card h2, #page-pedido .card p{
 	
 	padding: 10px 0;
 	
 	
 }
 
- #page-post .card p{
+ #page-post .card p,  #page-pedido .card p{
 	
 	font-weight: normal;
 	text-align: justify;
+}
+
+#page-pedido form{
+
+	margin: 0 !important;
+	padding: 0 !important;
+
 }
 
 .card .date{
@@ -1299,6 +1306,12 @@ form input[type="submit"]{
 	body{
 
 		margin: 100px 0 0 0;
+
+	}
+
+	.nome-usuario{
+
+		display: none !important;
 
 	}
 	

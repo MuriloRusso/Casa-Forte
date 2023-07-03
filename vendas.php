@@ -85,7 +85,7 @@
 							
 							<div>
 
-								<a href="product.php?id='.$row->ID.'" class="full-mobile btn btn-primary" title="Clique nesse botão para ver mais detalhes">
+								<a href="pedido.php?id='.$row->ID.'" class="full-mobile btn btn-primary" title="Clique nesse botão para ver mais detalhes">
 
 									Ver
 

@@ -122,7 +122,7 @@
 
 
 
-				print '<span>'.$_SESSION['nome'].'</span><span class="seta flex align-items-center"><img src="img/header/icon/seta.png"></span>
+				print '<span class="nome-usuario">'.$_SESSION['nome'].'</span><span class="seta flex align-items-center"><img src="img/header/icon/seta.png"></span>
 
 				<li class="sub-menu card">
 

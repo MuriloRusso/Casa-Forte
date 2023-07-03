@@ -351,6 +351,13 @@ a.btn-delete{
 
 }
 
+#page-my-profile input[type="submit"]{
+	
+    width: max-content !important;
+	padding: 15px 50px
+
+}
+
 
 .alert-sucess{
 	

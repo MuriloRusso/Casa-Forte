@@ -279,7 +279,7 @@
 
 								</div>
 								
-								<div class="flex flex-wrap justify-content-space-betwen">
+								<div class="flex justify-content-space-betwen actions">
 
 									<a href="delete-address.php?id='.$row->ID.'" class="btn btn-delete" title="Clique aqui para excluir endereço">Excluir</a>
 
@@ -399,7 +399,7 @@
 
 								</div>
 								
-								<div class="flex flex-wrap justify-content-space-betwen">
+								<div class="flex justify-content-space-betwen actions">
 
 									<a href="delete-card.php?id='.$row->ID.'" class="btn btn-delete" title="Clique aqui para excluir o cartão">Excluir</a>
 

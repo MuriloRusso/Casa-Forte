@@ -8,6 +8,8 @@
 
          include('protect.php');
 
+		 include('protect-cliente.php');
+
     ?>
 
     <head>

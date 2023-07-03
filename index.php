@@ -1,0 +1,438 @@
+
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+    <?php 
+
+         include('connect.php');
+
+    ?>
+
+    <head>
+
+        <?php 
+
+            include('head.php');
+
+        ?>
+
+    </head>
+
+    <body id="page-index">
+
+        <?php 
+
+            include('header.php');
+        
+        ?>
+
+
+        <div class="full-width flex flex-wrap">
+
+            <?php 
+
+                include('left-menu.php');
+
+            ?>
+
+            
+			<?php 
+						
+				if($_SESSION['papel'] == 'admin'){
+					
+					$sql_code = "SELECT * FROM pedido";
+
+					$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
+
+					$quantidadePedidos = $sql_query->num_rows;
+					
+					$sql_code = "SELECT * FROM pedido WHERE status='Entregue'";
+
+					$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
+
+					$quantidadePedidosEntregues = $sql_query->num_rows;
+					
+					$sql_code = "SELECT * FROM pedido WHERE status='Em Transito'";
+
+					$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
+
+					$quantidadePedidosTransito = $sql_query->num_rows;
+
+					$sql_code = "SELECT * FROM usuario  WHERE papel='cliente'";
+
+					$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
+
+					$quantidadeUsuarios = $sql_query->num_rows;
+					
+					$sql_code = "SELECT * FROM usuario  WHERE papel='admin'";
+
+					$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
+
+					$quantidadeAdmins = $sql_query->num_rows;
+					
+					$sql_code = "SELECT * FROM produtos";
+
+					$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
+
+					$quantidadeProdutos = $sql_query->num_rows;
+
+					
+					print '
+					
+					
+					<section class="text-center painel-adm">
+					
+						<h2>Painel Administrativo</h2>
+						
+						
+						<div class="flex flex-wrap justify-content-center">
+						
+							<div class="vendas col-33 card">
+							
+								<div>
+								
+									<h3>Vendas</h3>
+									<p>Total: '.$quantidadePedidos.'</p>
+								
+								
+								</div>
+								
+								<div class="icon">
+								
+									<img src="img/admin/icons/sales-icon.png">
+								
+								
+								</div>
+								
+								
+								
+							</div>	
+							
+							<div class="clientes col-33 card">
+							
+								<div>
+								
+									<h3>Clientes</h3>
+									<p>Total: '.$quantidadeUsuarios.'</p>
+								
+								
+								</div>
+								
+								<div class="icon">
+								
+									<img src="img/admin/icons/client-icon.png">
+								
+								
+								</div>
+								
+								
+								
+							</div>	
+
+
+
+							<div class="produtos col-33 card">
+							
+								<div>
+								
+									<h3>Produtos</h3>
+									<p>Total: '.$quantidadeProdutos.'</p>
+								
+								
+								</div>
+								
+								<div class="icon">
+								
+									<img src="img/admin/icons/product-icon.png">
+								
+								
+								</div>
+								
+								
+								
+							</div>	
+
+							
+						</div>	
+
+					
+					</section>
+					
+					<section class="text-center painel-adm">
+					
+						<h2>Pedidos</h2>
+						
+						
+						<div class="flex flex-wrap justify-content-center">
+						
+							<div class="vendas col-33 card">
+							
+								<div>
+								
+									<h3>Pedidos</h3>
+									<p>Total: '.$quantidadePedidos.'</p>
+								
+								
+								</div>
+								
+								<div class="icon">
+								
+									<img src="img/admin/icons/total-sales-icon.png">
+								
+								
+								</div>
+								
+								
+								
+							</div>	
+							
+							<div class="clientes col-33 card">
+							
+								<div>
+								
+									<h3>Pedidos Entregues</h3>
+									<p>Total: '.$quantidadePedidosEntregues.'</p>
+								
+								
+								</div>
+								
+								<div class="icon">
+								
+									<img src="img/admin/icons/delivery-icon.png">
+								
+								
+								</div>
+								
+								
+								
+							</div>	
+							
+							<div class="produtos col-33 card">
+							
+								<div>
+								
+									<h3>Pedidos Pendentes</h3>
+									<p>Total: '.$quantidadePedidosTransito.'</p>
+								
+								
+								</div>
+								
+								<div class="icon">
+								
+									<img src="img/admin/icons/pendant-icon.png">
+								
+								
+								</div>
+								
+								
+								
+							</div>	
+							
+							
+													
+						</div>	
+						
+						
+						<a class="btn btn-primary" href="vendas.php" title="Clique nesse botão para ver mais pedidos">Ver Pedidos</a>
+						
+					
+					
+					</section>
+					
+					
+					
+					<section class="text-center painel-users painel-adm">
+					
+						<h2>Usuários</h2>
+						
+						<div class="flex flex-wrap justify-content-center">
+						
+							<div class="vendas col-33 card">
+							
+								<div>
+								
+									<h3>Administradores</h3>
+									<p>Total: '.$quantidadeAdmins.'</p>
+								
+								
+								</div>
+								
+								<div class="icon">
+								
+									<img src="img/admin/icons/admin-icon.png">
+								
+								
+								</div>
+								
+								
+								
+							</div>	
+							
+							
+							<div class="clientes col-33 card">
+							
+								<div>
+								
+									<h3>Clientes</h3>
+									<p>Total: '.$quantidadeUsuarios.'</p>
+								
+								
+								</div>
+								
+								<div class="icon">
+								
+									<img src="img/admin/icons/client-icon.png">
+								
+								
+								</div>
+								
+								
+								
+							</div>	
+							
+						</div>	
+					
+						<a class="btn btn-primary" href="panel-users.php" title="Clique nesse botão para ver o painel de usuários">Painel de Usuários</a>
+					
+					
+					</section>
+					
+
+					';
+					
+					
+				}
+			
+			
+			?>
+			
+			
+			
+<!--
+			
+            <section class="flex justify-content-center">
+
+                <div class="seta-carrousel left"><img src="img/carrousel/icons/circulo-de-flecha.png" class="espelhar" alt="<"></div>  
+
+                    <div class="overflow-hidden">
+
+                        <div class="container-carrousel">
+                            
+                            <div class="carrousel-item active flex">
+
+                                    <?php 
+
+                                        include('blocks/carrousel/mais-vendidos.php');
+
+                                    ?>
+
+                            </div>
+
+                            <div class="carrousel-item flex">
+
+                                    <?php 
+
+                                        include('blocks/carrousel/mais-vendidos.php');
+
+                                    ?>
+
+                            </div>
+
+
+                            <div class="carrousel-item flex">                    
+
+                                    <?php 
+
+                                        include('blocks/carrousel/mais-vendidos.php');
+
+                                    ?>
+                            
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                <div class="seta-carrousel right"><img src="img/carrousel/icons/circulo-de-flecha.png" alt=">"></div> 
+
+            </section>
+			
+			
+            <script src="js/carrousel.js"></script>
+			
+-->
+			<?php
+			
+			if($_SESSION['papel'] == 'cliente' || !isset($_SESSION['papel'])){
+				
+			?>
+			
+			
+			<section class="flex justify-content-center carrousel-scroll">
+				
+				<div class="seta-carrousel left"><img src="img/carrousel/icons/circulo-de-flecha.png" class="espelhar" alt="<"></div>  
+				
+					 <div class="carrousel-scroll-itens">
+
+						<?php 
+
+							include('blocks/carrousel-scroll/carrousel-scroll-item-1.php');
+
+						?>
+
+						 
+                   	</div>
+
+                <div class="seta-carrousel right"><img src="img/carrousel/icons/circulo-de-flecha.png" alt=">"></div> 
+			
+			
+			</section>
+			
+			<script src="js/carrousel-scroll.js"></script>
+
+            <section>
+
+                <?php 
+
+                    include('blocks/products.php');
+
+                ?>
+
+            </section>
+
+            <!-- <section>
+
+            <?php 
+
+                include('blocks/posts.php');
+
+            ?>
+
+            </section> -->
+			
+			
+			
+			<?php
+			
+			}
+				
+			?>
+
+			<?php 
+
+				include('footer.php');
+
+			?>
+
+
+        </div>
+        
+
+
+
+    </body>
+
+
+
+</html>

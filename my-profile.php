@@ -225,7 +225,7 @@
 
 									<label for="cep">Cep:</label>
 									<input type="text" id="cep" name="cep" required onkeypress=$(this).mask("00000-000") value="'.$row->cep.'"placeholder="99999-999">
-									<a href="#" class=" btn btn-primary" onclick="buscarEndereco()">Buscar Endereço</a>
+									<a href="#" class=" btn btn-primary actions" onclick="buscarEndereco()">Buscar Endereço</a>
 
 								</div>
 								

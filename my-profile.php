@@ -155,6 +155,12 @@
 
 					</div>
 
+					<div class="form-group">
+
+						<a href="change-password.php" class="btn btn-primary">Alterar Senha</a>
+
+					</div>
+
 
 					<div class="form-group">
 

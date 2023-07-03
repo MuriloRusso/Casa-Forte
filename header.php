@@ -122,16 +122,27 @@
 
 
 
-					print '<span>'.$_SESSION['nome'].'</span><span class="seta flex align-items-center"><img src="img/header/icon/seta.png"></span>
+				print '<span>'.$_SESSION['nome'].'</span><span class="seta flex align-items-center"><img src="img/header/icon/seta.png"></span>
 
 				<li class="sub-menu card">
 
 					<ul>
 
 						<li><a class="btn" href="my-profile.php" title="Clique aqui para ver seu perfil">Meu Perfil</a></li>
-						<li><a class="btn" href="meus-pedidos.php" title="Clique aqui para ver seus pedidos">Meus Pedidos</a></li>
-						<li><a class="btn" href="carrinho.php" title="Clique aqui para ver seu carrinho">Meu Carrinho</a></li>
-						<li><a class="btn btn-primary btn-sair" href="logout.php" title="Clique aqui para sair">Sair</a></li>
+						';
+
+						if($usuario['papel'] === 'cliente'){
+
+							print '
+
+							<li><a class="btn" href="meus-pedidos.php" title="Clique aqui para ver seus pedidos">Meus Pedidos</a></li>
+							<li><a class="btn" href="carrinho.php" title="Clique aqui para ver seu carrinho">Meu Carrinho</a></li>
+
+							';
+
+						}
+
+						print '<li><a class="btn btn-primary btn-sair" href="logout.php" title="Clique aqui para sair">Sair</a></li>
 
 					</ul>
 

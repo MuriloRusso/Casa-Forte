@@ -59,7 +59,7 @@
 							
                             <p style="color: gray !important">'.$row->texto.'<p/>
 							
-							<p class="date">Data da Publicação: '.$row->data_post.'</p>
+							<p class="date">Data da Publicação: <span>'.$row->data_post.'</span></p>
 							
 							';
 						
@@ -107,6 +107,8 @@
 
 
     </body>
+
+    <script src="js/mascara-data.js"></script>
 
 
 

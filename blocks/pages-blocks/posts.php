@@ -55,6 +55,8 @@
         
         while($row = $sql_query->fetch_object()){
 
+			//$dat = explode($row->data_post, '-' , 999);
+
             print '
             <a href="post.php?id='.$row->id.'">
 
@@ -65,7 +67,7 @@
                     <h3>'.$row->titulo.'</h3>
 					
 					
-					<p class="date">Data da Publicação: '.$row->data_post.'</p>
+					<p class="date">Data da Publicação: <span>'.$row->data_post.'</span></p>
 					
 					';
 			
@@ -147,5 +149,7 @@
     ';
 
 ?>
+
+<script src="js/mascara-data.js"></script>
 	
 </html>

@@ -45,7 +45,9 @@
 
 
 		<section class="flex flex-wrap">
-			
+
+
+						
 			<div class="col-25">
 				
 				<div class="card">
@@ -58,24 +60,37 @@
 							
 						</li>
 						
-						<li>
+						<?php 
+
+							if($_SESSION['papel'] == 'cliente'){
+
+						?>						
+
+							<li>
+								
+								<a href="#" id="btn-adress" title="Clique aqui para ver seus endereços">Endereços</a>
+								
+							</li>
 							
-							<a href="#" id="btn-adress" title="Clique aqui para ver seus endereços">Endereços</a>
+							<li>
+								
+								<a href="#" id="btn-cards" title="Clique aqui para ver seus cartões">Cartões</a>
+								
+							</li>
 							
-						</li>
-						
-						<li>
-							
-							<a href="#" id="btn-cards" title="Clique aqui para ver seus cartões">Cartões</a>
-							
-						</li>
-						
-						<li>
-							
-							<a href="meus-pedidos.php" title="Clique aqui para ver seus pedidos">Meus Pedidos</a>
-							
-						</li>
-						
+							<li>
+								
+								<a href="meus-pedidos.php" title="Clique aqui para ver seus pedidos">Meus Pedidos</a>
+								
+							</li>
+
+
+						<?php 
+
+							}
+
+						?>			
+													
 					</ul>
 				
 				</div>

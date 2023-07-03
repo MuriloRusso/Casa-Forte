@@ -228,13 +228,11 @@
 				
 				
 
- 				while($row = $sql_query->fetch_object()){
-														
+ 				while($row = $sql_query->fetch_object()){														
 
-						print '
+						print '					
 						
-						
-							<form method="post" action="config/edit-address.php" class="border-bottom-gray">
+							<form method="post" action="config/edit-address.php" class="border-bottom-gray address">
 							
 								<h3>Endereço</h3>
 								
@@ -243,16 +241,16 @@
 								
 								<div class="form-group">
 
-									<label for="nome">Nome do Endereço:</label>
-									<input type="text" id="nome" name="nome" value="'.$row->nome_endereco.'" placeholder="Digite o nome do seu endereço aqui">
+									<label for="">Nome do Endereço:</label>
+									<input type="text" id="" class="iptNome" name="nome" value="'.$row->nome_endereco.'" placeholder="Digite o nome do seu endereço aqui">
 
 								</div>
 
 								<div class="form-group">
 
-									<label for="cep">Cep:</label>
-									<input type="text" id="cep" name="cep" required onkeypress=$(this).mask("00000-000") value="'.$row->cep.'"placeholder="99999-999">
-									<a href="#" class=" btn btn-primary actions" onclick="buscarEndereco()">Buscar Endereço</a>
+									<label for="">Cep:</label>
+									<input type="text" id="" class="iptCep"  name="cep" required onkeypress=$(this).mask("00000-000") value="'.$row->cep.'"placeholder="99999-999">
+									<a class=" btn btn-primary actions btnBuscarEnd">Buscar Endereço</a>
 
 								</div>
 								
@@ -260,31 +258,31 @@
 								
 								<div class="form-group">
 
-									<label for="logradouro">Logradouro:</label>
-									<input type="text" id="logradouro" name="logradouro" value="'.$row->logradouro.'"placeholder="Clique em Buscar Endereço para preencher o logradouro">
-
-								</div>
-								
-								
-								<div class="form-group">
-
-									<label for="numero">Numero:</label>
-									<input type="text" id="numero" name="numero" value="'.$row->numero.'"placeholder="Digite o número da sua casa aqui">
+									<label for="">Logradouro:</label>
+									<input readonly type="text" id="" class="iptLog"  name="logradouro" value="'.$row->logradouro.'"placeholder="Clique em Buscar Endereço para preencher o logradouro">
 
 								</div>
 								
 								
 								<div class="form-group">
 
-									<label for="bairro">Bairro:</label>
-									<input type="text" id="bairro" name="bairro" value="'.$row->bairro.'"placeholder="Clique em Buscar Endereço para preencher o bairro">
+									<label for="">Numero:</label>
+									<input type="text" id="" class="iptNum"  name="numero" value="'.$row->numero.'"placeholder="Digite o número da sua casa aqui">
+
+								</div>
+								
+								
+								<div class="form-group">
+
+									<label for="">Bairro:</label>
+									<input readonly type="text" id="" class="iptBairro" name="bairro" value="'.$row->bairro.'"placeholder="Clique em Buscar Endereço para preencher o bairro">
 
 								</div>
 								
 								<div class="form-group">
 
-									<label for="cidade">Cidade:</label>
-									<input type="text" id="cidade" name="cidade" value="'.$row->cidade.'" placeholder="Clique em Buscar Endereço para preencher a cidade">
+									<label for="">Cidade:</label>
+									<input readonly type="text" id="" class="iptCidade"  name="cidade" value="'.$row->cidade.'" placeholder="Clique em Buscar Endereço para preencher a cidade">
 
 								</div>
 
@@ -292,8 +290,8 @@
 
 								<div class="form-group">
 
-									<label for="pais">País:</label>
-									<input type="text" id="pais" name="pais" value="'.$row->pais.'"placeholder="Clique em Buscar Endereço para preencher o pais">
+									<label for="">País:</label>
+									<input readonly type="text" id="" class="iptPais"  name="pais" value="'.$row->pais.'"placeholder="Clique em Buscar Endereço para preencher o pais">
 
 								</div>
 								
@@ -522,40 +520,77 @@
 				
 			}
 
-  	function buscarEndereco() {
-    var cep = document.getElementById("cep").value;
-    var url = "https://viacep.com.br/ws/" + cep + "/json/";
 
-    fetch(url, { method: 'GET' })
-      .then(response => response.json())
-      .then(data => {
-        console.log(data);
-        
-        document.getElementById("logradouro").value = data.logradouro;
-        document.getElementById("bairro").value = data.bairro;
-        document.getElementById("cidade").value = data.localidade;
-		document.getElementById("pais").value = "Brasil";
-        
-      })
-      .catch(error => {
-        console.log("Erro ao buscar o endereço:", error);
-      });
-  }
-			
+			const formAddress = document.querySelectorAll('.address');
+
+			const iptCep = document.querySelectorAll('.iptCep');
+
+			const btnBuscar = document.querySelectorAll('.btnBuscarEnd');
+
+			for(let cont = 0; cont < formAddress.length; cont++){
+
+				btnBuscar[cont].onclick = () => {
+
+					var cep = iptCep[cont].value;
+					var url = "https://viacep.com.br/ws/" + cep + "/json/";
+
+					fetch(url, { method: 'GET' })
+					.then(response => response.json())
+					.then(data => {
+						console.log(data);
+						
+						document.querySelectorAll(".iptLog")[cont].value = data.logradouro;
+						document.querySelectorAll(".iptBairro")[cont].value = data.bairro;
+						document.querySelectorAll(".iptCidade")[cont].value = data.localidade;
+						document.querySelectorAll(".iptPais")[cont].value = "Brasil";
+						
+					})
+					.catch(error => {
+						console.log("Erro ao buscar o endereço:", error);
+					});
 
 
-  
 
-  document.getElementById('vencimento').addEventListener('blur', function() {
-    var inputValue = this.value;
-    var month = parseInt(inputValue.substring(0, 2));
+				}
 
-    if (month <= 0 || month > 12 || inputValue === "00") {
-      this.setCustomValidity('O mês deve ser um valor entre 01 e 12.');
-    } else {
-      this.setCustomValidity('');
-    }
-  });
+			}
+
+			/*
+
+			function buscarEndereco() {
+			var cep = document.getElementById("cep").value;
+			var url = "https://viacep.com.br/ws/" + cep + "/json/";
+
+			fetch(url, { method: 'GET' })
+			.then(response => response.json())
+			.then(data => {
+				console.log(data);
+				
+				document.getElementById("logradouro").value = data.logradouro;
+				document.getElementById("bairro").value = data.bairro;
+				document.getElementById("cidade").value = data.localidade;
+				document.getElementById("pais").value = "Brasil";
+				
+			})
+			.catch(error => {
+				console.log("Erro ao buscar o endereço:", error);
+			});
+		}
+					
+*/
+
+		
+
+		document.getElementById('vencimento').addEventListener('blur', function() {
+			var inputValue = this.value;
+			var month = parseInt(inputValue.substring(0, 2));
+
+			if (month <= 0 || month > 12 || inputValue === "00") {
+			this.setCustomValidity('O mês deve ser um valor entre 01 e 12.');
+			} else {
+			this.setCustomValidity('');
+			}
+		});
 
 		
 		</script>

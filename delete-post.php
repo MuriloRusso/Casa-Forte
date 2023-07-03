@@ -20,7 +20,7 @@
 
     </head>
 
-    <body id="delete-post">
+    <body id="delete-post" class="page-delete">
 
         <?php 
 

@@ -127,7 +127,7 @@
 										print '
 
 
-										<div class="flex flex-wrap justify-content-space-betwen">
+										<div class="flex flex-wrap justify-content-space-betwen actions">
 
 											<a href="delete-product.php?id='.$produto->id.'" class="btn btn-delete" title="Clique nesse botão para excluir o produto">Excluir</a>
 

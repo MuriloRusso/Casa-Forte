@@ -20,7 +20,7 @@
 
     </head>
 
-    <body id="delete-address">
+    <body id="delete-address"  class="page-delete">
 
         <?php 
 

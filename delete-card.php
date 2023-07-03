@@ -21,7 +21,7 @@
 
     </head>
 
-    <body id="delete-card">
+    <body id="delete-card" class="page-delete">
 
         <?php 
 

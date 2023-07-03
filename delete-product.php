@@ -21,7 +21,7 @@
 
     </head>
 
-    <body id="delete-product">
+    <body id="delete-product" class="page-delete">
 
         <?php 
 

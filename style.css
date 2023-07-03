@@ -131,6 +131,22 @@ header .sub-menu-category{
 }
 
 
+header .sub-menu-category{
+	
+	display: none !important;
+	position: absolute;
+    width: max-content !important;
+	margin: 0;
+    padding: 5px;
+}
+
+header .sub-menu a.btn{
+
+	width: -webkit-fill-available !important;
+
+}
+
+
 /*-----------------*/
 
 

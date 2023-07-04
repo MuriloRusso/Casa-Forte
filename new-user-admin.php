@@ -346,12 +346,12 @@
 					</div>
 						
 
-					<div class="form-group">
+					<!-- <div class="form-group">
 
 						<label for="cpf">CPF:</label>
 						<input type="text" id="cpf" name="cpf" required onkeypress="$(this).mask('000.000.000-00')" value="<?php echo $cpf; ?>" placeholder="999.999.999-99">
 
-					</div>
+					</div> -->
 
 					 <div class="form-group">
 

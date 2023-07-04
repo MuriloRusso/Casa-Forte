@@ -103,6 +103,32 @@
 
                         $row = $sql_query->fetch_object();
 
+                        $data_atual = date('Y-m-d');
+
+                        // $horario = date('H:i:s');
+
+                         $horario = date('H:i');
+
+                        // $hora_envio = explode($row->horario, ':');
+
+                        // $intervalo = abs( $row->horario - $horario ) / 60;
+
+                        // print $row->horario.'<br>';
+
+                        // print  $hora_envio[1].'<br>';
+
+                        // print $horario.'<br>';
+
+                        // print $intervalo;
+
+                        if($row->data_envio == $data_atual/* && $intervalo < 5*/) {
+
+                        
+
+                            // if( $intervalo > 30 ) {
+                            // // 
+                            // }
+
                         // $sql_code = "SELECT * FROM usuario WHERE id=".$row->id_usuario;
 
                         // $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
@@ -141,6 +167,14 @@
 					</div>
 
 				<?php
+
+                            }
+
+                        else{
+
+                            print '<p class="btn-delete btn">Link Expirado!</p>';
+
+                        }
                 
                     }
                 

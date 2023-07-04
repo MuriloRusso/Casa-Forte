@@ -85,7 +85,7 @@
                     <h2>Pedido: #'.$pedido->ID.'<h2/>
                                                 
 
-                    <p><strong>Data da Compra:</strong> '.$pedido->DataCompra.'</p>
+                    <p class="date"><strong>Data da Compra:</strong> <span>'.$pedido->DataCompra.'</span></p>
 
                     <p><strong>Quantidade:</strong> '.$pedido->Quantidade.'</p>
 
@@ -219,6 +219,8 @@
 
 
         </script>
+
+        <script src="js/mascara-data.js"></script>
 
 
     </body>

@@ -31,14 +31,6 @@
 
 		if(!isset($_POST['id'])){
 			
-//			$sql_code = "SELECT * FROM usuario";
-//
-//			$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
-//
-//			$quantidade = $sql_query->num_rows;
-//
-//			$emailUtilizado = false;
-
 			if($quantidade > 0) {
 
 				while($row = $sql_query->fetch_object()){
@@ -97,7 +89,7 @@
 
 				while($row = $sql_query->fetch_object()){
 
-					if($row->email == $_POST['email']){
+					if($row->email == $_POST['email'] && $row->id != $_POST['id']){
 
 						$emailUtilizado = true;
 
@@ -109,7 +101,7 @@
 			
 			if($emailUtilizado === true){				
 				
-				header("Location: ../new-user-admin.php");
+				header("Location: ../new-user-admin.php?id=".$_POST['id']);
 				
 			}
 			
@@ -117,7 +109,10 @@
 
 				$id = $mysqli->real_escape_string($_POST['id']);
 
-				$sql_code = "UPDATE usuario SET nome='{$nome}', descricao='{$descricao}', preco='{$preco}', NumeroParcelas='{$parcelas}' WHERE id=".$id;
+				$sql_code = "INSERT INTO usuario (nome, email, senha, papel, genero, data_nascimento, telefone) VALUES ('{$nome}', '{$email}', '{$senha}', '{$papel}', '{$genero}',  '{$nascimento}', '{$telefone}')";
+
+
+				$sql_code = "UPDATE usuario SET nome='{$nome}', email='{$email}', senha='{$senha}', papel='{$papel}', genero='{$genero}', data_nascimento='{$nascimento}', telefone='{$telefone}' WHERE id=".$id;
 
 				$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
 
@@ -147,7 +142,7 @@
 				}
 				*/
 
-				header("Location: ../index.php");	
+				header("Location: ../panel-users.php");
 				
 			}
 

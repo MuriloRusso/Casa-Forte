@@ -69,7 +69,7 @@
 					 
 //					$id =  $user->id;
 			
-					$nome = $user->nome-completo;
+					$nome = $user->nome;
 
 					$email = $user->email;
 
@@ -85,14 +85,11 @@
 
 
 				 }
-			
-			
-				else{
-				
-					
-				}
 
-            ?>
+				 print 'Nome: '.$nome;
+			
+			
+			?>
 			
 	
 			
@@ -105,21 +102,21 @@
 					<?php 
 
 					
-						$nome = '';
+				// 		$nome = '';
 
-						$email = '';
+				// 		$email = '';
 
-						$senha = '';
+				// 		$senha = '';
 
-						$papel = '';
+				// 		$papel = '';
 
-						$genero = '';
+				// 		$genero = '';
 
-				//		$cpf = $mysqli->real_escape_string($_POST['cpf']);
+				// //		$cpf = $mysqli->real_escape_string($_POST['cpf']);
 
-						$nascimento = '';
+				// 		$nascimento = '';
 
-						$telefone = '';	
+				// 		$telefone = '';	
 
 						$sql_code = "SELECT * FROM usuario";
 

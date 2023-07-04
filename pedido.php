@@ -91,11 +91,11 @@
 
                     <p><strong>Dados da Entrega:</strong> '.$pedido->EnderecoEntrega.'</p>
 
-                    <p><strong>Data da Previsão da Entrega:</strong> '.$pedido->DataPrevisaoEntrega.'</p>
+                    <p class="date"><strong>Data da Previsão da Entrega:</strong> <span>'.$pedido->DataPrevisaoEntrega.'</span></p>
 
                     <p><strong>Status:</strong> '.$pedido->Status.'</p>
 
-                    <p><strong>Data da Entrega:</strong> '.$pedido->DataEntrega.'</p>
+                    <p class="date"><strong>Data da Entrega:</strong> <span>'.$pedido->DataEntrega.'</span></p>
 
                     <form action="" method="post">
 

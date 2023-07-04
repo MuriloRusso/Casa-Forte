@@ -84,17 +84,17 @@
                     <h2>Pedido: #'.$pedido->ID.'<h2/>
                                                 
 
-                    <p><strong>Data da Compra:</strong> '.$pedido->DataCompra.'</p>
+                    <p class="date"><strong>Data da Compra:</strong> <span>'.$pedido->DataCompra.'</span></p>
 
                     <p><strong>Quantidade:</strong> '.$pedido->Quantidade.'</p>
 
                     <p><strong>Dados da Entrega:</strong> '.$pedido->EnderecoEntrega.'</p>
 
-                    <p><strong>Data da Previsão da Entrega:</strong> '.$pedido->DataPrevisaoEntrega.'</p>
+                    <p class="date"><strong>Data da Previsão da Entrega:</strong> <span>'.$pedido->DataPrevisaoEntrega.'</span></p>
 
                     <p><strong>Status:</strong> '.$pedido->Status.'</p>
 
-                    <p><strong>Data da Entrega:</strong> '.$pedido->DataEntrega.'</p>
+                    <p class="date"><strong>Data da Entrega:</strong>  <span>'.$pedido->DataEntrega.'</span></p>
 
                     
                     
@@ -172,6 +172,7 @@
 
         </script>
 
+		<script src="js/mascara-data.js"></script>
 
     </body>
 

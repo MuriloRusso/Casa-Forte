@@ -70,9 +70,13 @@
 								
 							</div>
 
-							<div>
+							<div class="date">
+
+								<span>
 							
-								'.$row->DataCompra.'
+									'.$row->DataCompra.'
+
+								</span>
 								
 							</div>	
 
@@ -134,6 +138,8 @@
 
 
     </body>
+
+	<script src="js/mascara-data.js"></script>
 
 
 

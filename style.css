@@ -614,7 +614,7 @@ section, footer{
 
 }
 
-.card .date{
+#blog .card .date, #page-post .card .date{
 	
 	margin: 20px 0 0 0;
 	

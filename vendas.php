@@ -43,11 +43,38 @@
 			<?php 
 		
 				
-				$sql_code = "SELECT * FROM pedido";	
+				// $sql_code = "SELECT * FROM pedido";	
 				
-				$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
+				// $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
 								
+				// $quantidade = $sql_query->num_rows;
+
+				$sql_code = "SELECT * FROM pedido";
+
+				$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
+			
 				$quantidade = $sql_query->num_rows;
+
+				if(!isset($_GET['page'])){
+
+					$sql_code = "SELECT * FROM pedido ORDER BY id DESC LIMIT 0, 10";
+			
+					$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
+			
+				}
+			
+				else{
+			
+					$page = intval($_GET['page']) - 1;
+			
+					$sql_code = "SELECT * FROM pedido ORDER BY id DESC LIMIT ".$page."0, 10";
+			
+					$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
+			
+			
+				}
+
+				// $quantidade = $sql_query->num_rows;
 				
 				print '
 				
@@ -101,7 +128,45 @@
 
 					';
 
-                }    			
+                }    	
+				
+				
+				if($quantidade > 10){
+
+					$numPages = (intval($quantidade / 10)) + 1;
+				
+		//		$numPages = ceil((intval($quantidadeProdutos / 10)));
+		
+				print '
+		
+				<div class="pagination full-width flex justify-content-center">';
+		
+		
+				for($a = 1; $a < $numPages+1; $a++){
+		
+			//		print '<a href="blog.php?page='.$a.'">'.$a.'</a>';
+		
+					if($a == $_GET['page'] || (!isset($_GET['page']) && $a == 1)){
+		
+						print '<a href="vendas.php?page='.$a.'" class="btn-pagination-active">'.$a.'</a>';
+		
+					}
+		
+					else{
+		
+						print '<a href="vendas.php?page='.$a.'">'.$a.'</a>';
+		
+		
+					}
+		
+		
+				}
+		
+		
+				print '</div>';
+					
+		
+			}
 				
 
 			?>

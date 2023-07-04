@@ -315,7 +315,7 @@
 					</div>
 		
 
-					<div class="form-group-radio">
+					<div class="form-group-radio" id="generoContainer" data-value="<?php echo $genero; ?>">
 
 						<label for="genero">Gênero:</label>
 						
@@ -426,7 +426,14 @@
 
         </div>
         
+		<script>
 
+			const generoAtual = document.querySelector('#generoContainer').getAttribute('data-value');
+
+			document.querySelector(`#generoContainer input[value=${generoAtual}]`).checked = true;
+
+
+		</script>
 
 
     </body>

@@ -6,6 +6,7 @@
 
          include('connect.php');
 
+         include('login-verification.php');
 
     ?>
 

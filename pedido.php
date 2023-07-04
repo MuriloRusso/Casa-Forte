@@ -93,7 +93,7 @@
 
                     <p class="date"><strong>Data da Previsão da Entrega:</strong> <span>'.$pedido->DataPrevisaoEntrega.'</span></p>
 
-                    <p><strong>Status:</strong> '.$pedido->Status.'</p>
+                    <p><strong>Status:</strong> <span id="statusValue">'.$pedido->Status.'</span></p>
 
                     <p class="date"><strong>Data da Entrega:</strong> <span>'.$pedido->DataEntrega.'</span></p>
 
@@ -221,6 +221,15 @@
         </script>
 
         <script src="js/mascara-data.js"></script>
+
+            <script>
+
+                const statusValue = document.querySelector('#statusValue');
+
+                document.querySelector(`select[name="status"] option[value="${statusValue.innerText}"]`).selected = true;
+
+
+            </script>
 
 
     </body>

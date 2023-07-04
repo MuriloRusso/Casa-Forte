@@ -72,7 +72,7 @@
 
                         $user = $sql_query->fetch_object();
 
-                        if($password == $passwordConfirm){//confirmação não confere
+                        if($newPassword == $passwordConfirm){//confirmação não confere
 
                             if($user->senha == $password){//senha atual incorreta 
                                 
@@ -130,17 +130,18 @@
 
 					</div>
 
-                    <div class="form-group">
-
-						<label for="passwordConfirm">Confirme a Senha Atual:</label>
-						<input type="password" id="passwordConfirm" name="passwordConfirm" placeholder="Confirme aqui a senha atual">
-
-					</div>
 
                     <div class="form-group">
 
 						<label for="newPassword">Nova Senha:</label>
 						<input type="password" id="newPassword" name="newPassword" placeholder="Digite aqui a nova senha">
+
+					</div>
+
+                    <div class="form-group">
+
+						<label for="passwordConfirm">Confirme a Nova Senha:</label>
+						<input type="password" id="passwordConfirm" name="passwordConfirm" placeholder="Confirme aqui a senha atual">
 
 					</div>
 					

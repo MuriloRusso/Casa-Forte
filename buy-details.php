@@ -55,8 +55,7 @@
                
                 $pedido = $sql_query->fetch_object();     
 
-                print '<div class="card text-center"> ';
-                
+                print '<div class="card text-center"> ';               
 
                 if(isset($_POST['idPedido'])){
 

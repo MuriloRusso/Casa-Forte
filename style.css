@@ -342,6 +342,17 @@ a.btn-delete{
 	
 }
 
+
+
+.btn-disable{
+
+    background-color: #aaa !important;
+    color: #333 !important;
+	cursor: no-drop !important;
+	
+}
+
+
 .btn-secondary{
 
     border  : 1px solid #ccc;

@@ -135,23 +135,70 @@
 						
 						
 						<div>
-						
-							<form action="config/add-carrinho.php" method="post">
-								<input type="hidden" value="'.$userId.'" name="id_cliente">
-								<input type="hidden" value="'.$row->id.'" name="id_produto">
-								<input type="submit" class="btn btn-primary" value="Adicionar ao Carrinho" title="Clique nesse botão para adicionar ao carrinho">
+
+						';
+
+						if($_SESSION['papel'] === 'cliente'){
+
+							print'
+							
+								<form action="config/add-carrinho.php" method="post">
+									<input type="hidden" value="'.$userId.'" name="id_cliente">
+									<input type="hidden" value="'.$row->id.'" name="id_produto">
+									<input type="submit" class="btn btn-primary" value="Adicionar ao Carrinho" title="Clique nesse botão para adicionar ao carrinho">
+									
+
+								</form>
 								
+							';
 
-							</form>
+						}
+
+						else{
+
+							print'
 						
+								<form action="" method="post">
+									<input type="submit" class="btn btn-disable" value="Adicionar ao Carrinho" title="Clique nesse botão para adicionar ao carrinho">
+								</form>
+								
+							';
 
+						}
+
+						if($_SESSION['papel'] === 'cliente'){
+
+							print'
+							
 							<form action="buy.php" method="post">
 
 								<input type="submit" class="btn btn-primary" value="Comprar" title="Clique nesse botão para comprar o produto">
 
 
 							</form>
+								
+							';
+
+						}
+
+
+						else{
+
+							print'
 						
+							<form action="" method="post">
+
+								<input type="submit" class="btn btn-disable" value="Comprar" title="Clique nesse botão para comprar o produto">
+
+
+							</form>
+									
+							';
+
+						}
+
+
+						print'												
 						
 						</div>
 

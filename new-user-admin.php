@@ -304,7 +304,7 @@
 
 						<label for="papel">Papel:</label>
 						
-						<select id="papel" name="papel" required> 
+						<select id="papel" name="papel" required data-value="<?php echo $papel; ?>"> 
 						
 							<option value="cliente" selected>Cliente</option>
 							<option value="admin">Admin</option>
@@ -431,6 +431,15 @@
 			const generoAtual = document.querySelector('#generoContainer').getAttribute('data-value');
 
 			document.querySelector(`#generoContainer input[value=${generoAtual}]`).checked = true;
+
+
+		</script>
+
+		<script>
+
+		const papelAtual = document.querySelector('#papel').getAttribute('data-value');
+
+		document.querySelector(`#papel option[value=${papelAtual}]`).selected = true;
 
 
 		</script>

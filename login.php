@@ -61,7 +61,7 @@
                             $user = $mysqli->real_escape_string($_POST['username']);
                             $senha = $mysqli->real_escape_string($_POST['password']);
                             $hash = $senha;
-                            $hash = password_hash($senha, PASSWORD_BCRYPT);
+                            // $hash = password_hash($senha, PASSWORD_BCRYPT);
                             // $hash = obterHashDoBancoDeDados($user); // substitua pela função que obtém o hash do banco de dados
 
                             // if (crypt($senha, $hash) === $hash) {

@@ -300,12 +300,134 @@
 					
 
 					';
+
+
+					$sql_code = "SELECT ID_Cliente, COUNT(*) AS total_compras
+					FROM pedido
+					GROUP BY ID_Cliente
+					ORDER BY total_compras DESC
+					LIMIT 10;
+					";
+	
+					$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);	
+
+					print '<section class="text-center painel-users painel-adm">
+					
+					<h2 class="full-width text-center">Melhores Clientes</h2>
+					
+					<div class="flex flex-wrap justify-content-center">';
+
+	
+						while($pedido = $sql_query->fetch_object()){	
+		
+							$sql_code2 = "SELECT * from usuario WHERE id=".$pedido->ID_Cliente;
+		
+							$sql_query2 = $mysqli->query($sql_code2) or die("Falha na execução do código SQL" . $mysqli->error);
+		
+							$user = $sql_query2->fetch_object();
+
+								print '				
+									<div class="col-33 card flex-wrap">
+
+										<div class="icon">
+
+										';
+										
+										if($user->avatar != ''){
+
+											print '<img src="img/users/'.$user->avatar.'.'.$user->extensao.'" style="border-radius: 100%">';
+
+										}
+
+										else{
+
+											print '<img src="img/user.png">';
+
+										}
+
+
+										print'
+										
+										
+										</div>
+									
+
+
+										<div>
+										
+											<p>Nome: '.$user->nome.'</p>
+											<p>E-mail: '.$user->email.'</p>
+											<p>Telefone: '.$user->telefone.'</p>
+
+										
+										
+										</div>
+										
+										<div class="full-width actions">
+										
+											<a class="btn btn-primary" href="new-user-admin.php?id='.$user->id.'" title="Ver usuário">Ver</a>
+										
+										
+										</div>
+										
+										
+
+										
+									</div>	
+															
+								
+							
+							';
+
+						}
+
+						print '
+						</div>	
+						
+						</section>';
 					
 					
 				}
 			
 			
 			?>
+
+
+				<?php
+				
+				
+				// $sql_code = "SELECT ID_Cliente, COUNT(*) AS total_compras
+				// FROM pedido
+				// GROUP BY ID_Cliente
+				// ORDER BY total_compras DESC
+				// LIMIT 10;
+				// ";
+
+				// $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
+
+
+				// while($pedido = $sql_query->fetch_object()){
+
+
+				// 	$sql_code2 = "SELECT * from usuario WHERE id=".$pedido->ID_Cliente;
+
+				// 	$sql_query2 = $mysqli->query($sql_code2) or die("Falha na execução do código SQL" . $mysqli->error);
+
+				// 	$user = $sql_query2->fetch_object();
+
+				// 	print 'Nome: '.$user->nome.'<br>';
+
+
+
+				// 	print $pedido->ID_Cliente.'<br>';
+
+				// }
+
+				// print 'Deu certo';
+
+				
+				
+				?>
 			
 			
 			

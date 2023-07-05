@@ -102,7 +102,7 @@
 						
 						<div>
 						
-						<form action="buy.php" method="post">
+						<form action="buy.php" method="post" id="buyForm">
 
 							<div class="card full-mobile">
 							
@@ -123,27 +123,29 @@
 								
 									<p>Calcule frete e prazo<p/>
 
-									<input type="text" value="'.$row->peso.'" name="peso">
+									<input type="text" value="09371-210" name="sCepOrigem">
 
-									<input type="text" value="'.$row->largura.'" name="largura">
-
-									<input type="text" value="'.$row->altura.'" name="altura">
-
-									<input type="text" value="'.$row->comprimento.'" name="comprimento">
-
-									<input type="text" value="09371-210" name="cepRemetente">
-
-										
 									<div class="form-grounp flex">
 										
 
-										<input type="text" name="cep" id="cep" placeholder="digite o CEP">
+										<input type="text" name="sCepDestino" id="cep" placeholder="digite o CEP">
 
-										<input type="submit" class="btn btn-primary" value="OK" id="btn-frete" title="Clique nesse botão para confirmar">
+										<a class="btn btn-primary" id="btn-frete" title="Clique nesse botão para confirmar">OK<a>
 										
 										<p id="valorFrete"></p>
 
 									</div>
+
+									<input type="text" value="'.$row->peso.'" name="nVlPeso">
+
+									<input type="text" value="'.$row->comprimento.'" name="nVlComprimento">
+
+									<input type="text" value="'.$row->altura.'" name="nVlAltura">
+
+									<input type="text" value="'.$row->largura.'" name="nVlLargura">
+
+									<input type="text" value="04014" name="nCdServico">
+																			
 										
 							
 								</div>
@@ -247,7 +249,41 @@
 
         </div>    
 
+			<script>
 
+				$('#btn-frete').click(function(){
+
+					// let cepRemetente = '09371-210';
+
+					// let peso = document.querySelector('#peso');
+
+					// let altura = document.querySelector('#altura');
+
+					// let largura = document.querySelector('#largura');
+
+					// let comprimento = document.querySelector('#comprimento');
+
+					// let cep = document.querySelector('#cep');
+
+					let formSerialized = $('#buyForm').serialize();
+
+
+					$.post('calcular-frete.php', formSerialized, function(resultado){
+
+						console.log(resultado);
+						resultado = JSON.parse(resultado);
+						let valorFrete = resultado.preco;
+						console.log('Valor do Frete: ' + valorFrete);
+						let prazoEntrega = resultado.prazo;
+						$('#valorFrete').html(`O valor do frete é <b>R$ ${valorFrete}</b> e o prazo de entrega é <b>${prazoEntrega} dias úteis</b>.`);
+
+
+					})
+
+
+				});
+
+			</script>
 
     </body>
 

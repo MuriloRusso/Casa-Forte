@@ -36,6 +36,7 @@
 					</li>
 
 					<li><a href="blog.php" title="Clique nesse botão para ir a seção de blog">Blog</a></li>
+					<li><a href="orcamento.php" title="Clique nesse botão para ir a seção de Orçamento">Orçamento</a></li>
 
 
 				</ul>
@@ -63,6 +64,8 @@
 					 <li><a href="index.php">Home</a></li>
 					<li><a href="products.php">Produtos</a></li>
 					<li><a href="blog.php">Blog</a></li>
+					<li><a href="orcamento.php">Orçamento</a></li>
+
 					';
 
 					if(!isset($_SESSION['id'])){

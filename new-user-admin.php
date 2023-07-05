@@ -95,7 +95,7 @@
 			
 			<section>
 
-				<form method="post" action="config/create-user-admin.php"  enctype="multipart/form-data">
+				<form method="post" action=""  enctype="multipart/form-data">
 						
 						
 					<?php 
@@ -163,9 +163,9 @@
 
 								if($emailUtilizado === true){		 
 
-									print '<p class="btn-delete">E-mail já utilizado.</p>';
+									print '<p class="btn-delete btn">E-mail já utilizado.</p>';
 
-									header("Location: new-user-admin.php");
+									// header("Location: new-user-admin.php");
 
 								}
 
@@ -177,7 +177,7 @@
 
 									$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
 
-									header("Location: index.php");
+									header("Location: panel-users.php");
 
 
 								}
@@ -225,9 +225,9 @@
 
 								if($emailUtilizado === true){		
 
-									print 'E-mail já utilizado.';
+									print '<p class="btn-delete btn">E-mail já utilizado.</p>';
 
-									header("Location: new-user-admin.php");
+									// header("Location: new-user-admin.php");
 
 								}
 
@@ -235,13 +235,13 @@
 
 	//									$id = $mysqli->real_escape_string($_POST['id']);
 
-									$sql_code = "UPDATE usuario SET nome='{$nome}', descricao='{$descricao}', preco='{$preco}', NumeroParcelas='{$parcelas}' WHERE id=".$id;
+									$sql_code = "UPDATE usuario SET nome='{$nome}', email='{$email}', senha='{$senha}', papel='{$papel}', genero='{$genero}', data_nascimento='{$nascimento}', telefone='{$telefone}' WHERE id=".$id;
 
 									$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
 
 	//									$foto = $_FILES['foto'];
 
-									header("Location: index.php");	
+									header("Location: panel-users.php");	
 
 								}
 								

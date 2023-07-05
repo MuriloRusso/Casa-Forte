@@ -129,62 +129,72 @@
 
 						if(!isset($_POST['id'])){
 
-							if($_POST['email'] != ''){
+							$senha = $mysqli->real_escape_string($_POST['senha']);
 
-								$nome = $mysqli->real_escape_string($_POST['nome-completo']);
+							if(strlen($senha) > 5){
 
-								$email = $mysqli->real_escape_string($_POST['email']);
+								if($_POST['email'] != ''){
 
-								$senha = $mysqli->real_escape_string($_POST['senha']);
+									$nome = $mysqli->real_escape_string($_POST['nome-completo']);
 
-								$hash = password_hash($senha, PASSWORD_BCRYPT);
+									$email = $mysqli->real_escape_string($_POST['email']);
+
+									$hash = password_hash($senha, PASSWORD_BCRYPT);
 
 
-								$papel = $mysqli->real_escape_string($_POST['papel']);
+									$papel = $mysqli->real_escape_string($_POST['papel']);
 
-								$genero = $mysqli->real_escape_string($_POST['genero']);
+									$genero = $mysqli->real_escape_string($_POST['genero']);
 
-						//		$cpf = $mysqli->real_escape_string($_POST['cpf']);
+							//		$cpf = $mysqli->real_escape_string($_POST['cpf']);
 
-								$nascimento = $mysqli->real_escape_string($_POST['data-nascimento']);
+									$nascimento = $mysqli->real_escape_string($_POST['data-nascimento']);
 
-								$telefone = $mysqli->real_escape_string($_POST['telefone']);	
+									$telefone = $mysqli->real_escape_string($_POST['telefone']);	
 
-								if($quantidade > 0) {
+									if($quantidade > 0) {
 
-									while($user = $sql_query->fetch_object()){
+										while($user = $sql_query->fetch_object()){
 
-										if($user->email == $_POST['email']){
+											if($user->email == $_POST['email']){
 
-											$emailUtilizado = true;
+												$emailUtilizado = true;
 
-										}	
+											}	
+
+										}
 
 									}
 
+									if($emailUtilizado === true){		 
+
+										print '<p class="btn-delete btn">E-mail já utilizado.</p>';
+
+										// header("Location: new-user-admin.php");
+
+									}
+
+									else{
+
+
+
+										$sql_code = "INSERT INTO usuario (nome, email, senha, papel, genero, data_nascimento, telefone) VALUES ('{$nome}', '{$email}', '{$hash}', '{$papel}', '{$genero}',  '{$nascimento}', '{$telefone}')";
+
+										$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
+
+										header("Location: panel-users.php");
+
+
+									}
+
+
 								}
 
-								if($emailUtilizado === true){		 
+							}
 
-									print '<p class="btn-delete btn">E-mail já utilizado.</p>';
+							else{
 
-									// header("Location: new-user-admin.php");
-
-								}
-
-								else{
-
-
-
-									$sql_code = "INSERT INTO usuario (nome, email, senha, papel, genero, data_nascimento, telefone) VALUES ('{$nome}', '{$email}', '{$hash}', '{$papel}', '{$genero}',  '{$nascimento}', '{$telefone}')";
-
-									$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
-
-									header("Location: panel-users.php");
-
-
-								}
-
+								print '<div class="btn btn-delete">A senha deve conter no mínimo 6 caracteres!</div>';
 
 							}
 
@@ -194,62 +204,73 @@
 
 						else{
 
-							if(isset($_POST['email'])){
+							$senha = $mysqli->real_escape_string($_POST['senha']);
+
+							if(strlen($senha) > 5){
+
+								if(isset($_POST['email'])){
+									
+									$nome = $mysqli->real_escape_string($_POST['nome-completo']);
+
+									$email = $mysqli->real_escape_string($_POST['email']);
+
+									// $senha = $mysqli->real_escape_string($_POST['senha']);
+
+									$hash = password_hash($senha, PASSWORD_BCRYPT);
+
+									$papel = $mysqli->real_escape_string($_POST['papel']);
+
+									$genero = $mysqli->real_escape_string($_POST['genero']);
+
+							//		$cpf = $mysqli->real_escape_string($_POST['cpf']);
+
+									$nascimento = $mysqli->real_escape_string($_POST['data-nascimento']);
+
+									$telefone = $mysqli->real_escape_string($_POST['telefone']);	
 								
-								$nome = $mysqli->real_escape_string($_POST['nome-completo']);
+									if($quantidade > 0) {
 
-								$email = $mysqli->real_escape_string($_POST['email']);
+										while($user = $sql_query->fetch_object()){
 
-								$senha = $mysqli->real_escape_string($_POST['senha']);
+											if($user->email == $_POST['email'] && $user->id != $_POST['id']){
 
-								$hash = password_hash($senha, PASSWORD_BCRYPT);
+												$emailUtilizado = true;
 
-								$papel = $mysqli->real_escape_string($_POST['papel']);
+											}	
 
-								$genero = $mysqli->real_escape_string($_POST['genero']);
-
-						//		$cpf = $mysqli->real_escape_string($_POST['cpf']);
-
-								$nascimento = $mysqli->real_escape_string($_POST['data-nascimento']);
-
-								$telefone = $mysqli->real_escape_string($_POST['telefone']);	
-							
-								if($quantidade > 0) {
-
-									while($user = $sql_query->fetch_object()){
-
-										if($user->email == $_POST['email']){
-
-											$emailUtilizado = true;
-
-										}	
+										}
 
 									}
 
+									if($emailUtilizado === true){		
+
+										print '<p class="btn-delete btn">E-mail já utilizado.</p>';
+
+										// header("Location: new-user-admin.php");
+
+									}
+
+									else{
+
+		//									$id = $mysqli->real_escape_string($_POST['id']);
+
+										$sql_code = "UPDATE usuario SET nome='{$nome}', email='{$email}', senha='{$hash}', papel='{$papel}', genero='{$genero}', data_nascimento='{$nascimento}', telefone='{$telefone}' WHERE id=".$id;
+
+										$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
+
+		//									$foto = $_FILES['foto'];
+
+										header("Location: panel-users.php");	
+
+									}
+									
 								}
+							}
 
-								if($emailUtilizado === true){		
+							else{
 
-									print '<p class="btn-delete btn">E-mail já utilizado.</p>';
+								print '<div class="btn btn-delete">A senha deve conter no mínimo 6 caracteres!</div>';
 
-									// header("Location: new-user-admin.php");
-
-								}
-
-								else{
-
-	//									$id = $mysqli->real_escape_string($_POST['id']);
-
-									$sql_code = "UPDATE usuario SET nome='{$nome}', email='{$email}', senha='{$hash}', papel='{$papel}', genero='{$genero}', data_nascimento='{$nascimento}', telefone='{$telefone}' WHERE id=".$id;
-
-									$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
-
-	//									$foto = $_FILES['foto'];
-
-									header("Location: panel-users.php");	
-
-								}
-								
 							}
 
 

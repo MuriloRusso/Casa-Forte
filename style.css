@@ -1326,6 +1326,24 @@ form input[type="submit"]{
 
 	}
 	
+	header #box-login img{
+
+		margin-right: 0 !important;
+
+	}
+
+	header #logo img{
+
+		width: 50px !important;
+
+	}
+
+	.seta{
+
+		margin-left: 10px;
+
+	}
+
 }
 
 

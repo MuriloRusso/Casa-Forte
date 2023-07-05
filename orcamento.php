@@ -42,6 +42,75 @@
 			
 			<section>
 
+                <?php                
+                
+                // error_reporting(9999);
+
+
+                    // require 'PHPMailer-master/PHPMailerAutoload.php';
+/*
+                    $mail = new PHPMailer;
+                    $mail->isSMTP();
+                
+                    $mail->Host = "smtp.hostinger.com";
+                    $mail->Port = "465";
+                    $mail->SMTPSecure = "tls";
+                    $mail->SMTPAuth = "true";
+                    $mail->Username = "no-reply@vertconclube.com.br";
+                    $mail->Password = "Senti@nela2021";
+                
+                
+                    $mail->setFrom($mail->Username, 'Site'); //remetente
+                    $mail->addAddress('contato@murilorusso.com.br');
+                    $mail->Subject = 'Formulário de Orçamento Preenchido';
+                
+                    $mail->Subject = '=?UTF-8?B?'.base64_encode($mail->Subject).'?=';
+                
+                    $conteudo_email = " 
+                    
+                    Formulário de Orçamento Preenchido
+                    
+                    ";
+                
+                
+                    $conteudo_email = utf8_decode($conteudo_email);
+                
+                    $mail->IsHTML(true);
+                    $mail->Body = $conteudo_email;
+                
+                    $mail->send();*/
+                    
+                
+                   /* if($mail->send()){
+                        
+                        $mail->ClearAllRecipients();
+                        
+                        $mail->addAddress('arthur@2up.com.br');
+                        
+                        $mail->send();
+                        
+                        header("Location: index.php?alert=sucess");
+                        
+                    }
+                
+                    else{
+                        
+                        header("Location: index.php?alert=error".$mail->ErrorInfo);
+                        
+                    }*/
+                
+                
+                
+                    
+                    
+                    
+                    
+                
+                
+                
+                
+                ?>
+
 				<form method="post" action=""  enctype="multipart/form-data">
 
 					<div class="form-group">

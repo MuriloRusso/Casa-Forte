@@ -78,7 +78,7 @@
 
 					if($emailUtilizado === true && $_POST['email'] != ''){				
 
-						print '<p class="btn-delete">E-mail já utilizado</p>';
+						print '<p class="btn-delete btn">E-mail já utilizado</p>';
 
 //							header("Location: new-user.php");
 
@@ -86,7 +86,7 @@
 					
 					else if($senha != $Confirmação){				
 
-						print '<p class="btn-delete">Senha e confirmação não conferem</p>';
+						print '<p class="btn-delete btn">Senha e confirmação não conferem</p>';
 
 //							header("Location: new-user.php");
 

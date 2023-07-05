@@ -92,6 +92,12 @@
 
 					}
 
+					else if(strlen($senha) < 6 && $senha != ''){
+
+						print '<div class="btn btn-delete">'.$senha.'A senha deve conter no mínimo 6 caracteres!</div>';
+
+					}
+
 					else{
 
 						

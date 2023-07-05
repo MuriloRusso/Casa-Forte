@@ -8,6 +8,14 @@
 
 		$preco = $mysqli->real_escape_string($_POST['preco']);
 
+		$peso = $mysqli->real_escape_string($_POST['peso']);
+
+		$altura = $mysqli->real_escape_string($_POST['altura']);
+
+		$largura = $mysqli->real_escape_string($_POST['largura']);
+
+		$comprimento = $mysqli->real_escape_string($_POST['comprimento']);
+
 		$parcelas = $mysqli->real_escape_string($_POST['parcelas']);
 
 
@@ -33,7 +41,7 @@
 			$deu_certo = move_uploaded_file($foto["tmp_name"], $path);
 
 					
-			$sql_code = "INSERT INTO produtos (nome, descricao, arquivoOriginal, arquivo, extensao, preco, NumeroParcelas) VALUES ('{$nome}', '{$descricao}', '{$nomeDoArquivo}', '{$novoNomeDoArquivo}', '.{$extensao}', '{$preco}', '{$parcelas}')";
+			$sql_code = "INSERT INTO produtos (nome, descricao, arquivoOriginal, arquivo, extensao, preco, peso, altura, largura, comprimento, NumeroParcelas) VALUES ('{$nome}', '{$descricao}', '{$nomeDoArquivo}', '{$novoNomeDoArquivo}', '.{$extensao}', '{$preco}', '{$peso}', '{$largura}', '{$comprimento}', '{$preco}','{$parcelas}')";
 						
 			$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
 
@@ -46,7 +54,7 @@
 			
 			$id = $mysqli->real_escape_string($_POST['id']);
 					
-			$sql_code = "UPDATE produtos SET nome='{$nome}', descricao='{$descricao}', preco='{$preco}', NumeroParcelas='{$parcelas}' WHERE id=".$id;
+			$sql_code = "UPDATE produtos SET nome='{$nome}', descricao='{$descricao}', preco='{$preco}', peso='{$peso}', altura='{$altura}', largura='{$largura}', comprimento='{$comprimento}', NumeroParcelas='{$parcelas}' WHERE id=".$id;
 						
 			$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
 

@@ -106,6 +106,34 @@
 						<input type="text" id="preco" name="preco" value="<?php echo $product->preco; ?>" required>
 						
 					</div>
+
+					<div class="form-group">
+
+						<label for="peso">Peso:</label>
+						<input type="text" id="peso" name="peso" value="<?php echo $product->peso; ?>" required>
+						
+					</div>
+
+					<div class="form-group">
+
+						<label for="altura">Altura:</label>
+						<input type="text" id="altura" name="altura" value="<?php echo $product->altura; ?>" required>
+						
+					</div>
+
+					<div class="form-group">
+
+						<label for="largura">Largura:</label>
+						<input type="text" id="largura" name="largura" value="<?php echo $product->largura; ?>" required>
+						
+					</div>
+
+					<div class="form-group">
+
+						<label for="comprimento">Comprimento:</label>
+						<input type="text" id="comprimento" name="comprimento" value="<?php echo $product->comprimento; ?>" required>
+						
+					</div>
 					
 					
 
@@ -129,12 +157,6 @@
 
 
 							 }
-
-	//
-	//						else{
-	//
-	//
-	//						}
 
 						?>
 

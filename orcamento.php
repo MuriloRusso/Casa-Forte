@@ -185,7 +185,7 @@
                 
             })
             .catch(error => {
-                console.log("Erro ao buscar o endereço:", error);
+                alert("Erro ao buscar o endereço:", error);
             });
         }
         </script>    

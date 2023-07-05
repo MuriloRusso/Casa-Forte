@@ -160,10 +160,6 @@
 
 						?>
 
-
-
-					 
-
 						
 						<input type="file" id="foto" name="foto" value="">
 

@@ -98,6 +98,16 @@
 									</a>
 
 									<div class="full-mobile">
+
+										<p>Quantidade:</p>
+
+										<div class="form-grounp flex">										
+
+											<input type="number" min="1" name="quantidade" id="quantidade" placeholder="" value="'.$row->quantidade.'">
+
+
+										</div>
+
 										<a href="config/delete-item-cart.php?id='.$row->ID.'" class="btn btn-delete font-white">Remover</a>
 									</div>
 									

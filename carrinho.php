@@ -77,7 +77,7 @@
 					//
 					while($produto = $sql_query2->fetch_object()){
 
-						$valorTotal = $valorTotal + $produto->preco;
+						$valorTotal = $valorTotal + ($produto->preco * $row->quantidade);
 							
 						print '
 

@@ -60,8 +60,19 @@
 
                             $user = $mysqli->real_escape_string($_POST['username']);
                             $senha = $mysqli->real_escape_string($_POST['password']);
+                            $hash = $senha;
+                            $hash = password_hash($senha, PASSWORD_BCRYPT);
+                            // $hash = obterHashDoBancoDeDados($user); // substitua pela função que obtém o hash do banco de dados
 
-                            $sql_code = "SELECT * FROM usuario WHERE email = '$user' AND senha = '$senha'";
+                            // if (crypt($senha, $hash) === $hash) {
+
+                            //     print 'Senha OK!';
+
+                            //     } else {
+                            //         print 'Senha incorreta!';
+                            //     }
+
+                            $sql_code = "SELECT * FROM usuario WHERE email = '$user' AND senha = '$hash'";
                             $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
 
                             $quantidade = $sql_query->num_rows;

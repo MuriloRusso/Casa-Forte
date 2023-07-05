@@ -137,6 +137,9 @@
 
 								$senha = $mysqli->real_escape_string($_POST['senha']);
 
+								$hash = password_hash($senha, PASSWORD_BCRYPT);
+
+
 								$papel = $mysqli->real_escape_string($_POST['papel']);
 
 								$genero = $mysqli->real_escape_string($_POST['genero']);
@@ -173,7 +176,7 @@
 
 
 
-									$sql_code = "INSERT INTO usuario (nome, email, senha, papel, genero, data_nascimento, telefone) VALUES ('{$nome}', '{$email}', '{$senha}', '{$papel}', '{$genero}',  '{$nascimento}', '{$telefone}')";
+									$sql_code = "INSERT INTO usuario (nome, email, senha, papel, genero, data_nascimento, telefone) VALUES ('{$nome}', '{$email}', '{$hash}', '{$papel}', '{$genero}',  '{$nascimento}', '{$telefone}')";
 
 									$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
 
@@ -198,6 +201,8 @@
 								$email = $mysqli->real_escape_string($_POST['email']);
 
 								$senha = $mysqli->real_escape_string($_POST['senha']);
+
+								$hash = password_hash($senha, PASSWORD_BCRYPT);
 
 								$papel = $mysqli->real_escape_string($_POST['papel']);
 
@@ -235,7 +240,7 @@
 
 	//									$id = $mysqli->real_escape_string($_POST['id']);
 
-									$sql_code = "UPDATE usuario SET nome='{$nome}', email='{$email}', senha='{$senha}', papel='{$papel}', genero='{$genero}', data_nascimento='{$nascimento}', telefone='{$telefone}' WHERE id=".$id;
+									$sql_code = "UPDATE usuario SET nome='{$nome}', email='{$email}', senha='{$hash}', papel='{$papel}', genero='{$genero}', data_nascimento='{$nascimento}', telefone='{$telefone}' WHERE id=".$id;
 
 									$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
 

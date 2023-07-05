@@ -102,39 +102,57 @@
 						
 						<div>
 						
-						<div class="card full-mobile">
-						
-						<div class="border-bottom-gray">
-						
-							<h2>R$ '.$row->preco.'<h2/>
-							
-							<p class="desc">Em Até '.$row->NumeroParcelas.'X no cartão.<p/>      
-						
-						</div>
-						
-						<div class="border-bottom-gray">
-						
-							<form action="" method="post">
-							
-								<p>Calcule frete e prazo<p/>
-								
-								<div class="form-grounp flex">
-								
-									<input type="text" name="cep" id="cep" placeholder="digite o CEP">
+						<form action="buy.php" method="post">
 
-									<input type="submit" class="btn btn-primary" value="OK" id="btn-frete" title="Clique nesse botão para confirmar">
+							<div class="card full-mobile">
+							
+								<div class="border-bottom-gray">
+								
+									<h2>R$ '.$row->preco.'<h2/>
 
+									<input type="text" value="'.$row->preco.'" name="preco">
+
+									<p class="desc">Em Até '.$row->NumeroParcelas.'X no cartão.<p/>      
+
+									<input type="text" value="'.$row->NumeroParcelas.'" name="parcelas">
 								
 								</div>
+							
+								<div class="border-bottom-gray">
+							
 								
+									<p>Calcule frete e prazo<p/>
 
-							</form>
+									<input type="text" value="'.$row->peso.'" name="peso">
+
+									<input type="text" value="'.$row->largura.'" name="largura">
+
+									<input type="text" value="'.$row->altura.'" name="altura">
+
+									<input type="text" value="'.$row->comprimento.'" name="comprimento">
+
+									<input type="text" value="09371-210" name="cepRemetente">
+
+										
+									<div class="form-grounp flex">
+										
+
+										<input type="text" name="cep" id="cep" placeholder="digite o CEP">
+
+										<input type="submit" class="btn btn-primary" value="OK" id="btn-frete" title="Clique nesse botão para confirmar">
+										
+										<p id="valorFrete"></p>
+
+									</div>
+										
+							
+								</div>
 							
 						
-						</div>
-						
-						
-						<div>
+							<div>
+
+						</form>
+	
 
 						';
 

@@ -172,7 +172,30 @@
 
 					<div class="form-submit-group flex flex-wrap justify-content-space-betwen">
 
+					<?php
+
+						if(isset($_GET['id'])){
+
+							
+					?>
+
+					<input class="btn-primary" type="submit" id="submit" title="Clique aqui para Atualizar o produto" value="Atualizar Produto">
+
+					<?php
+
+						}
+						else{
+							
+					?>
+
 						<input class="btn-primary" type="submit" id="submit" title="Clique aqui para criar o produto" value="Criar Produto">
+
+					<?php
+
+						}
+
+							
+					?>
 
 					</div>
 

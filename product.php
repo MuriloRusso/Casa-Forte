@@ -110,11 +110,11 @@
 								
 									<h2>R$ '.$row->preco.'<h2/>
 
-									<input type="text" value="'.$row->preco.'" name="preco">
+									<input type="hidden" value="'.$row->preco.'" name="preco">
 
 									<p class="desc">Em Até '.$row->NumeroParcelas.'X no cartão.<p/>      
 
-									<input type="text" value="'.$row->NumeroParcelas.'" name="parcelas">
+									<input type="hidden" value="'.$row->NumeroParcelas.'" name="parcelas">
 								
 								</div>
 							
@@ -123,28 +123,38 @@
 								
 									<p>Calcule frete e prazo<p/>
 
-									<input type="text" value="09371-210" name="sCepOrigem">
+									<input type="hidden" value="09371-210" name="sCepOrigem">
 
 									<div class="form-grounp flex">
 										
 
 										<input type="text" name="sCepDestino" id="cep" placeholder="digite o CEP">
 
-										<a class="btn btn-primary" id="btn-frete" title="Clique nesse botão para confirmar">OK<a>
+										<a class="btn btn-primary" id="btn-frete" title="Clique nesse botão para confirmar">OK</a>
 										
 										<p id="valorFrete"></p>
 
 									</div>
 
-									<input type="text" value="'.$row->peso.'" name="nVlPeso">
+									<input type="hidden" value="'.$row->peso.'" name="nVlPeso">
 
-									<input type="text" value="'.$row->comprimento.'" name="nVlComprimento">
+									<input type="hidden" value="'.$row->comprimento.'" name="nVlComprimento">
 
-									<input type="text" value="'.$row->altura.'" name="nVlAltura">
+									<input type="hidden" value="'.$row->altura.'" name="nVlAltura">
 
-									<input type="text" value="'.$row->largura.'" name="nVlLargura">
+									<input type="hidden" value="'.$row->largura.'" name="nVlLargura">
 
-									<input type="text" value="04014" name="nCdServico">
+									<input type="hidden" value="04014" name="nCdServico">
+
+									<p>Quantidade:</p>
+
+									<div class="form-grounp flex">										
+
+										<input type="number" min="1" name="quantidade" id="quantidade" placeholder="" value="1">
+
+
+									</div>
+
 																			
 										
 							

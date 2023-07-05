@@ -873,7 +873,7 @@ section, footer{
 	
 }
 
-#page-product #cep{
+#page-product #cep, input[type="number"]{
 	
 	
 	width: 80%;
@@ -882,7 +882,12 @@ section, footer{
     border-radius: 16px;
     border: 1px solid #ccc;
 }
+input[type="number"]{
 
+	width: 50px !important;
+    height: 50px !important;
+
+}
 
 .card.width-auto{
 	

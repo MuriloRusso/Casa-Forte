@@ -61,28 +61,38 @@
 
                         $user = $sql_query->fetch_object();
 
-                        if($newPassword == $passwordConfirm){//confirmação não confere
-                                
-                            if($user->senha != $newPassword){//verifica se senha antiga e nova são iguais
+                        if(strlen($newPassword) > 5 && $newPassword != ''){
 
-                                $sql_code = "UPDATE usuario SET senha='{$newPassword}' WHERE id=".$id;
+                            if($newPassword == $passwordConfirm){//confirmação não confere
+                                    
+                                if($user->senha != $newPassword){//verifica se senha antiga e nova são iguais
 
-                                $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
+                                    $sql_code = "UPDATE usuario SET senha='{$newPassword}' WHERE id=".$id;
 
-                                print '<p class="alert-sucess text-center">Senha Alterada com sucesso</p>';
+                                    $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
 
-                            }                   
+                                    print '<p class="alert-sucess text-center">Senha Alterada com sucesso</p>';
+
+                                }                   
+                                else{
+
+                                    print '<p class="btn-delete btn">Senha nova é igual a atual</p>';
+
+                                }     
+
+                            }
+
                             else{
 
-                                print '<p class="btn-delete btn">Senha nova é igual a atual</p>';
+                                print '<p class="btn-delete btn">Senhas não conferem.</p>';
 
-                            }     
+                            }
 
                         }
 
                         else{
 
-                            print '<p class="btn-delete btn">Senhas não conferem.</p>';
+                            print '<div class="btn btn-delete">A senha deve conter no mínimo 6 caracteres!</div>';
 
                         }
                         // header("Location: ../my-profile.php");                           

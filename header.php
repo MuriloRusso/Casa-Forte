@@ -42,7 +42,7 @@
 
 			</nav>
 
-			<span id="btn-menu-mobile" class="mobile">
+			<span id="btn-menu-mobile" class="mobile open">
 
 				<hr><hr><hr>
 
@@ -63,7 +63,27 @@
 					 <li><a href="index.php">Home</a></li>
 					<li><a href="products.php">Produtos</a></li>
 					<li><a href="blog.php">Blog</a></li>
-					<li class="btn-entrar"><a href="login.php">Entrar</a></li>
+					';
+
+					if(!isset($_SESSION['id'])){
+
+						print '
+							<li class="btn-entrar"><a href="login.php">Entrar</a></li>
+
+						';
+					}
+					else{
+
+						print '
+
+							<li><a href="logout.php">Sair</a></li>
+
+						';
+
+					}
+
+
+					print '
 
 				</ul>
 

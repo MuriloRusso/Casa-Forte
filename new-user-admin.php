@@ -275,9 +275,40 @@
 
 										$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
 
+										$avatar = $_FILES['avatar'];
+
+										$novoNomeDoArquivo = '';
+
+										if($avatar['name']){				
+													
+											$pasta = "img/users/";
+
+											$nomeDoArquivo = $avatar['name'];
+
+											$novoNomeDoArquivo = uniqid();
+
+											$extensao = strtolower(pathinfo($nomeDoArquivo, PATHINFO_EXTENSION));
+
+											$path = $pasta . $novoNomeDoArquivo . "." . $extensao;
+
+
+											$deu_certo = move_uploaded_file($avatar["tmp_name"], $path);
+
+											$sql_code = "UPDATE usuario SET avatar='{$novoNomeDoArquivo}', extensao='{$extensao}' WHERE id=".$id;
+
+											$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
+																			
+										}
+
 		//									$foto = $_FILES['foto'];
 
-										header("Location: panel-users.php");	
+										// header("Location: panel-users.php");	
+
+										print '<script>    
+										
+										window.location.href = "panel-users.php";
+
+										</script>';
 
 									}
 									

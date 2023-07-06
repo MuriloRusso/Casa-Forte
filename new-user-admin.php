@@ -52,7 +52,11 @@
 				$nascimento;
 			
 				$telefone;
+
+
+				$avatar;
 			
+				$extensao;
 			
 				
 			
@@ -83,6 +87,10 @@
 
 					$telefone = $user->telefone;
 
+					$avatar = $user->avatar;
+
+					$extensao = $user->extensao;;
+
 
 				 }
 
@@ -99,23 +107,6 @@
 						
 						
 					<?php 
-
-					
-				// 		$nome = '';
-
-				// 		$email = '';
-
-				// 		$senha = '';
-
-				// 		$papel = '';
-
-				// 		$genero = '';
-
-				// //		$cpf = $mysqli->real_escape_string($_POST['cpf']);
-
-				// 		$nascimento = '';
-
-				// 		$telefone = '';	
 
 						$sql_code = "SELECT * FROM usuario";
 
@@ -299,6 +290,48 @@
 						
 						
 					?>
+
+					<?php 
+
+						if($avatar != ''){
+
+							print '<img src="img/users/'.$avatar.'.'.$extensao.'" width=250  id="img-atual">
+							
+							<label  for="upload" class="upload"  style="display: none">
+
+								<span class="upload-image">	</span>
+
+							</label>			
+							
+							<div class="actions">
+							
+								<a class="btn btn-primary" id="change-image">Alterar Foto</a>
+							</div>
+							';
+
+
+							}
+
+							else{
+									
+									
+								print '<img src="img/user.png" width=250  id="img-atual">
+								
+									<label  for="upload" class="upload"  style="display: none">
+		
+									<span class="upload-image">	</span>
+
+								</label>			
+								
+								<div class="actions">
+								
+									<a class="btn btn-primary" id="change-image">Alterar Foto</a>
+								</div>';
+								
+							}
+
+					?>
+
 
 					
 						

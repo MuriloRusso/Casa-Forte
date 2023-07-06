@@ -129,7 +129,19 @@
 									
 									$extensao = $usuario['extensao'];
 									
-									print '<img src="img/users/'.$avatar.'.'.$extensao.'" width=250 id="avatarImg">';
+									print '<img src="img/users/'.$avatar.'.'.$extensao.'" width=250  id="img-atual">
+									
+									<label  for="upload" class="upload"  style="display: none">
+		
+										<span class="upload-image">	</span>
+
+									</label>			
+									
+									
+										<a class="btn btn-primary actions" id="change-image">Alterar Foto</a>
+									
+									
+									';
 									
 									
 								}
@@ -137,7 +149,18 @@
 								else{
 									
 									
-									print '<img src="img/user.png" width=250 id="avatarImg">';
+									print '<img src="img/user.png" width=250  id="img-atual">
+									
+										<label  for="upload" class="upload"  style="display: none">
+			
+										<span class="upload-image">	</span>
+
+									</label>			
+									
+									<div class="actions">
+									
+										<a class="btn btn-primary" id="change-image">Alterar Foto</a>
+									</div>';
 									
 								}
 							
@@ -146,7 +169,7 @@
 
 						</div>
 						
-						<input type="file" name="avatar" id="avatarInput" accept="image/*" >
+						<input type="file" name="avatar" id="upload" accept="image/*" >
 <!--						<input type="file" id="nome" name="nome" value="">-->
 
 					</div>

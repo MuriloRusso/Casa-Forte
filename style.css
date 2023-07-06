@@ -1275,8 +1275,14 @@ form input[type="submit"]{
 	border: 2px dashed;
 	cursor: pointer;
 	transition: color 300ms ease-in-out,  background 300ms ease-in-out;
+	max-width: 100% !important;
 	
 }
+#img-atual{
+	max-width: 100% !important;
+
+}
+
 
 .upload:hover{
 	

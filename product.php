@@ -173,6 +173,7 @@
 							print'
 							
 								<form action="config/add-carrinho.php" method="post">
+									<input type="number" min="1" name="quantidade">
 									<input type="hidden" value="'.$userId.'" name="id_cliente">
 									<input type="hidden" value="'.$row->id.'" name="id_produto">
 									<input type="submit" class="btn btn-primary" value="Adicionar ao Carrinho" title="Clique nesse botão para adicionar ao carrinho">

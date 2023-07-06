@@ -112,19 +112,51 @@
 								print '
 																	
 									<img src="img/posts/'.$post->arquivo.''.$post->extensao.'" id="img-atual">	
+
+									<label  for="upload" class="upload"  style="display: none">
+		
+										<span class="upload-image">	</span>
+
+									</label>			
 									
+									<div class="actions">
+									
+										<a class="btn btn-primary" id="change-image">Alterar Capa</a>
+									</div>
+
+
+									<input name="capa" type="file" accept="image/*" id="upload">
+
+												
+								
+								';
+
+							}
+
+							else{
+
+								print '
+								
+								<label  for="upload" class="upload">
+		
+									<span class="upload-image">	</span>
+		
+								</label>					
+								<input name="capa" type="file" accept="image/*" id="upload">
+		
+
 								
 								';
 
 							}
 
 						?>
-						<label  for="upload" class='upload'>
+						<!-- <label  for="upload" class='upload'>
 		
 							<span class="upload-image">	</span>
 
 						</label>					
-						<input name="capa" type="file" accept="image/*" id="upload">
+						<input name="capa" type="file" accept="image/*" id="upload"> -->
 
 						<?php 
 
@@ -225,6 +257,15 @@
 
         </div>
         
+		<script>
+
+			document.querySelector('#change-image').onclick = function(){
+
+				document.querySelector('.upload').click();
+
+			}
+
+		</script>
 
 
 

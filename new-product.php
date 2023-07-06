@@ -153,7 +153,34 @@
 
 							 if(isset($_GET['id']) ){
 
-								print '<img src="img/products/'.$product->arquivo.''.$product->extensao.'">';
+								print '<img src="img/products/'.$product->arquivo.''.$product->extensao.'" id="img-atual">
+								
+								<label  for="upload" class="upload"  style="display: none">
+		
+									<span class="upload-image">	</span>
+
+								</label>			
+								
+								<div class="actions">
+								
+									<a class="btn btn-primary" id="change-image">Alterar Foto</a>
+								</div>
+								';
+
+
+							 }
+
+							 else{
+
+								print '								
+								<label  for="upload" class="upload">
+		
+									<span class="upload-image">	</span>
+
+								</label>			
+								
+						
+								';
 
 
 							 }
@@ -161,7 +188,7 @@
 						?>
 
 						
-						<input type="file" id="foto" name="foto" value="">
+						<input type="file" id="upload" name="foto" accept="image/*" >
 
 					</div>
 

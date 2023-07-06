@@ -10,6 +10,14 @@ inputImage.innerHTML = thumbImageText;
     
 inputThumb.addEventListener('change', function(e){
 
+    try{
+
+        document.querySelector('.upload').style = 'display: flex';
+
+    }
+
+    catch{}
+
     const inputTarget = e.target;
     const file = inputTarget.files[0];
     
@@ -61,3 +69,10 @@ inputThumb.addEventListener('change', function(e){
 
 });	
 
+
+
+document.querySelector('#change-image').onclick = function(){
+
+    document.querySelector('.upload').click();
+
+}

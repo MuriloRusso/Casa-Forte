@@ -59,6 +59,20 @@
                      if(isset($_POST['nome'])){
 
 
+                        $nome = $_POST['nome'];
+                        $telefone = $_POST['telefone'];
+                        $cep = $_POST['cep'];
+                        $logradouro = $_POST['logradouro'];
+                        $numero = $_POST['numero'];
+                        $bairro = $_POST['bairro'];
+                        $cidade = $_POST['cidade'];
+                        $pais = $_POST['pais'];
+                        $referencia = $_POST['ponto-referencia'];
+                        $servico = $_POST['servico'];
+
+
+
+
                         $mail = new PHPMailer();
                         $mail->isSMTP();
 
@@ -94,7 +108,28 @@
                     
                         $mailContent = " 
                         
-                        Formulário de Orçamento Preenchido
+                        Nome: $nome <br>
+
+                        Telefone: $telefone  <br>
+
+                        Cep: $cep <br>
+
+                        Logradouro: $logradouro <br>
+
+                        Numero: $numero <br>
+
+                        Bairro: $bairro <br>
+
+                        Cidade: $cidade <br>
+
+                        Pais: $pais <br>
+
+                        Ponto de Referência: $referencia <br>
+
+                        Serviço: $servico <br>
+
+
+                
                         
                         ";
                     
@@ -130,7 +165,7 @@
 					<div class="form-group">
 
 						<label for="nome">Nome:</label>
-						<input type="text" id="nome" name="nome" value="" required placeholder="Digite o titulo do post aqui">
+						<input type="text" id="nome" name="nome" value="" required placeholder="Digite o seu nome aqui">
 
 					</div>
 
@@ -192,7 +227,7 @@
                     <div class="form-group">
 
                     <label for="ponto-referencia">Ponto de Referência:</label>
-                    <input type="text" id="ponto-referencia" name="ponto-referencia" value="" required placeholder="Digite o ponto de referência aqui">
+                    <input type="text" id="ponto-referencia" name="ponto-referencia" value="" placeholder="Digite o ponto de referência aqui">
 
                     </div>
 

@@ -137,7 +137,9 @@
 
 									$email = $mysqli->real_escape_string($_POST['email']);
 
-									$hash = password_hash($senha, PASSWORD_BCRYPT);
+									$hash = $senha;
+
+									// $hash = password_hash($senha, PASSWORD_BCRYPT);
 
 
 									$papel = $mysqli->real_escape_string($_POST['papel']);
@@ -506,6 +508,8 @@
 						<select id="papel" name="papel" required data-value="<?php echo $papel; ?>"> 
 						
 							<option value="cliente" selected>Cliente</option>
+							<option value="colaborador">Colaborador</option>
+
 							<option value="admin">Admin</option>
 
 						

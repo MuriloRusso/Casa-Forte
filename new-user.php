@@ -186,7 +186,7 @@
                         // }
 						
 						
-						print '<p class="alert-sucess">Usuário criado com sucesso. <a href="login.php">Clique aqui</a> para se logar.</p>';
+						print '<p class="alert-sucess text-center">Usuário criado com sucesso. <a href="login.php">Clique aqui</a> para se logar.</p>';
 
 //						header("Location: login.php");
 							

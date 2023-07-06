@@ -39,7 +39,7 @@
             
 			<?php 
 						
-				if($_SESSION['papel'] == 'admin'){
+				if($_SESSION['papel'] == 'admin' || $_SESSION['papel'] == 'colaborador'){
 					
 					$sql_code = "SELECT * FROM pedido";
 

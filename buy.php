@@ -58,6 +58,12 @@
                 print '<div class="card text-center">                                   
                             
                     <h2>Produto: '.$produto->nome.'</h2>
+
+                    <div class="full-width">
+
+                        <img src="img/products/'.$produto->arquivo.''.$produto->extensao.'">
+                        
+                    </div>
                                                 
                     <p><strong>Descrição:</strong> '.$produto->descricao.'</p>
 

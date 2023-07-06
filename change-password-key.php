@@ -82,6 +82,15 @@
 
                                         $(".form-group-submit").css("display", "none");
 
+                                        
+                                            setTimeout(function(){
+
+                                                window.location.href = "login.php";
+
+
+                                            }, 2000)
+                                    
+
 
                                     }, 300)
                                     
@@ -186,7 +195,7 @@
 
                     </div>
 
-					<div class="form-group-submit actions flex">
+					<div class="form-group-submit actions">
 
 						<input type="submit" value="Alterar Senha" class="btn btn-primary" title="Alterar Senha">
 

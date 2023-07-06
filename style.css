@@ -1034,7 +1034,7 @@ input[type='submit']{
 	
 }
 
-input{
+input, select, textarea{
 	
 	outline-color: #ededfb;
 	

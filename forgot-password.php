@@ -137,7 +137,15 @@
     
                             if($mail->send()){
     
-                                print '<p class="alert-sucess text-center">Solicitação Enviada Com Sucesso</p>';
+                                    
+                                print '
+                                
+                                <p class="alert-sucess text-center">Um e-mail foi enviado para '.$email.' com um link para recuperação da sua senha!</p>
+                            
+                                <a href="login.php" class="btn actions btn-primary">Voltar</a>
+
+
+                            ';
     
                             }
                             
@@ -148,15 +156,7 @@
                             }
     
                             
-                            print '
-                            
-                                <p class="alert-sucess text-center">Um e-mail foi enviado para '.$email.' com um link para recuperação da sua senha!</p>
-                            
-                                <a href="login.php" class="btn actions btn-primary">Voltar</a>
-
-
-                            ';
-
+                        
                         }
 
                         else{

@@ -38,6 +38,13 @@
 
                 <?php 
 					
+					use PHPMailer\PHPMailer\PHPMailer;
+                    use PHPMailer\PHPMailer\Exception;
+
+                    require 'PHPMailer-master-atual/PHPMailer-master/src/Exception.php';
+                    require 'PHPMailer-master-atual/PHPMailer-master/src/PHPMailer.php';
+                    require 'PHPMailer-master-atual/PHPMailer-master/src/SMTP.php';
+
 
 					include('connect.php');
 
@@ -108,86 +115,75 @@
 						$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
 						
 						
-						//enviar e-mail
+                        $mail = new PHPMailer();
+                        $mail->isSMTP();
+
+
+                        $mail->Host = 'smtp.hostinger.com';
+                        $mail->SMTPAuth = true;
+                        $mail->SMTPSecure = "tls";
+                        $mail->Port = "587";
+                        $mail->Username = 'no-reply@vertconclube.com.br';
+                        $mail->Password = 'Senti@nela2021';
+
+                        $mail->setFrom('no-reply@vertconclube.com.br', 'vertconclube');
+
+                        $mail->addReplyTo('no-reply@vertconclube.com.br', 'vertconclube');
+
+                        // include('config/smtp.php');
+
+
+
+                        // $mail->addAddress('no-reply@vertconclube.com.br', 'vertconclube');
+
+                        $mail->addAddress($email, 'vertconclube');
+
+
+                        // $mail->addCC('contato@murilorusso.com.br', 'SLMIT');
+
+                        // $mail->addBCC('murilorussooo@gmail.com', 'SLMIT');	
+                            
+                        $mail->Subject = 'Sua conta foi Registrada com Sucesso!';
+
+                        $mail->Subject = '=?UTF-8?B?'.base64_encode($mail->Subject).'?=';
+
+
+                        $mail->isHTML(true);
+
+
+                    
+                        $mailContent = " 
+                        
+                        Olá: $nome <br>
+
+						Foi Criada uma conta com seu e-mail em nossa Loja
+
+						Acesse o link abaixo para se Logar: 
 						
-//						$nome = $_POST['nome'];
-//						$email = $_POST['email'];
+						http://casaforteprojetoseservicos.com.br/novo/login.php 
 
-					/*	$data_envio = date('d/m/Y');
-						$hora_envio = date('H:i:s');
+                
+                        
+                        ";
+                    
+                        $mailContent = utf8_decode($mailContent);
 
-
-						require 'PHPMailer-master/PHPMailerAutoload.php';
-
-						$mail = new PHPMailer;
-						$mail->isSMTP();
-
-						$mail->Host = "email-ssl.com.br";
-						$mail->Port = "465";
-						$mail->SMTPSecure = "ssl";
-						$mail->SMTPAuth = "true";
-						$mail->Username = "no-reply@hexait.com.br";
-						$mail->Password = "H7667@ngeL";
+                        $mail->Body = $mailContent;
 
 
-						$mail->setFrom($mail->Username, 'Casas Forte'); //remetente
+						$mail->send();
 
-						$mail->addAddress($email);
+                        // if($mail->send()){
 
-//						$mail->addAttachment('./form-config/file/'.$novoNomeDoArquivo.'.'.$extensao, $nomeOriginal.'.'.$extensao);
+                        //     print '<p class="alert-sucess text-center">Solicitação Enviada Com Sucesso</p>';
 
+                        // }
+                        
+                        // else{
 
-						$mail->Subject = 'Sua Conta foi Criada';
+                        //     print '<p class="btn-delete btn">'.$mail->ErrorInfo.'</p>';
 
-						$mail->Subject = '=?UTF-8?B?'.base64_encode($mail->Subject).'?=';
-
-
-						$conteudo_email = " 
-
-							<p>Olá, $nome, foi criado um cadastro com seu e-mail no site <a href='http://casaforteprojetoseservicos.com.br/'>Casas Forte</a> </p>
-
-
-							<br><br><br>
-							
-							Este e-mail foi enviado em $data_envio às $hora_envio <br>
-
-						  ";
-
-
-
-						$conteudo_email = utf8_decode($conteudo_email);
-
-						$mail->IsHTML(true);
-						$mail->Body = $conteudo_email;
-
-
-
-
-						if($mail->send()){
-
-							
-							header("Location: ../index.php?alert=sucess");
-
-						}
-
-						else{
-
-							header("Location: index.php?alert=error".$mail->ErrorInfo);
-
-						}
-
-
-
-						
-						
-						
-						*/
-						
-						
-						
-						
-						//--------------------
-						
+                        // }
 						
 						
 						print '<p class="alert-sucess">Usuário criado com sucesso. <a href="login.php">Clique aqui</a> para se logar.</p>';

@@ -48,72 +48,8 @@
 				
 				
 				
-				<!-- <ul>
+		
 					
-					<h2>Administradores:</h2>
-				
-					<?php					
-					
-						$sql_code = "SELECT * FROM usuario WHERE papel='admin'";
-
-						$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
-
-						$quantidadeADMs = $sql_query->num_rows;
-							
-						while($admin = $sql_query->fetch_object()){
-							
-							print '<li class="flex justify-content-space-betwen align-items-center"><div>'.$admin->nome.'</div><div><a href="new-user-admin.php?id='.$admin->id.'" class="btn btn-primary" title="Clique nesse botão para ver mais detalhes">Ver</a></div></li>';
-							
-							
-						}	
-					
-					?>
-					
-					
-					<a href="new-user-admin.php" class="btn btn-primary" title="Clique nesse botão para adicionar novo usuário">Adicionar Usuário</a>
-				
-				
-				</ul> -->
-				
-				
-				
-				<!-- <ul>
-					
-					<h2>Clientes:</h2> -->
-				
-					<?php					
-					
-						// $sql_code = "SELECT * FROM usuario WHERE papel='cliente'";
-
-						// $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
-
-						// $quantidadeADMs = $sql_query->num_rows;
-
-						// $sql_code = "SELECT * FROM usuario pedido WHERE papel='cliente'";
-
-						// $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
-					
-						// $quantidade = $sql_query->num_rows;
-
-						// if(!isset($_GET['page'])){
-
-						// 	$sql_code = "SELECT * FROM usuario WHERE papel='cliente' ORDER BY id DESC LIMIT 0, 10";
-					
-						// 	$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
-					
-						// }
-					
-						// else{
-					
-						// 	$page = intval($_GET['page']) - 1;
-					
-						// 	$sql_code = "SELECT * FROM usuario WHERE papel='cliente' ORDER BY id DESC LIMIT ".$page."0, 10";
-					
-						// 	$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
-					
-					
-						// }
-					?>
 
 					<ul>
 					
@@ -121,7 +57,7 @@
 					
 						<?php					
 						
-							$sql_code = "SELECT * FROM usuario WHERE papel='admin'";
+							$sql_code = "SELECT * FROM usuario WHERE papel='admin' OR papel='colaborador'";
 
 							$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
 
@@ -129,8 +65,33 @@
 								
 							while($admin = $sql_query->fetch_object()){
 								
-								print '<li class="flex justify-content-space-betwen align-items-center"><div>'.$admin->nome.'</div><div><a href="new-user-admin.php?id='.$admin->id.'" class="btn btn-primary" title="Clique nesse botão para ver mais detalhes">Ver</a></div></li>';
+								print '
+							
+							<li class="flex justify-content-space-betwen align-items-center">
+								<div>'.$admin->nome.'</div>
+
+								<div>'.$admin->papel.'</div>
+
+
+
+
+								';
+
+								if($_SESSION['papel'] == 'admin'){
+
+									print'
+
+										<div>
+											<a href="new-user-admin.php?id='.$admin->id.'" class="btn btn-primary" title="Clique nesse botão para ver mais detalhes">Ver</a>
+										</div>
+									
+									';
+
+								}
+
 								
+								print'
+							</li>';
 								
 							}	
 						

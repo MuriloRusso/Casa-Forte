@@ -596,7 +596,7 @@ section, footer{
 }
 
 
-#page-post .card, #page-pedido .card{
+#page-post .card, #page-pedido .card, #page-buy form, #page-buy .card{
 	
 	width: auto !important;
 	max-width: 900px;

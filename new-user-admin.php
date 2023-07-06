@@ -54,9 +54,9 @@
 				$telefone;
 
 
-				$avatar;
+				$avatar = '';
 			
-				$extensao;
+				$extensao = '';
 			
 				
 			
@@ -167,13 +167,39 @@
 
 									else{
 
+										$avatar = $_FILES['avatar'];
+
+										$novoNomeDoArquivo = '';
+
+										if($avatar['name']){				
+													
+											$pasta = "img/users/";
+
+											$nomeDoArquivo = $avatar['name'];
+
+											$novoNomeDoArquivo = uniqid();
+
+											$extensao = strtolower(pathinfo($nomeDoArquivo, PATHINFO_EXTENSION));
+
+											$path = $pasta . $novoNomeDoArquivo . "." . $extensao;
 
 
-										$sql_code = "INSERT INTO usuario (nome, email, senha, papel, genero, data_nascimento, telefone) VALUES ('{$nome}', '{$email}', '{$hash}', '{$papel}', '{$genero}',  '{$nascimento}', '{$telefone}')";
+											$deu_certo = move_uploaded_file($avatar["tmp_name"], $path);
+																			
+										}
+
+										$sql_code = "INSERT INTO usuario (nome, email, senha, papel, genero, data_nascimento, telefone, avatar, extensao) VALUES ('{$nome}', '{$email}', '{$hash}', '{$papel}', '{$genero}',  '{$nascimento}', '{$telefone}', '{$novoNomeDoArquivo}', '{$extensao}')";
 
 										$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
 
-										header("Location: panel-users.php");
+										// header("Location: panel-users.php");
+
+										print '<script>    
+										
+										window.location.href = "panel-users.php";
+
+										</script>';
+
 
 
 									}
@@ -332,8 +358,9 @@
 
 					?>
 
+					<input type="file" name="avatar" id="upload" accept="image/*" >
 
-					
+
 						
 					<div class="form-group">
 

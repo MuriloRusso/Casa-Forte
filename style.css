@@ -886,6 +886,7 @@ input[type="number"]{
 
 	width: 50px !important;
     height: 50px !important;
+	margin: 0 auto !important;
 
 }
 

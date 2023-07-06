@@ -201,16 +201,28 @@
                         <div class="form-group">
 
 
-                        <select name="metodo_de_pagamento">
+                        <select name="metodo_de_pagamento" id="pagamento">
 
-
+                        <option value="">Seus Cartões Salvos</option>
 
                     ';
 
                     while($metododepagamento = $sql_query->fetch_object()){
 
                         print '                                                    
-                            <option>'.$metododepagamento->nome_do_cartao.'</option>                                                       
+                            
+                            <option 
+                            data-numero="'.$metododepagamento->numero_do_cartao.'"
+                            data-vencimento="'.$metododepagamento->data_vencimento.'"
+                            data-codigo="'.$metododepagamento->codigo_seguranca.'"
+                            data-nome="'.$metododepagamento->nome_titular.'"
+                            data-cpf="'.$metododepagamento->cpf_titular.'"
+                            data-bandeira="'.$metododepagamento->bandeira_do_cartao.'"
+                            value="'.$metododepagamento->ID.'">
+                            
+                            '.$metododepagamento->nome_do_cartao.'
+                            </option>                                                       
+
 
 
                         ';
@@ -227,7 +239,7 @@
                         <div class="form-group">
 
                             <label for="numero">Numero do Cartão:</label>
-                            <input type="text" id="numero" name="numero" required onkeypress="$(this).mask(`0000 0000 0000 0000`)" placeholder="9999 9999 9999 9999">
+                            <input type="text" id="numero-cartao" name="numero" required onkeypress="$(this).mask(`0000 0000 0000 0000`)" placeholder="9999 9999 9999 9999">
 
                         </div>
                         
@@ -298,19 +310,11 @@
 
                 let selectAddress = document.querySelector('#endereco');
 
-                console.log('select endereco guardada');
-
                 selectAddress.onchange = function() {
-
-                    console.log('Função iniciada');
 
                     const options = selectAddress.querySelectorAll('option');
 
-                    console.log('options guardadas ' + options.length);
-
                     for(let cont = 0; cont < options.length; cont++){
-
-                        console.log(options[cont].selected);
 
                         if(options[cont].selected === true){
 
@@ -328,15 +332,49 @@
 
                             document.querySelector('#ponto-referencia').value = options[cont].getAttribute('data-referencia');
 
-
                         }
-
 
                     }
 
+                }
 
+
+                let selectCards = document.querySelector('#pagamento');
+
+                console.log('select endereco guardada');
+
+                selectCards.onchange = function() {
+
+                    console.log('Função iniciada');
+
+                    const options = selectCards.querySelectorAll('option');
+
+                    console.log('options guardadas ' + options.length);
+
+                    for(let cont = 0; cont < options.length; cont++){
+
+                        console.log(options[cont].selected);
+
+                        if(options[cont].selected === true){
+
+                            document.querySelector('#numero-cartao').value = options[cont].getAttribute('data-numero');
+
+                            document.querySelector('#nome-titular').value = options[cont].getAttribute('data-nome');
+
+                            document.querySelector('#cpf-titular').value = options[cont].getAttribute('data-cpf');
+
+                            document.querySelector('#bandeira-cartao').value = options[cont].getAttribute('data-bandeira');
+
+                            document.querySelector('#vencimento').value = options[cont].getAttribute('data-vencimento');
+
+                            document.querySelector('#seguranca').value = options[cont].getAttribute('data-codigo');
+
+                        }
+
+                    }
 
                 }
+
 
 
 

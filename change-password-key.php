@@ -71,7 +71,22 @@
 
                                     $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
 
-                                    print '<p class="alert-sucess text-center">Senha Alterada com sucesso</p>';
+                                    print '<p class="alert-sucess text-center">Senha Alterada com sucesso</p>
+                                    
+                                    
+                                    <script>
+
+                                    setTimeout(function(){
+
+                                        $(".form-group").css("display", "none");
+
+                                        $(".form-group-submit").css("display", "none");
+
+
+                                    }, 300)
+                                    
+                                    
+                                    </script>';
 
                                 }                   
                                 else{

@@ -87,7 +87,9 @@
                         
                         <div class="card text-center">           
                         
-                        <h2>Endereços</h2>
+                        <h2>Endereços:</h2>
+
+                        <div class="form-group">
 
                         <select name="endereço">
 
@@ -107,7 +109,9 @@
 
                     print '
                         
-                        </select>                    
+                        </select>    
+                        
+                        </div>
 
                                                         
                             <div class="form-group">
@@ -182,6 +186,9 @@
                         
                         <h2>Pagamento:</h2>
 
+                        <div class="form-group">
+
+
                         <select name="metodo_de_pagamento">
 
 
@@ -200,7 +207,9 @@
 
                     print '
                         
-                        </select>         
+                        </select>    
+                        
+                        <div>
                     
 
                         <div class="form-group">

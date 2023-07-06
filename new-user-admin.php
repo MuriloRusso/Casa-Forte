@@ -108,6 +108,13 @@
 						
 					<?php 
 
+						use PHPMailer\PHPMailer\PHPMailer;
+						use PHPMailer\PHPMailer\Exception;
+
+						require 'PHPMailer-master-atual/PHPMailer-master/src/Exception.php';
+						require 'PHPMailer-master-atual/PHPMailer-master/src/PHPMailer.php';
+						require 'PHPMailer-master-atual/PHPMailer-master/src/SMTP.php';
+
 						$sql_code = "SELECT * FROM usuario";
 
 						$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
@@ -191,6 +198,82 @@
 										$sql_code = "INSERT INTO usuario (nome, email, senha, papel, genero, data_nascimento, telefone, avatar, extensao) VALUES ('{$nome}', '{$email}', '{$hash}', '{$papel}', '{$genero}',  '{$nascimento}', '{$telefone}', '{$novoNomeDoArquivo}', '{$extensao}')";
 
 										$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
+
+
+
+										$mail = new PHPMailer();
+										$mail->isSMTP();
+				
+				
+										$mail->Host = 'smtp.hostinger.com';
+										$mail->SMTPAuth = true;
+										$mail->SMTPSecure = "tls";
+										$mail->Port = "587";
+										$mail->Username = 'no-reply@vertconclube.com.br';
+										$mail->Password = 'Senti@nela2021';
+				
+										$mail->setFrom('no-reply@vertconclube.com.br', 'vertconclube');
+				
+										$mail->addReplyTo('no-reply@vertconclube.com.br', 'vertconclube');
+				
+										// include('config/smtp.php');
+				
+				
+				
+										// $mail->addAddress('no-reply@vertconclube.com.br', 'vertconclube');
+				
+										$mail->addAddress($email, 'vertconclube');
+				
+				
+										// $mail->addCC('contato@murilorusso.com.br', 'SLMIT');
+				
+										// $mail->addBCC('murilorussooo@gmail.com', 'SLMIT');	
+											
+										$mail->Subject = 'Sua conta foi Registrada com Sucesso!';
+				
+										$mail->Subject = '=?UTF-8?B?'.base64_encode($mail->Subject).'?=';
+				
+				
+										$mail->isHTML(true);
+				
+				
+									
+										$mailContent = " 
+										
+										Olá: $nome <br>
+				
+										Foi Criada uma conta com seu e-mail em nossa Loja pela administração<br>
+				
+										Acesse o link abaixo para se Logar: <br>
+										
+										http://casaforteprojetoseservicos.com.br/novo/login.php 
+				
+								
+										
+										";
+									
+										$mailContent = utf8_decode($mailContent);
+				
+										$mail->Body = $mailContent;
+				
+				
+										$mail->send();
+				
+										// if($mail->send()){
+				
+										//     print '<p class="alert-sucess text-center">Solicitação Enviada Com Sucesso</p>';
+				
+										// }
+										
+										// else{
+				
+										//     print '<p class="btn-delete btn">'.$mail->ErrorInfo.'</p>';
+				
+										// }
+
+
+
+
 
 										// header("Location: panel-users.php");
 

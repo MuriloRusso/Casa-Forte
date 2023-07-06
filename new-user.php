@@ -156,9 +156,9 @@
                         
                         Olá: $nome <br>
 
-						Foi Criada uma conta com seu e-mail em nossa Loja
+						Foi Criada uma conta com seu e-mail em nossa Loja<br>
 
-						Acesse o link abaixo para se Logar: 
+						Acesse o link abaixo para se Logar: <br>
 						
 						http://casaforteprojetoseservicos.com.br/novo/login.php 
 

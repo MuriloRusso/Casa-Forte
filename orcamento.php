@@ -42,66 +42,13 @@
 			
 			<section>
 
+                
+
+				<form method="post" action=""  enctype="multipart/form-data">
+
                 <?php              
                 
                 
-                // if(isset($_POST['']))
-                
-                // error_reporting(9999);
-
-
-                    // require 'PHPMailer-master/PHPMailerAutoload.php';
-/*
-                    $mail = new PHPMailer;
-                    $mail->isSMTP();
-                
-                    $mail->Host = "smtp.hostinger.com";
-                    $mail->Port = "465";
-                    $mail->SMTPSecure = "tls";
-                    $mail->SMTPAuth = "true";
-                    $mail->Username = "no-reply@vertconclube.com.br";
-                    $mail->Password = "Senti@nela2021";
-                
-                
-                    $mail->setFrom($mail->Username, 'Site'); //remetente
-                    $mail->addAddress('contato@murilorusso.com.br');
-                    $mail->Subject = 'Formulário de Orçamento Preenchido';
-                
-                    $mail->Subject = '=?UTF-8?B?'.base64_encode($mail->Subject).'?=';
-                
-                    $conteudo_email = " 
-                    
-                    Formulário de Orçamento Preenchido
-                    
-                    ";
-                
-                
-                    $conteudo_email = utf8_decode($conteudo_email);
-                
-                    $mail->IsHTML(true);
-                    $mail->Body = $conteudo_email;
-                
-                    $mail->send();*/
-                    
-                
-                   /* if($mail->send()){
-                        
-                        $mail->ClearAllRecipients();
-                        
-                        $mail->addAddress('arthur@2up.com.br');
-                        
-                        $mail->send();
-                        
-                        header("Location: index.php?alert=sucess");
-                        
-                    }
-                
-                    else{
-                        
-                        header("Location: index.php?alert=error".$mail->ErrorInfo);
-                        
-                    }*/
-
                     use PHPMailer\PHPMailer\PHPMailer;
                     use PHPMailer\PHPMailer\Exception;
 
@@ -109,89 +56,71 @@
                     require 'PHPMailer-master-atual/PHPMailer-master/src/PHPMailer.php';
                     require 'PHPMailer-master-atual/PHPMailer-master/src/SMTP.php';
 
+                     if(isset($_POST['nome'])){
 
 
-                    $mail = new PHPMailer();
-                    $mail->isSMTP();
-                    // $mail->Host = 'smtp.office365.com';
-                    // $mail->SMTPAuth = true;
-                    // $mail->Port = 587;
-                    // $mail->Username = 'site@slmit.com.br';
-                    // $mail->Password = 'a%$Rfg#3425*sc';
+                        $mail = new PHPMailer();
+                        $mail->isSMTP();
 
-                    $mail->Host = "smtp.hostinger.com";
-                    $mail->Port = "587";
-                    $mail->SMTPSecure = "tls";
-                    $mail->SMTPAuth = "true";
-                    $mail->Username = "sistema@bioma4me.com.br";
-                    $mail->Password = "Sistemasmtp1*";
 
-                    //print $phpmailer;
+                        $mail->Host = 'smtp.hostinger.com';
+                        $mail->SMTPAuth = true;
+                        $mail->SMTPSecure = "tls";
+                        $mail->Port = "587";
+                        $mail->Username = 'no-reply@vertconclube.com.br';
+                        $mail->Password = 'Senti@nela2021';
 
-                    $mail->setFrom('sistema@bioma4me.com.br', 'SLMIT');
+                        $mail->setFrom('no-reply@vertconclube.com.br', 'vertconclube');
 
-                    $mail->addReplyTo('sistema@bioma4me.com.br', 'SLMIT');
+                        $mail->addReplyTo('no-reply@vertconclube.com.br', 'vertconclube');
 
-                    $mail->addAddress('contato@murilorusso.com.br', 'SLMIT');
+                        // $mail->addAddress('no-reply@vertconclube.com.br', 'vertconclube');
 
-                    // $mail->addCC('murilo@2up.com.br', 'SLMIT');
+                        $mail->addAddress('contato@murilorusso.com.br', 'vertconclube');
 
-                    // $mail->addBCC('murilorussooo@gmail.com', 'SLMIT');	
+
+                        // $mail->addCC('contato@murilorusso.com.br', 'SLMIT');
+
+                        // $mail->addBCC('murilorussooo@gmail.com', 'SLMIT');	
+                            
+                        $mail->Subject = 'Formulário de Orçamento Preenchido';
+
+                        $mail->Subject = '=?UTF-8?B?'.base64_encode($mail->Subject).'?=';
+
+
+                        $mail->isHTML(true);
+
+
+                    
+                        $mailContent = " 
                         
-                    $mail->Subject = 'CONTATO VIA SITE - SERVIÇOS GERENCIADOS';
-
-
-                    $mail->isHTML(true);
-
-
-                  
-                    $mailContent = " 
+                        Formulário de Orçamento Preenchido
+                        
+                        ";
                     
-                    Formulário de Orçamento Preenchido
-                    
-                    ";
-                
-                    $mailContent = utf8_decode($mailContent);
+                        $mailContent = utf8_decode($mailContent);
 
-                    $mail->Body = $mailContent;
+                        $mail->Body = $mailContent;
 
 
-                    if($mail->send()){
+                        if($mail->send()){
 
-                        // header("Location: ../servicos.php?alert=sucess");
+                            print '<p class="alert-sucess text-center">Solicitação Enviada Com Sucesso</p>';
 
-                        //  print "<script>location.href='index.php?alert=sucess';</script>";
+                        }
+                        
+                        else{
 
+                            print '<p class="btn-delete btn">'.$mail->ErrorInfo.'</p>';
 
-                        print 'Sucesso';
+                        }
 
                     }
-                    
-                    else{
-
-                        // header("Location: ../servicos.php?alert=error".$mail->ErrorInfo);
-
-                        //  print "<script>location.href='index.php?alert=error".$mail->ErrorInfo."';</script>";
-
-                        print $mail->ErrorInfo;
-
-
-                    }
-
-                                
-                
-                
-                    
-                    
-                    
-                    
-                
-                
+                            
                 
                 
                 ?>
 
-				<form method="post" action=""  enctype="multipart/form-data">
 
 					<div class="form-group">
 						<h2>Orçamento</h2>

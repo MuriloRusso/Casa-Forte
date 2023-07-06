@@ -42,7 +42,10 @@
 			
 			<section>
 
-                <?php                
+                <?php              
+                
+                
+                // if(isset($_POST['']))
                 
                 // error_reporting(9999);
 
@@ -98,7 +101,84 @@
                         header("Location: index.php?alert=error".$mail->ErrorInfo);
                         
                     }*/
+
+                    use PHPMailer\PHPMailer\PHPMailer;
+                    use PHPMailer\PHPMailer\Exception;
+
+                    require 'PHPMailer-master-atual/PHPMailer-master/src/Exception.php';
+                    require 'PHPMailer-master-atual/PHPMailer-master/src/PHPMailer.php';
+                    require 'PHPMailer-master-atual/PHPMailer-master/src/SMTP.php';
+
+
+
+                    $mail = new PHPMailer();
+                    $mail->isSMTP();
+                    // $mail->Host = 'smtp.office365.com';
+                    // $mail->SMTPAuth = true;
+                    // $mail->Port = 587;
+                    // $mail->Username = 'site@slmit.com.br';
+                    // $mail->Password = 'a%$Rfg#3425*sc';
+
+                    $mail->Host = "smtp.hostinger.com";
+                    $mail->Port = "587";
+                    $mail->SMTPSecure = "tls";
+                    $mail->SMTPAuth = "true";
+                    $mail->Username = "sistema@bioma4me.com.br";
+                    $mail->Password = "Sistemasmtp1*";
+
+                    //print $phpmailer;
+
+                    $mail->setFrom('sistema@bioma4me.com.br', 'SLMIT');
+
+                    $mail->addReplyTo('sistema@bioma4me.com.br', 'SLMIT');
+
+                    $mail->addAddress('contato@murilorusso.com.br', 'SLMIT');
+
+                    // $mail->addCC('murilo@2up.com.br', 'SLMIT');
+
+                    // $mail->addBCC('murilorussooo@gmail.com', 'SLMIT');	
+                        
+                    $mail->Subject = 'CONTATO VIA SITE - SERVIÇOS GERENCIADOS';
+
+
+                    $mail->isHTML(true);
+
+
+                  
+                    $mailContent = " 
+                    
+                    Formulário de Orçamento Preenchido
+                    
+                    ";
                 
+                    $mailContent = utf8_decode($mailContent);
+
+                    $mail->Body = $mailContent;
+
+
+                    if($mail->send()){
+
+                        // header("Location: ../servicos.php?alert=sucess");
+
+                        //  print "<script>location.href='index.php?alert=sucess';</script>";
+
+
+                        print 'Sucesso';
+
+                    }
+                    
+                    else{
+
+                        // header("Location: ../servicos.php?alert=error".$mail->ErrorInfo);
+
+                        //  print "<script>location.href='index.php?alert=error".$mail->ErrorInfo."';</script>";
+
+                        print $mail->ErrorInfo;
+
+
+                    }
+
+                                
                 
                 
                     

@@ -755,7 +755,7 @@ section, footer{
 	width: 700px;
 }
 
-#page-my-profile form .form-group{
+#page-my-profile .form-group{
 	
 	max-width: 100%;
 	
@@ -999,14 +999,14 @@ form a{
 	
 }
 
-form .form-group{
+.form-group{
 
     display: flex;
     flex-direction: column;
 
 }
 
-form .form-submit-group, form .form-group{
+form .form-submit-group, .form-group{
 
     padding: 10px;
     max-width: 400px;
@@ -1027,7 +1027,7 @@ input{
 	
 }
 
-form .form-group input, form .form-group textarea , form .form-group select{
+.form-group input, .form-group textarea , .form-group select{
 
     border-radius: 5px;
     border: 1px solid gray;
@@ -1037,7 +1037,7 @@ form .form-group input, form .form-group textarea , form .form-group select{
     border-color: #f3f3f4;
 
 }
-form .form-group textarea{
+.form-group textarea{
 	
 	min-height: 170px;
 	
@@ -1929,7 +1929,7 @@ footer{
 		
 	}
 	
-	form, form .form-submit-group, form .form-group{
+	form, form .form-submit-group, .form-group{
 		
 		max-width: 600px;
 		
@@ -1941,7 +1941,7 @@ footer{
 		
 	}
 	
-	form .form-group input, form .form-group textarea{
+	.form-group input, .form-group textarea{
 		
 		padding: 16px;
 		font-size: 2.5rem;

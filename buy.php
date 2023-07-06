@@ -67,7 +67,7 @@
                             
                         </div>
                                                     
-                        <p><strong>Descrição:</strong> '.$produto->descricao.'</p>
+                        <p class="actions"><strong>Descrição:</strong> '.$produto->descricao.'</p>
 
                         <a class="btn btn-primary" href="product.php?id='.$produto->id.'">Ver Produto</a>
                     
@@ -130,7 +130,7 @@
 
                                 <label for="cep">Cep:</label>
                                 <input type="text" id="cep" name="cep" required onkeypress="$(this).mask(`00000-000`)"value="" required placeholder="99999-999">
-                                <a href="#" class=" btn btn-primary" onclick="buscarEndereco()">Buscar Endereço</a>
+                                <a href="#" class=" btn btn-primary actions" onclick="buscarEndereco()">Buscar Endereço</a>
 
 
                             </div>
@@ -325,7 +325,6 @@
                             document.querySelector('#cidade').value = options[cont].getAttribute('data-cidade');
 
                             document.querySelector('#pais').value = options[cont].getAttribute('data-pais');
-
 
                             document.querySelector('#ponto-referencia').value = options[cont].getAttribute('data-referencia');
 

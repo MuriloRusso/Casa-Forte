@@ -88,6 +88,10 @@
 
                         $mail->addReplyTo('no-reply@vertconclube.com.br', 'vertconclube');
 
+                        // include('config/smtp.php');
+
+
+
                         // $mail->addAddress('no-reply@vertconclube.com.br', 'vertconclube');
 
                         $mail->addAddress('contato@murilorusso.com.br', 'vertconclube');

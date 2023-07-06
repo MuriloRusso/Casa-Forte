@@ -37,6 +37,10 @@
 
                 <?php 
 
+                    use PHPMailer\PHPMailer\PHPMailer;
+                    use PHPMailer\PHPMailer\Exception;
+
+
                     if(isset($_POST['email'])){
 
                         $email = $mysqli->real_escape_string($_POST['email']);
@@ -62,7 +66,87 @@
 
                             $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
 
+                
+
+                
+                            require 'PHPMailer-master-atual/PHPMailer-master/src/Exception.php';
+                            require 'PHPMailer-master-atual/PHPMailer-master/src/PHPMailer.php';
+                            require 'PHPMailer-master-atual/PHPMailer-master/src/SMTP.php';
+        
+        
+    
+                            $nome = $_POST['nome'];
+                            $email = $_POST['email'];
+    
+    
+                            $mail = new PHPMailer();
+                            $mail->isSMTP();
+    
+    
+                            $mail->Host = 'smtp.hostinger.com';
+                            $mail->SMTPAuth = true;
+                            $mail->SMTPSecure = "tls";
+                            $mail->Port = "587";
+                            $mail->Username = 'no-reply@vertconclube.com.br';
+                            $mail->Password = 'Senti@nela2021';
+    
+                            $mail->setFrom('no-reply@vertconclube.com.br', 'vertconclube');
+    
+                            $mail->addReplyTo('no-reply@vertconclube.com.br', 'vertconclube');
+    
+                            // include('config/smtp.php');
+    
+    
+    
+                            // $mail->addAddress('no-reply@vertconclube.com.br', 'vertconclube');
+    
+                            $mail->addAddress($email, 'vertconclube');
+    
+    
+                            // $mail->addCC('contato@murilorusso.com.br', 'SLMIT');
+    
+                            // $mail->addBCC('murilorussooo@gmail.com', 'SLMIT');	
+                                
+                            $mail->Subject = 'Redefinição de Senha';
+    
+                            $mail->Subject = '=?UTF-8?B?'.base64_encode($mail->Subject).'?=';
+    
+    
+                            $mail->isHTML(true);
+    
+    
+
+                    
+                        
+                            $mailContent = ' 
                             
+                                <p>Foi Solicitada uma troca de senha da sua conta no nosso site por esquecimento</p>
+    
+    
+                                <p>Para redefinir sua senha, clique no link abaixo: </p>
+
+                                <a href=`http://casaforteprojetoseservicos.com.br/novo/change-password-key.php?key="'.$chave.'"`>http://casaforteprojetoseservicos.com.br/novo/change-password-key.php?key="'.$chave.'"</a>
+
+                            
+                            ';
+                        
+                            $mailContent = utf8_decode($mailContent);
+    
+                            $mail->Body = $mailContent;
+    
+    
+                            if($mail->send()){
+    
+                                print '<p class="alert-sucess text-center">Solicitação Enviada Com Sucesso</p>';
+    
+                            }
+                            
+                            else{
+    
+                                print '<p class="btn-delete btn">'.$mail->ErrorInfo.'</p>';
+    
+                            }
+    
                             
                             print '
                             

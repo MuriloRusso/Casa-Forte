@@ -91,7 +91,9 @@
 
                         <div class="form-group">
 
-                        <select name="endereço">
+                        <select name="endereço" id="endereco">
+
+                        <option value="">Seus Endereços Salvos</option>
 
 
 
@@ -100,7 +102,17 @@
                     while($endereco = $sql_query->fetch_object()){
 
                         print '                                                    
-                            <option>'.$endereco->nome_endereco.'</option>                                                       
+                            <option 
+                            data-cep="'.$endereco->cep.'"
+                            data-logradouro="'.$endereco->logradouro.'"
+                            data-numero="'.$endereco->numero.'"
+                            data-cidade="'.$endereco->cidade.'"
+                            data-bairro="'.$endereco->bairro.'"
+                            data-pais="'.$endereco->pais.'"
+                            data-referencia="'.$endereco->ponto_referencia.'" 
+                            value="'.$endereco->ID.'">'
+                            .$endereco->nome_endereco.'
+                            </option>                                                       
 
 
                         ';
@@ -268,6 +280,7 @@
                 ?>      
 
             </form>
+            
 
 
             </section>
@@ -280,6 +293,55 @@
 
 
         </div>    
+
+            <script>
+
+                let selectAddress = document.querySelector('#endereco');
+
+                console.log('select endereco guardada');
+
+                selectAddress.onchange = function() {
+
+                    console.log('Função iniciada');
+
+                    const options = selectAddress.querySelectorAll('option');
+
+                    console.log('options guardadas ' + options.length);
+
+                    for(let cont = 0; cont < options.length; cont++){
+
+                        console.log(options[cont].selected);
+
+                        if(options[cont].selected === true){
+
+                            document.querySelector('#cep').value = options[cont].getAttribute('data-cep');
+
+                            document.querySelector('#logradouro').value = options[cont].getAttribute('data-logradouro');
+
+                            document.querySelector('#numero').value = options[cont].getAttribute('data-numero');
+
+                            document.querySelector('#bairro').value = options[cont].getAttribute('data-bairro');
+
+                            document.querySelector('#cidade').value = options[cont].getAttribute('data-cidade');
+
+                            document.querySelector('#pais').value = options[cont].getAttribute('data-pais');
+
+
+                            document.querySelector('#ponto-referencia').value = options[cont].getAttribute('data-referencia');
+
+
+                        }
+
+
+                    }
+
+
+
+                }
+
+
+
+            </script>
 
 
         <script>

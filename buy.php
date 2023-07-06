@@ -70,6 +70,41 @@
                         <p class="actions"><strong>Descrição:</strong> '.$produto->descricao.'</p>
 
                         <a class="btn btn-primary" href="product.php?id='.$produto->id.'">Ver Produto</a>
+
+                        <div class="form-group">	
+
+                            <label>Preço Unitário:</label>
+
+                            <h2>R$: '.$produto->preco .'</h2>
+
+
+
+                            <input type="hidden" readonly name="preco" id="preco" value="'.$produto->preco .'">
+
+
+                        </div>
+
+                    
+                    </div>';
+
+
+                    print '<div class="card text-center">                                   
+                                
+                        <h2>Detalhes da Compra:</h2>
+
+
+                        <div class="form-group">	
+
+                            <label>Quantidade:</label>
+
+
+                            <input type="number" min="1" name="quantidade" id="quantidade" placeholder="" value="'.$_POST['quantidade'].'">
+
+
+                        </div>
+
+
+                        
                     
                     </div>';
 
@@ -290,6 +325,13 @@
             
 
                 ?>      
+
+                <div class="form-group-submit">
+
+                    <input type="submit" value="Confirmar" class="btn btn-primary">
+
+                </div>
+
 
             </form>
             

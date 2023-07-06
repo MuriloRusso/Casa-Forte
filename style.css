@@ -886,6 +886,13 @@ input[type="number"]{
 
 	width: 50px !important;
     height: 50px !important;
+
+	
+}
+
+
+#page-buy input[type="number"]{
+
 	margin: 0 auto !important;
 
 }

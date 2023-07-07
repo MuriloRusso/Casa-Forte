@@ -79,6 +79,8 @@
 
 					$senha = $user->senha;
 
+					// print "senha: ".$senha;
+
 					$papel = $user->papel;
 
 					$genero = $user->genero;
@@ -306,9 +308,9 @@
 
 						else{
 
-							$senha = $mysqli->real_escape_string($_POST['senha']);
+							$senhaNova = $mysqli->real_escape_string($_POST['senha']);
 
-							if(strlen($senha) > 5){
+							if(strlen($senhaNova) > 5){
 
 								if(isset($_POST['email'])){
 									
@@ -318,7 +320,9 @@
 
 									// $senha = $mysqli->real_escape_string($_POST['senha']);
 
-									$hash = password_hash($senha, PASSWORD_BCRYPT);
+									$hash = $senhaNova;
+
+									// $hash = password_hash($senha, PASSWORD_BCRYPT);
 
 									$papel = $mysqli->real_escape_string($_POST['papel']);
 
@@ -497,7 +501,7 @@
 					 <div class="form-group">
 
 						<label for="senha">Senha:</label>
-						<input type="password" id="senha" name="senha" value="<?php echo $senha; ?>" required placeholder="Digite a senha do usuário aqui">
+						<input type="password" id="senha" name="senha" value="<?php echo $user->senha; ?>" required placeholder="Digite a senha do usuário aqui">
 
 					</div>
 						

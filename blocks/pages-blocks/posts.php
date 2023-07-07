@@ -5,23 +5,26 @@
 	
 <?php
 
-   print '
-    
-    
-        <div class="container-posts flex justify-content-center flex-wrap">
+	print '
 		
-        
-        <h2 class="full-width text-center">Blog:</h2>
-        
-    ';
+		
+	<div class="container-posts flex justify-content-center flex-wrap">
 
-		if($_SESSION['papel'] == 'admin'){
-			
-			
-			print '<div class="full-width flex justify-content-center"><a href="new-post.php" class="btn btn-primary" title="Clique nesse botão para adicionar um novo post">Adicionar Novo Post</a></div>';
-			
-		}
+		<div class="flex justify-content-space-around flex-wrap full-width align-items-center">
 
+			<h2 class="text-center">Produtos:</h2>
+
+	';
+
+	if($_SESSION['papel'] == 'admin'){
+		
+		
+		print '<div class="flex justify-content-center">
+		<a href="new-product.php" class="btn btn-primary" title="Clique nesse botão para adicionar um novo produto">Novo</a></div>';
+		
+	}
+
+	print '</div>';
         
      
 

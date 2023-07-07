@@ -243,10 +243,13 @@
 				
 				print '<ul>
 				
-					<h1 class="text-center">Endereços</h1>
+					<div class="flex flex-wrap justify-content-space-around full-width">
+
+						<h1 class="text-center">Endereços</h1>
+						
+						<a class="btn btn-primary" href="add-new-address.php" title="Clique aqui para adicionar novo endereço">Novo</a>
 					
-					<a class="btn btn-primary" href="add-new-address.php" title="Clique aqui para adicionar novo endereço">Adicinar Novo Endereço</a>
-				
+					</div>
 				';
 				
 				
@@ -372,13 +375,26 @@
 								
 //				$quantidadePedidos = $sql_query->num_rows;
 				
-				print '<ul>
+				// print '<ul>
 				
-					<h1 class="text-center">Cartões</h1>
+				// 	<h1 class="text-center">Cartões</h1>
 					
-					<a class="btn btn-primary" href="add-card.php" title="Clique aqui para adicionar novo cartão">Adicinar Novo Cartão</a>
+				// 	<a class="btn btn-primary" href="add-card.php" title="Clique aqui para adicionar novo cartão">Adicinar Novo Cartão</a>
 
 				
+				// ';
+				
+
+					
+				print '<ul>
+				
+					<div class="flex flex-wrap justify-content-space-around full-width">
+
+						<h1 class="text-center">Cartões</h1>
+						
+						<a class="btn btn-primary" href="add-card.php" title="Clique aqui para adicionar novo endereço">Novo</a>
+					
+					</div>
 				';
 				
 				

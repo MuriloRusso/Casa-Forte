@@ -9,17 +9,22 @@
     
     
         <div class="container-posts flex justify-content-center flex-wrap">
+
+			<div class="flex justify-content-space-around flex-wrap full-width align-items-center">
         
-        <h2 class="full-width text-center">Produtos:</h2>
+       			<h2 class="text-center">Produtos:</h2>
         
     ';
         
 		if($_SESSION['papel'] == 'admin'){
 			
 			
-			print '<div class="full-width flex justify-content-center"><a href="new-product.php" class="btn btn-primary" title="Clique nesse botão para adicionar um novo produto">Adicionar Novo Produto</a></div>';
+			print '<div class="flex justify-content-center">
+			<a href="new-product.php" class="btn btn-primary" title="Clique nesse botão para adicionar um novo produto">Novo</a></div>';
 			
 		}
+
+		print '</div>';
      
 
     // $sql_query;

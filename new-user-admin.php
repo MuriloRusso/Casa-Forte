@@ -131,7 +131,7 @@
 
 							$senha = $mysqli->real_escape_string($_POST['senha']);
 
-							if(strlen($senha) > 5 && $senha != ''){
+							if(strlen($senha) > 5 ){
 
 								if($_POST['email'] != ''){
 
@@ -298,7 +298,12 @@
 
 							else{
 
-								print '<div class="btn btn-delete">'.$senha.'A senha deve conter no mínimo 6 caracteres!</div>';
+								if($senha != ''){
+
+									print '<div class="btn btn-delete">A senha deve conter no mínimo 6 caracteres2!</div>';
+
+								}
+
 
 							}
 

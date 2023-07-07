@@ -62,7 +62,7 @@
 					
 					<div class="full-width flex justify-content-center actions">
 
-						<form action="categorizar.php" method="post">
+						<form action="categorizar.php" method="post" class="form-clean">
 						
 							<input type="hidden" value="1" name="id_categoria">
 						

@@ -532,6 +532,17 @@
             ?>
 
             </section> -->
+
+
+			 <section>
+
+            <?php 
+
+                include('blocks/more-sell.php');
+
+            ?>
+
+            </section> 
 			
 			
 			

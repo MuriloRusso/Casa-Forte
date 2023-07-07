@@ -57,6 +57,25 @@
 
 					print '<div class="full-width flex justify-content-center"><a href="new-product.php" class="btn btn-primary" title="Clique nesse botão para adicionar um novo produto">Adicionar Novo Produto</a></div>';
 
+
+					print '
+					
+					<div class="full-width flex justify-content-center actions">
+
+						<form action="categorizar.php" method="post">
+						
+							<input type="hidden" value="1" name="id_categoria">
+						
+							<input type="submit" class="btn btn-primary" value="Incluir Nessa Categoria">
+							
+
+						</form>
+
+					</div>
+					
+					
+					';
+
 				}
 
 

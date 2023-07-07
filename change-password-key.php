@@ -82,14 +82,14 @@
 
                                         $(".form-group-submit").css("display", "none");
 
-                                        
-                                            setTimeout(function(){
-
-                                                window.location.href = "login.php";
-
-
-                                            }, 2000)
                                     
+                                        setTimeout(function(){
+
+                                            window.location.href = "login.php";
+
+
+                                        }, 2000)
+                                
 
 
                                     }, 300)

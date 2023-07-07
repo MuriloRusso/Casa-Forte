@@ -304,7 +304,7 @@ header #box-login{
 .btn{
 
     padding: 15px 50px;
-    border-radius: 16px;
+    border-radius: 8px;
 	
 	
 	display: block;
@@ -328,7 +328,7 @@ p.btn{
 
 a.btn-delete{
 	
-	border-radius: 16px !important;
+	border-radius: 8px !important;
 	
 }
 
@@ -355,7 +355,7 @@ a.btn-delete{
 
 .btn-secondary{
 
-    border  : 1px solid #ccc;
+    border: 1px solid #ccc;
     color: #999;
 
 }
@@ -935,6 +935,7 @@ input[type="number"]{
 
 .card .parc{
 	
+	border-radius: 6px;
 	background-color: #26b540 !important;
     color: white;
     padding: 10px;
@@ -1080,7 +1081,7 @@ form input[type="submit"]{
 
     border: none;
     padding: 15px !important;
-    border-radius: 16px;
+    border-radius: 8px;
     width: -webkit-fill-available;
 
 
@@ -1474,7 +1475,7 @@ form input[type="submit"]{
     height: 7px;
     width: 100%;
     background-color: grey;
-    border-radius: 16px;
+    border-radius: 8px;
 
 }
 

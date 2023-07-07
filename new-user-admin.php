@@ -6,7 +6,22 @@
 
          include('connect.php');
 
-         include('protect-adm.php');
+
+		 include('protect-colaborador.php');
+
+
+		//  if($_SESSION['papel'] == 'colaborador'){
+
+		// 	include('protect-colaborador.php');
+
+
+		//  }
+
+		//  else{
+
+		// 	include('protect-adm.php');
+
+		//  }
 
     ?>
 
@@ -91,7 +106,16 @@
 
 					$avatar = $user->avatar;
 
-					$extensao = $user->extensao;;
+					$extensao = $user->extensao;
+
+
+
+					if($_SESSION['papel'] == 'colaborador' && $papel != 'cliente'){
+
+						include('protect-adm.php');
+
+
+					}
 
 
 				 }
@@ -424,20 +448,33 @@
 
 
 
-					<div class="form-group">
-						
-						<h2>Novo Usuário</h2>
-						
-					</div>
 						
 						
 					 <?php 
 
 						if(isset($_GET['id'])){
+
+							print '
+							<div class="form-group">
+								
+								<h2>Editar Usuário</h2>
+								
+							</div>';
 							
 							print '<input type="hidden" name="id" value="'.$id.'" required>';
 							
-						}						
+						}					
+						
+						else{
+
+							print '
+							<div class="form-group">
+								
+								<h2>Novo Usuário</h2>
+								
+							</div>';
+
+						}
 						
 						
 					?>
@@ -517,9 +554,21 @@
 						<select id="papel" name="papel" required data-value="<?php echo $papel; ?>"> 
 						
 							<option value="cliente" selected>Cliente</option>
-							<option value="colaborador">Colaborador</option>
 
-							<option value="admin">Admin</option>
+							<?php
+
+								if($_SESSION['papel'] == 'admin'){
+
+							?>
+									<option value="colaborador">Colaborador</option>
+
+									<option value="admin">Admin</option>
+
+							<?php
+
+								}
+
+							?>
 
 						
 						</select>

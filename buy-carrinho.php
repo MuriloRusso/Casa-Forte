@@ -47,66 +47,66 @@
 
 
             
-                if(isset($_POST['quantidade-produtos'])){
+                if(isset($_POST['quantidade-itens'])){
 
-                    $idProduto = $_POST['id_produto'];
-                    
-                    $sql_code = "SELECT * FROM produtos WHERE id=".$idProduto;
-        
-                    $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
+                    $quantidadeProdutos = intval($_POST['quantidade-itens']);
 
-                    $produto = $sql_query->fetch_object();  
+                    for($contP = 1; $contP < $quantidadeProdutos; $contP++){
 
-                    print '<div class="card text-center">                                   
+                        $idProduto = $_POST['idProduto'.$contP];
+
+                        $sql_code = "SELECT * FROM produtos WHERE id=".$idProduto;
+            
+                        $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
+
+                        $produto = $sql_query->fetch_object();  
+
+                        print '<div class="card text-center">                                   
+                                    
+                            <h2>Produto: '.$produto->nome.'</h2>
+
+                   <!--         <div class="full-width">
+
+                                <img src="img/products/'.$produto->arquivo.''.$produto->extensao.'">
                                 
-                        <h2>Produto: '.$produto->nome.'</h2>
+                            </div>
+                                                        
+                            <p class="actions"><strong>Descrição:</strong> '.$produto->descricao.'</p>
+-->
+                            <a class="btn btn-primary" href="product.php?id='.$produto->id.'">Ver Produto</a>
 
-                        <div class="full-width">
+                            <div class="form-group">	
 
-                            <img src="img/products/'.$produto->arquivo.''.$produto->extensao.'">
+                                <label>Preço Unitário:</label>
+
+                                <h2>R$: '.$produto->preco .'</h2>
+
+
+
+                                <input type="hidden" readonly name="preco" id="preco" value="'.$produto->preco .'">
+
+
+                            </div>
                             
-                        </div>
-                                                    
-                        <p class="actions"><strong>Descrição:</strong> '.$produto->descricao.'</p>
-
-                        <a class="btn btn-primary" href="product.php?id='.$produto->id.'">Ver Produto</a>
-
-                        <div class="form-group">	
-
-                            <label>Preço Unitário:</label>
-
-                            <h2>R$: '.$produto->preco .'</h2>
+                            <h2>Detalhes da Compra:</h2>
 
 
+                            <div class="form-group">	
 
-                            <input type="hidden" readonly name="preco" id="preco" value="'.$produto->preco .'">
-
-
-                        </div>
-
-                    
-                    </div>';
+                                <label>Quantidade:</label>
 
 
-                    print '<div class="card text-center">                                   
-                                
-                        <h2>Detalhes da Compra:</h2>
+                                <input type="number" min="1" name="quantidade" id="quantidade" placeholder="" value="'.$_POST['quantidade'.$contP].'">
 
 
-                        <div class="form-group">	
-
-                            <label>Quantidade:</label>
+                            </div>
 
 
-                            <input type="number" min="1" name="quantidade" id="quantidade" placeholder="" value="'.$_POST['quantidade'].'">
-
-
-                        </div>
-
-
+                            
                         
-                    
-                    </div>';
+                        </div>';
+
+                    }
 
                     $sql_code = "SELECT * FROM usuario WHERE id=".$_SESSION['id'];
         

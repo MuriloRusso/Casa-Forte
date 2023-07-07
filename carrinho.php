@@ -153,7 +153,7 @@
 
 								<div>
 
-									<a class="btn btn-primary">continuar</a>
+									<input type="submit" class="btn btn-primary" value="Continuar">
 
 								</div>
 

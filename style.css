@@ -1112,6 +1112,17 @@ form input[type="submit"]{
 }
 
 
+.form-clean{
+
+	padding: 0 !important;
+    background-color: transparent !important;
+    margin: initial !important;
+    max-width: fit-content !important;
+    border-radius: 0 !important;
+
+}
+
+
 .circle{
 
     border-radius: 100%;

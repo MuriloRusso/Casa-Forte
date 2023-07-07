@@ -49,11 +49,20 @@
 
                     if(isset($_POST['newPassword'])){
 
+                        $chave = $_GET['key'];
+
+                        $sql_code = "SELECT * FROM forgot_password WHERE chave=".$chave;
+
+                        $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
+
+                        $row = $sql_query->fetch_object();
+
                         $passwordConfirm = $mysqli->real_escape_string($_POST['passwordConfirm']);
 
                         $newPassword = $mysqli->real_escape_string($_POST['newPassword']);
 
                         $id = $mysqli->real_escape_string($_POST['id']);
+                        
 
                         $sql_code = "SELECT * FROM usuario WHERE id=".$id;
 
@@ -71,6 +80,13 @@
 
                                     $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
 
+                                    $st = 'usado';
+
+                                    $sql_code = "UPDATE forgot_password SET status_key='{$st}' WHERE id=".$row->id;
+                                    
+                                    $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
+
+                                    
                                     print '<p class="alert-sucess text-center">Senha Alterada com sucesso</p>
                                     
                                     
@@ -96,6 +112,8 @@
                                     
                                     
                                     </script>';
+
+                                    
 
                                 }                   
                                 else{
@@ -140,70 +158,69 @@
 
                         $data_atual = date('Y-m-d');
 
-                        // $horario = date('H:i:s');
+                        $horario = date('H:i');
 
-                         $horario = date('H:i');
 
-                        // $hora_envio = explode($row->horario, ':');
+                        // Data/hora atual
+                        $dataAtual = time();
 
-                        // $intervalo = abs( $row->horario - $horario ) / 60;
+                        // Data/hora armazenada na coluna do banco de dados
+                        $dataColuna = strtotime($row->horario); // Substitua 'data_coluna' pelo nome da coluna no banco de dados
 
-                        // print $row->horario.'<br>';
+                        // Tempo máximo permitido em segundos (por exemplo, 1 hora = 3600 segundos)
+                        $tempoMaximo = 1800;
 
-                        // print  $hora_envio[1].'<br>';
+                        // // Verifica se o tempo máximo já passou
+                        // if (($dataAtual - $dataColuna) > $tempoMaximo) {
+                        //     // O tempo máximo já passou
+                        //     echo "Já passou o tempo determinado.";
+                        // } else {
+                        //     // O tempo máximo ainda não passou
+                        //     echo "Ainda não passou o tempo determinado.";
+                        // }
 
-                        // print $horario.'<br>';
+                        print $dataAtual.'<br>';
 
-                        // print $intervalo;
+                        print $dataColuna.'<br>';
 
-                        if($row->data_envio == $data_atual/* && $intervalo < 5*/) {
 
-                        
+                        print $dataAtual - $dataColuna.'<br>';
 
-                            // if( $intervalo > 30 ) {
-                            // // 
-                            // }
-
-                        // $sql_code = "SELECT * FROM usuario WHERE id=".$row->id_usuario;
-
-                        // $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
-
-                 
-
+                        if($row->data_envio == $data_atual && $row->status_key != 'usado' && (($dataAtual - $dataColuna) < $tempoMaximo)) {
                     
                 ?>
 
-					<div class="form-group">
-						<h2>Recuperar Senha</h2>
-					</div>
-					
-										
-					<input type="hidden" id="id" name="id" value="<?php echo $row->id_usuario; ?>">
-					
-                    
-                    <div class="form-group">
+                            <div class="form-group">
+                                <h2>Recuperar Senha</h2>
+                            </div>
+                            
+                                                
+                            <input type="hidden" id="id" name="id" value="<?php echo $row->id_usuario; ?>">
+                            
+                            
+                            <div class="form-group">
 
-						<label for="newPassword">Nova Senha:</label>
-						<input type="password" id="newPassword" name="newPassword" placeholder="Digite aqui a nova senha">
+                                <label for="newPassword">Nova Senha:</label>
+                                <input type="password" id="newPassword" name="newPassword" placeholder="Digite aqui a nova senha">
 
-					</div>
-					
-                    <div class="form-group">
+                            </div>
+                            
+                            <div class="form-group">
 
-                        <label for="passwordConfirm">Confirme a Nova Senha:</label>
-                        <input type="password" id="passwordConfirm" name="passwordConfirm" placeholder="Confirme aqui a senha atual">
+                                <label for="passwordConfirm">Confirme a Nova Senha:</label>
+                                <input type="password" id="passwordConfirm" name="passwordConfirm" placeholder="Confirme aqui a senha atual">
 
-                    </div>
+                            </div>
 
-					<div class="form-group-submit actions">
+                            <div class="form-group-submit actions">
 
-						<input type="submit" value="Alterar Senha" class="btn btn-primary" title="Alterar Senha">
+                                <input type="submit" value="Alterar Senha" class="btn btn-primary" title="Alterar Senha">
 
-					</div>
+                            </div>
 
 				<?php
 
-                            }
+                        }
 
                         else{
 

@@ -66,6 +66,9 @@
 							<input type="hidden" value="3" name="id_categoria">
 						
 							<input type="submit" class="btn btn-primary" value="Incluir Nessa Categoria">
+
+							<input type="submit" class="btn btn-delete actions" id="remove" value="Remover Dessa Categoria">
+
 							
 
 						</form>
@@ -255,6 +258,18 @@
 
 
         </div>
+
+		
+		<script>
+
+			document.querySelector('#remove').onclick = function(){
+
+				document.querySelector('form').action = 'remove-category.php';
+
+			}
+
+
+		</script>
         
 		<script>
 			

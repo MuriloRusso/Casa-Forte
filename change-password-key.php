@@ -179,12 +179,12 @@
                         //     echo "Ainda não passou o tempo determinado.";
                         // }
 
-                        print $dataAtual.'<br>';
+                        // print $dataAtual.'<br>';
 
-                        print $dataColuna.'<br>';
+                        // print $dataColuna.'<br>';
 
 
-                        print $dataAtual - $dataColuna.'<br>';
+                        // print $dataAtual - $dataColuna.'<br>';
 
                         if($row->data_envio == $data_atual && $row->status_key != 'usado' && (($dataAtual - $dataColuna) < $tempoMaximo)) {
                     

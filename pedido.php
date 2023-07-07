@@ -6,7 +6,7 @@
 
          include('connect.php');
 
-         include('protect-adm.php');
+         include('protect-colaborador.php');
 
     ?>
 

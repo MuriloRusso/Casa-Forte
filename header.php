@@ -64,9 +64,20 @@
 					 <li><a href="index.php">Home</a></li>
 					<li><a href="products.php">Produtos</a></li>
 					<li><a href="blog.php">Blog</a></li>
-					<li><a href="orcamento.php">Orçamento</a></li>
-
 					';
+
+					$sql_code = "SELECT * FROM usuario WHERE id='{$_SESSION['id']}'";	
+
+					$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
+
+					$usuario = $sql_query->fetch_assoc();
+
+					if($usuario['papel'] != 'admin'){
+					
+						print '<li><a href="orcamento.php">Orçamento</a></li>';
+
+					}
+
 
 					if(!isset($_SESSION['id'])){
 

@@ -22,7 +22,7 @@
 
     </head>
 
-    <body id="" class=''>
+    <body id="categorizar" class=''>
 
     
         <?php 
@@ -40,7 +40,7 @@
             ?>
 
 
-            <section>
+            <section class="flex flex-wrap justify-content-center">
 
 
                 <?php
@@ -57,7 +57,7 @@
 
                     $quantidadeProdutos = $sql_query->num_rows;
 
-                    print $quantidadeProdutos;
+                    // print $quantidadeProdutos;
 
                     
                    
@@ -73,22 +73,20 @@
                         $quantidade = $sql_query2->num_rows;
 
 
-                        print $quantidade;
+                        // print $quantidade;
 
                         if($quantidade === 0){
 
                             print '
                             <a href="product.php?id='.$produto->id.'" >
     
-                                <div class="card">
-    
-                                    <img src="img/products/'.$produto->arquivo.''.$produto->extensao.'" alt="imagem do produto">
-    
+                                <div class="card flex align-items-center justify-content-space-betwen">
+        
+                                    <p>ID: #'.$produto->id.'</p>
+
                                     <h3>'.$produto->nome.'</h3>
     
-                                    <p class="price">R$: '.$produto->preco.'</p>
-
-                                    <form action="config/categorizar.php" method="post">
+                                    <form action="config/categorizar.php" method="post" class="form-clean">
 
                                          <input type="hidden" name="id_categoria" value="'.$id_categoria.'">
 

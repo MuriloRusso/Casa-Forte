@@ -1087,6 +1087,18 @@ form input[type="submit"]{
 
 }
 
+#categorizar input[type="submit"]{
+
+	width: auto !important;
+
+}
+
+#categorizar section .card{
+
+	width: 900px !important;
+
+}
+
 .form-group-radio{
 	
 	 border-radius: 5px;

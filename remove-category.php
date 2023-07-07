@@ -22,7 +22,7 @@
 
     </head>
 
-    <body id="" class=''>
+    <body id="categorizar" class=''>
 
     
         <?php 
@@ -40,7 +40,7 @@
             ?>
 
 
-            <section>
+            <section class="flex flex-wrap justify-content-center">
 
 
                 <?php
@@ -73,23 +73,22 @@
 
                         $categorizacao = $sql_query2->fetch_object();
 
-                        print $quantidade;
+                        // print $quantidade;
 
 
                         if($quantidade === 1){
 
+                           
                             print '
                             <a href="product.php?id='.$produto->id.'" >
     
-                                <div class="card">
-    
-                                    <img src="img/products/'.$produto->arquivo.''.$produto->extensao.'" alt="imagem do produto">
-    
-                                    <h3>'.$produto->nome.'</h3>
-    
-                                    <p class="price">R$: '.$produto->preco.'</p>
+                                <div class="card flex align-items-center justify-content-space-betwen">
+        
+                                    <p>ID: #'.$produto->id.'</p>
 
-                                    <form action="config/remove-category.php" method="post">
+                                    <h3>'.$produto->nome.'</h3>
+
+                                    <form action="config/remove-category.php" method="post" class="form-clean">
 
                                          <input type="hidden" name="id_categorizacao" value="'.$categorizacao->ID.'">
 

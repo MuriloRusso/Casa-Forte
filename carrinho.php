@@ -40,14 +40,12 @@
             ?>
 
 
-			<form action="buy-carrinho.php" class="form-clean">
+			<form action="buy-carrinho.php" class="form-clean" method="post">
 
 				<section class="flex flex-wrap">
 
-
 					<?php 
-				
-						
+										
 						$sql_code = "SELECT * FROM carrinho WHERE ID_Cliente='{$_SESSION['id']}'";	
 						
 						$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
@@ -63,12 +61,8 @@
 							<input type="hidden" name="quantidade-itens" value="'.$quantidadeItens.'">
 						
 						';
-						
-						
-						
+																	
 						$valorTotal = 0;
-
-
 
 						$cont = 1;			
 
@@ -89,6 +83,8 @@
 								print '						
 								
 									<li class="flex card justify-content-space-betwen flex-wrap">
+
+										<input type="hidden" name="idProduto'.$cont.'" value="'.$produto->id.'">
 									
 										<a href="product.php?id='.$produto->id.'" class="full-mobile">
 											<img src="img/products/'.$produto->arquivo.$produto->extensao.'" alt="imagem do produto">

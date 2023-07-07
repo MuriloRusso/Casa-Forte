@@ -47,7 +47,7 @@
 
 
             
-                if(isset($_POST['id_produto'])){
+                if(isset($_POST['quantidade-produtos'])){
 
                     $idProduto = $_POST['id_produto'];
                     

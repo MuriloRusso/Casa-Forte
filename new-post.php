@@ -64,7 +64,7 @@
 			
 			<section>
 
-				<form method="post" action="config/create-post.php"  enctype="multipart/form-data">
+				<form method="post" action="config/create-post.php"  enctype="multipart/form-data" class="form-model">
 
 
 					<div class="form-group">
@@ -89,7 +89,7 @@
 					
 <!--					<input name="id" type="hidden" value="<?php echo $post->id; ?>">-->
 					
-					<div class="form-group">
+					<div class="form-group full-width">
 
 						<label for="nome">Titulo do Post:</label>
 						<input type="text" id="nome" name="nome" value="<?php echo $post->titulo; ?>" required placeholder="Digite o titulo do post aqui">
@@ -103,7 +103,7 @@
 
 					</div> -->
 
-					<div>
+					<div class="form-group full-width">
 
 						<?php 
 
@@ -185,7 +185,7 @@
 					</div>
 
 
-					 <div class="form-group">
+					 <div class="form-group full-width">
 
 						<label for="texto">Texto:</label>
 						<textarea type="text" id="texto" name="texto" required placeholder="Digite a descrição do seu texto aqui"><?php echo $post->texto; ?></textarea>
@@ -193,7 +193,7 @@
 					</div>
 
 
-					<div class="form-submit-group flex flex-wrap justify-content-space-betwen">
+					<div class="form-submit-group flex flex-wrap justify-content-space-betwen full-width">
 
 						
 						<?php 

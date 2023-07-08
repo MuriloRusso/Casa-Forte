@@ -12,7 +12,7 @@
 
 		<div class="flex justify-content-space-around flex-wrap full-width align-items-center">
 
-			<h2 class="text-center">Produtos:</h2>
+			<h2 class="text-center">Blog:</h2>
 
 	';
 
@@ -20,7 +20,7 @@
 		
 		
 		print '<div class="flex justify-content-center">
-		<a href="new-product.php" class="btn btn-primary" title="Clique nesse botão para adicionar um novo produto">Novo</a></div>';
+		<a href="new-post.php" class="btn btn-primary" title="Clique nesse botão para adicionar um novo produto">Novo</a></div>';
 		
 	}
 

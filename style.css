@@ -1094,6 +1094,27 @@ form input[type="submit"]{
 
 }
 
+
+.form-model{
+
+	padding: 120px;
+    background-color: white;
+    margin: auto;
+    max-width: 900px;
+    border-radius: 16px;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.form-model .form-group{
+
+	max-width: -webkit-fill-available;
+
+
+}
+
+
 #categorizar input[type="submit"]{
 
 	width: auto !important;
@@ -1820,7 +1841,7 @@ footer{
 
     /*form*/
 
-    form{
+    form, .form-model{
 
         padding: 20px;
 

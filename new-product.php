@@ -62,10 +62,10 @@
 			
 			<section>
 
-				<form method="post" action="config/create-product.php"  enctype="multipart/form-data">
+				<form method="post" action="config/create-product.php"  enctype="multipart/form-data" class="form-model">
 
 
-					<div class="form-group">
+					<div class="form-group full-width">
 						<h2>Novo Produto</h2>
 					</div>
 					
@@ -86,66 +86,15 @@
 					
 <!--					<input name="id" type="hidden" value="<?php echo $product->id; ?>">-->
 					
-					<div class="form-group">
+					<div class="form-group full-width">
 
 						<label for="nome">Nome:</label>
 						<input type="text" id="nome" name="nome" value="<?php echo $product->nome; ?>" required placeholder="Digite o nome do produto aqui">
 
 					</div>
 
-					<div class="form-group">
-
-						<label for="descricao">Descrição:</label>
-						<textarea type="text" id="descricao" name="descricao" placeholder="Digite a descrição do produto aqui" required><?php echo $product->descricao; ?></textarea>
-
-					</div>
-
-					 <div class="form-group">
-
-						<label for="preco">Preço:</label>
-						<input type="text" id="preco" name="preco" value="<?php echo $product->preco; ?>" required>
-						
-					</div>
-
-					<div class="form-group">
-
-						<label for="peso">Peso:</label>
-						<input type="text" id="peso" name="peso" value="<?php echo $product->peso; ?>" required>
-						
-					</div>
-
-					<div class="form-group">
-
-						<label for="altura">Altura:</label>
-						<input type="text" id="altura" name="altura" value="<?php echo $product->altura; ?>" required>
-						
-					</div>
-
-					<div class="form-group">
-
-						<label for="largura">Largura:</label>
-						<input type="text" id="largura" name="largura" value="<?php echo $product->largura; ?>" required>
-						
-					</div>
-
-					<div class="form-group">
-
-						<label for="comprimento">Comprimento:</label>
-						<input type="text" id="comprimento" name="comprimento" value="<?php echo $product->comprimento; ?>" required>
-						
-					</div>
-					
-					
-
-					<div class="form-group">
-
-						<label for="parcelas">Numero de Parcelas:</label>
-						<input type="text" id="parcelas" name="parcelas"  pattern="[1-9][0-9]*" value="<?php echo $product->NumeroParcelas; ?>" required onkeypress="$(this).mask('000')" placeholder="Digite o número de parcelas aqui">
-
-					</div>
-
-					
-					<div class="form-group">
+							
+					<div class="form-group full-width">
 						
 						<label for="foto">Foto do Produto:</label>
 					
@@ -192,8 +141,61 @@
 
 					</div>
 
+					<div class="form-group full-width">
 
-					<div class="form-submit-group flex flex-wrap justify-content-space-betwen">
+						<label for="descricao">Descrição:</label>
+						<textarea type="text" id="descricao" name="descricao" placeholder="Digite a descrição do produto aqui" required><?php echo $product->descricao; ?></textarea>
+
+					</div>
+
+					 <div class="form-group">
+
+						<label for="preco">Preço:</label>
+						<input type="text" id="preco" name="preco" value="<?php echo $product->preco; ?>" required placeholder="Digite aqui o Preço do Produto">
+						
+					</div>
+
+					<div class="form-group">
+
+						<label for="peso">Peso:</label>
+						<input type="text" id="peso" name="peso" value="<?php echo $product->peso; ?>" required placeholder="Digite aqui o Peso do Produto">
+						
+					</div>
+
+					<div class="form-group">
+
+						<label for="altura">Altura:</label>
+						<input type="text" id="altura" name="altura" value="<?php echo $product->altura; ?>" required placeholder="Digite aqui a Altura do Produto">
+						
+					</div>
+
+					<div class="form-group">
+
+						<label for="largura">Largura:</label>
+						<input type="text" id="largura" name="largura" value="<?php echo $product->largura; ?>" required placeholder="Digite aqui a Largura do Produto">
+						
+					</div>
+
+					<div class="form-group">
+
+						<label for="comprimento">Comprimento:</label>
+						<input type="text" id="comprimento" name="comprimento" value="<?php echo $product->comprimento; ?>" required placeholder="Digite aqui o Comprimento do Produto">
+						
+					</div>
+					
+					
+
+					<div class="form-group">
+
+						<label for="parcelas">Numero de Parcelas:</label>
+						<input type="text" id="parcelas" name="parcelas"  pattern="[1-9][0-9]*" value="<?php echo $product->NumeroParcelas; ?>" required onkeypress="$(this).mask('000')" placeholder="Digite o número de parcelas aqui">
+
+					</div>
+
+			
+
+
+					<div class="form-submit-group flex flex-wrap justify-content-space-betwen full-width">
 
 					<?php
 

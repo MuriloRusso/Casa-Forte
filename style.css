@@ -1114,6 +1114,11 @@ form input[type="submit"]{
 
 }
 
+#change-image{
+
+	margin: 0 !important;
+
+}
 
 #categorizar input[type="submit"]{
 

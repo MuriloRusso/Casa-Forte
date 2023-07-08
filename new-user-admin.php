@@ -129,7 +129,7 @@
 			
 			<section>
 
-				<form method="post" action=""  enctype="multipart/form-data">
+				<form method="post" action=""  enctype="multipart/form-data" class="form-model">
 						
 						
 					<?php 
@@ -455,7 +455,7 @@
 						if(isset($_GET['id'])){
 
 							print '
-							<div class="form-group">
+							<div class="form-group full-width">
 								
 								<h2>Editar Usuário</h2>
 								
@@ -468,7 +468,7 @@
 						else{
 
 							print '
-							<div class="form-group">
+							<div class="form-group full-width">
 								
 								<h2>Novo Usuário</h2>
 								
@@ -491,7 +491,7 @@
 
 							</label>			
 							
-							<div class="actions">
+							<div class="actions full-width">
 							
 								<a class="btn btn-primary" id="change-image">Alterar Foto</a>
 							</div>
@@ -511,7 +511,7 @@
 
 								</label>			
 								
-								<div class="actions">
+								<div class="actions full-width">
 								
 									<a class="btn btn-primary" id="change-image">Alterar Foto</a>
 								</div>';
@@ -524,7 +524,7 @@
 
 
 						
-					<div class="form-group">
+					<div class="form-group full-width">
 
 						<label for="nome-completo">Nome Completo:</label>
 						<input type="text" id="nome-completo" name="nome-completo" value="<?php echo $nome; ?>" required placeholder="Digite o nome completo do usuário aqui">
@@ -576,7 +576,32 @@
 					</div>
 		
 
-					<div class="form-group-radio" id="generoContainer" data-value="<?php echo $genero; ?>">
+
+					<!-- <div class="form-group">
+
+						<label for="cpf">CPF:</label>
+						<input type="text" id="cpf" name="cpf" required onkeypress="$(this).mask('000.000.000-00')" value="<?php echo $cpf; ?>" placeholder="999.999.999-99">
+
+					</div> -->
+
+					 <div class="form-group">
+
+						<label for="data-nascimento">Data de Nascimento:</label>
+						<input type="date" id="data-nascimento" name="data-nascimento" value="<?php echo $nascimento; ?>" required>
+
+					</div>
+					
+					
+
+					<div class="form-group">
+
+						<label for="telefone">Telefone:</label>
+						<input type="text" id="telefone" name="telefone" required onkeypress="$(this).mask('(99) 99999-9999')" value="<?php echo $telefone; ?>" placeholder="(99) 99999-9999">
+
+					</div>
+
+					
+					<div class="form-group-radio full-width" id="generoContainer" data-value="<?php echo $genero; ?>">
 
 						<label for="genero">Gênero:</label>
 						
@@ -607,32 +632,9 @@
 					</div>
 						
 
-					<!-- <div class="form-group">
-
-						<label for="cpf">CPF:</label>
-						<input type="text" id="cpf" name="cpf" required onkeypress="$(this).mask('000.000.000-00')" value="<?php echo $cpf; ?>" placeholder="999.999.999-99">
-
-					</div> -->
-
-					 <div class="form-group">
-
-						<label for="data-nascimento">Data de Nascimento:</label>
-						<input type="date" id="data-nascimento" name="data-nascimento" value="<?php echo $nascimento; ?>" required>
-
-					</div>
-					
-					
-
-					<div class="form-group">
-
-						<label for="telefone">Telefone:</label>
-						<input type="text" id="telefone" name="telefone" required onkeypress="$(this).mask('(99) 99999-9999')" value="<?php echo $telefone; ?>" placeholder="(99) 99999-9999">
-
-					</div>
 
 
-
-					<div class="form-submit-group flex flex-wrap justify-content-space-betwen">
+					<div class="form-group flex flex-wrap justify-content-space-betwen full-width">
 						
 						<?php 
 

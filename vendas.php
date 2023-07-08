@@ -20,7 +20,7 @@
 
     </head>
 
-    <body id="page-carrinho" class='page-cards'>
+    <body id="page-vendas" class='page-cards'>
 
         <?php 
 

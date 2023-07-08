@@ -724,12 +724,19 @@ section, footer{
 	
 }
 
+.page-cards section .pagination a{
+	
+	color: white;	
+	
+}
 
 .page-cards section a{
 	
 	color: black;	
 	
 }
+
+
 
 .page-cards .card div{
 	

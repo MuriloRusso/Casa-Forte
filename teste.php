@@ -5,7 +5,8 @@
     // Use o namespace completo, incluindo o namespace pai e a classe
     // echo integrationAsaasNameSpace\integrationAsaas::cadastrarCliente('Gustavo', '44763783823');
     // echo integrationAsaasNameSpace\integrationAsaas::verificarUser('Gustavo', '44763783823');
-   integrationAsaasNameSpace\integrationAsaas::verificarUser('Gustavo', '12121212122');
+//    integrationAsaasNameSpace\integrationAsaas::verificarUser('Gustavo', '12121212122');
+        integrationAsaasNameSpace\integrationAsaas::createPayment('cus_000058667545');
 
     // if($custumer_id != null){
 

@@ -178,9 +178,90 @@ namespace integrationAsaasNameSpace{
            
         }
 
-        public static function createPayment(){
+        public static function createPayment($custumer_id){
 
-            // https://www.asaas.com/api/v3/payments
+            
+            print_r('Função realizar pagamento iniciada');
+
+
+            $urlProduction = "https://www.asaas.com/";
+
+
+            $postData = http_build_query(
+                
+                array(
+                    'customer' => $custumer_id,
+                    'billingType' => 'BOLETO',
+                    "dueDate"=> "2023-07-10",
+                    "value"=> 150,
+                    "description"=> "Pedido 056984",
+                    "externalReference"=> "056984",
+                    "discount"=> array(
+                        "value"=> 0,
+                        "dueDateLimitDays"=> 0
+                    ),
+                      "fine"=> array(
+                        "value"=> 1
+                      ),
+                      "interest"=> array(
+                        "value"=> 2
+                      ),
+                      "postalService"=> false
+                ));
+
+
+            $ch = curl_init();        
+            curl_setopt($ch, CURLOPT_URL, $urlProduction."/api/v3/payments");
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+            curl_setopt($ch, CURLOPT_HEADER, FALSE);
+
+
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
+            
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+                'access_token: $aact_YTU5YTE0M2M2N2I4MTliNzk0YTI5N2U5MzdjNWZmNDQ6OjAwMDAwMDAwMDAwMDAzMjM0NDE6OiRhYWNoXzk2NDQxNTU3LTQzNDAtNGUzYS1hOTU0LTM1ZjZiODEwMzhlNQ=='
+            ));
+            
+            $response = curl_exec($ch);
+            curl_close($ch);
+            
+            $response = json_decode($response);
+
+            print_r($response);
+
+
+
+            header("Location: " . $response->bankSlipUrl);
+
+
+            //  print_r($response->errors[0]->description);
+
+/*
+
+            if($response->errors[0]->description != 'O CPF ou CNPJ informado é inválido.'){
+
+                include('connect.php');
+
+                $sql_code = "UPDATE usuario SET custumer_id='{$response->id}' WHERE cpfcnpj=".$cpfcnpj;
+    
+                $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
+                
+
+            }
+
+            else{
+
+                print_r('<br>O CPF ou CNPJ informado é inválido.');
+
+            }
+*/
+
+            
+		
+
+            print_r($response->id);                
+
+                //return "Hello from my static function!";          
 
         }
 

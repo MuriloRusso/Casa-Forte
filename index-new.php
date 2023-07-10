@@ -438,19 +438,243 @@
 			?>
 			
 			
-			<section class="flex justify-content-center">
+			<section>
 
                 
 				<div class="banner full-width">
 
 					<img src="img/home/banner.jpg" alt="Banner" style="max-width: 100%;">
 
-				</div>
-				
+				</div>			
 			
 			
 			</section>
 
+			<section class="text-center boxed">
+
+				<div class="section-text">
+
+					<h2>Quem Somos...</h2>
+
+					<p>Nossa Empresa, foi criada e desenvolvida especificamente para garantir segurança e tranquilidade as familias, bem como as Empresas.
+
+	
+
+						Nossa equipe e formada por profissionais altamente qualificados, equipamentos de ultima geração e tecnologia de ponta.
+
+						
+
+						Desenvolvimento de projetos individualizado e especifico a necessidade de cada cliente.
+					</p>
+				
+				</div>
+				
+			</section>
+
+			<section class="text-center boxed">
+
+				<div class="">
+					
+					<h2>Serviços</h2>
+
+					<div class="flex flex-wrap">
+
+						<div class="col-33">
+
+							<div class="servicos">
+
+
+								<img src="img/home/icons/servicos/icon-1.jpg" alt="Icone" class="text-center">
+
+								<p>Câmeras com acesso em tempo real via celular, computador ou tablet.</p>
+
+								
+							</div>
+
+						</div>
+
+						<div class="col-33">
+
+							<div class="servicos">
+
+								<img src="img/home/icons/servicos/icon-2.jpg" alt="Icone" class="text-center">
+
+								<p>Sistema de identificação facial</p>
+
+
+							</div>
+
+						</div>
+
+						<div class="col-33">
+
+							<div class="servicos">
+
+								<img src="img/home/icons/servicos/icon-1.jpg" alt="Icone" class="text-center">
+
+								<p>Sensor de movimento e sensor de calor</p>
+
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</section>
+
+			<section class="">
+
+				<div class="boxed flex flex-wrap">
+
+					<div class="col-50">
+
+						<div class="section-text">
+
+						<h2>Instaladores</h2>
+
+							<p>Contamos com uma equipe de instaladores altamente qualificados, treinados pelas próprias fabricantes dos equipamentos.
+
+
+							</p>
+
+
+						</div>
+
+					</div>
+
+					<div class="col-50">
+
+						<img src="img/home/instaladores.jpg" alt="">	
+
+					</div>
+
+				</div>
+
+			</section>
+
+
+			<section class="flex flex-wrap boxed">
+
+				<div class="boxed flex flex-wrap">
+
+
+					<div class="col-50">
+
+						<img src="img/home/reconhecimento-facial.jpg" alt="">	
+
+					</div>
+
+					<div class="col-50">
+
+						<div class="section-text">
+
+						<h2>RECONHECIMENTO FACIAL</h2>
+
+							<p>Sistema e equipamentos com sensores de reconhecimento facial, através de cadastros dos moradores dos condominios, ou funcionários das Empresas,  ou ainda de imagens disponibilizadas nas redes sociais e cadastros oficiais.
+
+
+							</p>
+
+
+						</div>
+
+					</div>	
+
+				</div>
+
+				
+
+			</section>
+
+			<section class="flex flex-wrap boxed">
+
+				<h2 class="text-center full-width">Biometria</h2>
+
+				<div class="col-33">
+
+					<img src="img/home/instaladores.jpg" alt="">	
+
+
+				</div>
+
+				<div class="col-33">
+
+					<div class="section-text">
+
+						<h3>CONTROLADORES DE ACESSO RESIDENCIAL  E DE PORTARIA PREDIAL</h3>
+						<p>Sistema de controle de acesso de moradores e de funcionários de Empresas, através da biometria digital, facial ou de leitura de retina.</p>
+
+					</div>
+
+				</div>
+
+
+				<div class="col-33">
+
+					<img src="img/home/instaladores.jpg" alt="">	
+
+
+				</div>
+
+
+			</section>
+
+			<section class="flex flex-wrap boxed">
+
+				<div class="col-50">
+
+					<div class="section-text">
+
+					<h2> SISTEMA DE MONITORAMENTO E ALARME</h2>
+
+						<p>Nosso Sistema de Alarme Residencial possui equipamentos de última geração que garantem o monitoramento 24 horas por dia da sua residência. Com o Monitoramento Residencial  você pode contar com a melhor proteção para seu lar, da sua família e de seu patrimônio
+
+
+
+						</p>
+
+
+					</div>
+
+				</div>
+
+				<div class="col-50">
+
+					<img src="img/home/instaladores.jpg" alt="">	
+
+				</div>
+
+			</section>
+
+
+			<section class="flex flex-wrap boxed">
+
+				<div class="col-50">
+
+					<img src="img/home/instaladores.jpg" alt="">	
+
+				</div>
+
+				<div class="col-50">
+
+					<div class="section-text">
+
+					<!-- <h2>RECONHECIMENTO FACIAL</h2> -->
+
+						<p>Nossos projetos são personalizados e atendem casas, apartamentos, sobrados etc. O monitoramento e alarme possibilita através de sensores de presença, sensores perimetrais, câmeras de segurança e botões de pânico garantindo a detecção de intrusos, que permite uma atuação de maneira eficaz em qualquer situação de emergência.
+						</p>
+
+
+					</div>
+
+				</div>
+
+				
+
+			</section>
 
 
 			<?php

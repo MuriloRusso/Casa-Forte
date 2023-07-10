@@ -427,6 +427,24 @@ a.btn-delete{
 	
 }
 
+.servicos{
+
+	padding: 20px 10px;
+
+}
+
+.servicos img{
+
+	max-width: 100%;
+
+
+}
+
+img{
+
+	max-width: 100%;
+
+}
 
 
 /* classes display flex*/
@@ -508,6 +526,41 @@ a.btn-delete{
 .full-width{
 
     width: 100%;
+
+}
+
+.section-text{
+
+	padding: 50px 0;
+
+}
+
+
+.section-text h2{
+
+	font-size: 3rem;
+
+}
+
+
+.section-text p{
+
+	line-height: 1.5;
+	font-size: 2rem;
+
+}
+
+.section-text p, .section-text h2, .section-text h3{
+
+	padding: 2%;
+
+}
+
+.boxed{
+
+	max-width: 1200px;
+	padding: 50px 2%;
+	margin: auto;
 
 }
 

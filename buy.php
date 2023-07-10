@@ -43,9 +43,23 @@
 
             <form action="">
 
+                <h1>Resumo da Compra</h1>
+
+                <nav class="menu-compra">
+
+                    <ul>
+
+                        <li>01. Resumo</li>
+                        <li>02. Endereço</li>
+                        <!-- <li>03. Frete</li> -->
+                        <li>04. Pagamento</li>
+
+
+                    </ul>
+
+                </nav>
+
                 <?php 
-
-
             
                 if(isset($_POST['id_produto'])){
 
@@ -120,7 +134,7 @@
 
                     print '
                         
-                        <div class="card text-center">           
+                        <div class="card text-center item-compra">           
                         
                         <h2>Endereços:</h2>
 
@@ -229,7 +243,7 @@
 
                     print '
                         
-                        <div class="card text-center">           
+                        <div class="card text-center item-compra">           
                         
                         <h2>Pagamento:</h2>
 

@@ -529,11 +529,12 @@ img{
 
 }
 
-.section-text{
+/* .section-text{
 
 	padding: 50px 0;
 
 }
+
 
 
 .section-text h2{
@@ -554,7 +555,212 @@ img{
 
 	padding: 2%;
 
+} */
+
+#container-icons p, #container-icons h2{
+
+
+	font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.3em;
 }
+
+#container-icons p, .font-secondary {
+
+	color: #222429;
+
+}
+
+h2.font-secondary, h2.font-primary {
+
+	font-size: 4rem;
+
+}
+
+
+
+#container-icons h2, .font-primary {
+
+	color: #6571f2;
+
+}
+
+#container-icons{
+
+	background-color: white;
+	border-end-start-radius: 4px;
+	max-width: 1140px;
+	margin: auto;
+    display: flex;
+	/* flex-wrap: wrap; */
+	box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.09);
+
+}
+
+
+#container-icons .item{
+
+	padding: 40px;
+	border-right: 1px solid #DDDDDD8C;
+
+}
+
+#container-icons .item:last-child{
+
+	border: none;
+
+}
+
+
+#bg-1{
+
+	background-image: url('img/home/sections/externa.jpg');
+
+}
+
+
+#bg-2{
+
+	background-image: url('img/home/sections/interna.jpg');
+
+}
+
+.bg{
+
+	padding: 200px 0;
+	background-size: auto 100%;
+	background-position: center;
+	margin: 20px;
+	transition: ease 1s;
+
+}
+
+.bg:hover{
+
+	background-size: 120% 120%;
+	filter: brightness(0.5);
+
+}
+
+
+.coment{
+
+	box-shadow: 0px 0px 35px 0px #00000014;
+    background: #fff;
+    padding: 32px 40px 23px;
+    border-radius: 5px;
+    position: relative;
+    bottom: 65px;
+    left: 50px;
+    right: 50px;
+    transition: .5s;
+    z-index: 2;
+    text-align: left;
+    width: inherit;
+
+}
+
+.card-model-2{
+
+	margin:20px;
+	background-color: #6571f2;
+	padding: 65px 20px;
+
+}
+
+
+.card-model-3{
+
+	margin:20px;
+	/* padding: 250px 0; */
+	height: 500px;
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+	background-position: center;
+	transition: ease 1s;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	transition: ease 1s;
+}
+
+.card-model-3:hover > .content{
+
+	width: 100%;
+	height: 100%;
+	font-size: 1rem !important;
+	transition: ease 1s;
+
+}
+
+.card-model-3 .content{
+
+	width: 0;
+	height: 0;
+	font-size: 0 !important;
+	background-color: #6571f2;
+	opacity: 0.8;
+	transition: ease 1s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    /* padding: 0 5%; */
+    color: white;
+    background-color: #6571f2;
+
+
+}
+
+
+.card-model-3 .content h3, .card-model-3 .content p{
+
+	font-size: 0 !important;
+	transition: ease 2s;
+
+}
+
+.card-model-3:hover > .content h3, .card-model-3:hover > .content p{
+
+	font-size: 2rem !important;
+
+}
+
+
+.card-model-3.bg-1 {
+
+	background-image: url('img/home/reconhecimento-facial.jpg');
+}
+
+.card-model-3.bg-2 {
+
+	background-image: url('img/home/biometria.jpg');
+}
+
+.card-model-3.bg-3 {
+
+	background-image: url('img/home/alarme.jpg');
+}
+
+
+
+.card-model-2:hover{
+
+	background-color: #5460e1;
+
+
+}
+
+.card-model-2 p, .card-model-2 h2{
+
+	color: white !important;
+
+}
+
+
 
 .boxed{
 
@@ -1435,13 +1641,43 @@ form input[type="submit"]{
 
 
 
+@media (max-width: 900px) and (orientation: landscape){
 
+	.card-model-3{
+
+		background-size: 100% !important;
+
+	}
+
+
+}
 
 
 
 
 @media (max-width: 900px){
+
+	#container-icons{
+
+		flex-direction: column;
+		margin: 100px 0;
+
+	}
+
+
+	.coment {
+
+		left: 0;
+		right: 0;
+		width: initial;
+	}
 	
+	#container-icons .item{
+
+		border-top: 1px solid #ccc;
+
+	}
+
 	.container-carrousel-scroll-itens{
 	
 		width: 250px;
@@ -1893,6 +2129,7 @@ footer{
     .col-100, .col-50, .col-33, .col-70, .col-75, .col-40, .col-60, .col-25{
 
 		width: 100%;
+		max-width: -webkit-fill-available;
 
 	}
 

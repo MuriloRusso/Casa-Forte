@@ -856,7 +856,7 @@ section, footer{
 }
 
 
-.card{
+.card, .post{
 
     background-color: white !important;
     padding: 20px;
@@ -868,6 +868,46 @@ section, footer{
     box-shadow: rgba(0, 0, 0, 0.14) 0px 6px 10px;
 }
 
+
+
+.post{
+
+    width: 700px;
+
+}
+
+
+/* .post img{
+
+	max-width: 50%;
+
+} */
+
+.post p, .post h3{
+
+	margin: 0 2%;
+
+}
+
+.post h3{
+
+	color: #6571f2;
+
+}
+.post p{
+
+	color: #222429;
+	overflow: hidden;
+	height: 100px;
+
+}
+
+.post .date{
+
+	height: auto;
+	margin-top: 10px;
+
+}
 
 .card p a{
 	
@@ -2090,7 +2130,7 @@ footer{
 
     /*Cards*/
 
-    .card{
+    .card, .post{
 
         width: 220px;
         margin: 5xp 5px 20px 5px;

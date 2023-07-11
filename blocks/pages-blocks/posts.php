@@ -61,44 +61,56 @@
 			//$dat = explode($row->data_post, '-' , 999);
 
             print '
-            <a href="post.php?id='.$row->id.'">
 
-                <div class="card">
+            
+                <div class="post flex flex-wrap">
 
-                    <img src="img/posts/'.$row->arquivo.''.$row->extensao.'" alt="imagem do post">
+                    <img src="img/posts/'.$row->arquivo.''.$row->extensao.'" alt="imagem do post" class="col-50">
 
-                    <h3>'.$row->titulo.'</h3>
+						<div class="col-50">
+
+							<h3>'.$row->titulo.'</h3>
+
+							<p class="">'.$row->texto.'</p>
+
+							
+							<p class="date">Data da Publicação: <span>'.$row->data_post.'</span></p>
+
+
+							<a href="post.php?id='.$row->id.'" class="btn btn-primary">Continuar Lendo</a>
+
+							
+							
+						</div>
+
+						';
+
+						if($_SESSION['papel'] == 'admin'){
+								
+							print '								
+								
+								<div class="flex flex-wrap justify-content-space-betwen actions full-width">
+								
+									<a href="delete-post.php?id='.$row->id.'" class="btn btn-delete" title="Clique nesse botão para excluir o post">Excluir</a>
+								
+									<a href="new-post.php?id='.$row->id.'" class="btn btn-primary" title="Clique nesse botão para editar o post">Editar</a>
+								
+								
+								</div>
+							
+							';
+							
+							
+						}
+
+					print '	
 					
-					
-					<p class="date">Data da Publicação: <span>'.$row->data_post.'</span></p>
-					
-					';
-			
-			
-					if($_SESSION['papel'] == 'admin'){
-						
-						print '
-						
-						
-						<div class="flex flex-wrap justify-content-space-betwen actions">
-						
-							<a href="delete-post.php?id='.$row->id.'" class="btn btn-delete" title="Clique nesse botão para excluir o post">Excluir</a>
-						
-							<a href="new-post.php?id='.$row->id.'" class="btn btn-primary" title="Clique nesse botão para editar o post">Editar</a>
-						
-						
-						</div>';
-						
-						
-					}
-			
-			
-					print'
 
-                
                 </div>
                 
-            </a>';
+			
+			
+			';
             
            
             

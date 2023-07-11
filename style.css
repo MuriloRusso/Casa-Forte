@@ -111,8 +111,17 @@ header nav ul li a{
     padding: 10px 20px;
     color: gray;
 	font-size: 1.7rem;
+	/* transition: ease 0.5s; */
+}
+
+header nav ul li a:hover{
+
+	border-bottom: 2px solid #6571f2 !important;
+    font-weight: 600;
+    color: #6571f2 !important;
 
 }
+
 
 header nav ul li:hover > .sub-menu-category{
 
@@ -596,7 +605,7 @@ h2.font-secondary, h2.font-primary {
 
 
 
-#container-icons h2, .font-primary {
+#container-icons h2, .font-primary, h2, h1 {
 
 	color: #6571f2;
 
@@ -2078,7 +2087,8 @@ footer{
 	
 	padding: 30px 0;
 	color: #ADBBDF;
-	background-color: #ededfb;
+	/* background-color: #ededfb; */
+	background-color: #6571f2;
 	
 }
 

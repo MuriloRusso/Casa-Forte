@@ -488,7 +488,7 @@
 					
 				</section>
 
-				<section>
+				<section class="margin-0">
 
 					<div class="text-center boxed">
 

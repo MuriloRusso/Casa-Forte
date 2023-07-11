@@ -195,6 +195,12 @@ header .sub-menu a.btn{
 
 
 }
+
+#page-buy .card{
+
+	border: 1px solid #ddd;
+
+}
 /*table*/
 
 table{
@@ -949,6 +955,10 @@ section, footer{
 .post{
 
     width: 700px;
+	box-shadow: none !important;
+	background-color: transparent !important;
+	border-bottom: 1px solid #ddd !important;
+	border-radius: 0 !important;
 
 }
 
@@ -2231,7 +2241,8 @@ footer{
 
     .card, .post{
 
-        width: 220px;
+        /* width: 220px; */
+		width: auto;
         margin: 5xp 5px 20px 5px;
 
     }

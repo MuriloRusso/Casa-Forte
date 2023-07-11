@@ -1719,6 +1719,21 @@ form input[type="submit"]{
 
 @media (max-width: 900px){
 
+
+	.post a {
+
+		margin-top: 10px;
+		width: auto !important;
+
+
+	}
+	
+	.post div{
+
+		margin-top: 10px;
+
+	}
+
 	#container-icons{
 
 		flex-direction: column;

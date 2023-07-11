@@ -28,7 +28,7 @@
         ?>
 
 
-        <div class="full-width flex flex-wrap">
+        <div class="full-width">
 
             <?php 
 
@@ -438,7 +438,9 @@
 			?>
 			
 
-				<section>
+				<section class="banner"></section>
+
+				<section class="up">
 					
 					<div id="container-icons">
 
@@ -512,7 +514,7 @@ Desenvolvimento de projetos individualizado e especifico a necessidade de cada c
 
 							<div class="coment">
 
-								<p class="font-primay">SECURITY PROFESSIONAL </p>
+								<p class="font-primary">SECURITY PROFESSIONAL </p>
 								<p class="font-secondary">Experts and Staff</p>
 
 							</div>
@@ -526,7 +528,7 @@ Desenvolvimento de projetos individualizado e especifico a necessidade de cada c
 
 							<div class="coment">
 
-								<p class="font-primay">EXPLORE THE TECHNIQUE</p>
+								<p class="font-primary">EXPLORE THE TECHNIQUE</p>
 								<p class="font-secondary">BODYGUARD SECURITY</p>
 
 							</div>
@@ -614,7 +616,7 @@ Desenvolvimento de projetos individualizado e especifico a necessidade de cada c
 		
 
 
-				<section class="flex justify-content-center carrousel-scroll">
+				<section class="flex justify-content-center carrousel-scroll margin-0">
 
 				
 					<div class="seta-carrousel left"><img src="img/carrousel/icons/circulo-de-flecha.png" class="espelhar" alt="<"></div>  
@@ -638,7 +640,7 @@ Desenvolvimento de projetos individualizado e especifico a necessidade de cada c
 				<script src="js/carrousel-scroll.js"></script>
 
 						
-				<section>
+				<section class="margin-0">
 						
 					<div class="text-center boxed">
 
@@ -712,6 +714,26 @@ Desenvolvimento de projetos individualizado e especifico a necessidade de cada c
 					</div>
 
 
+
+				</section>
+
+
+				<section>
+
+					<div class="boxed flex flex-wrap">
+
+						<div class="col-50">
+
+							<p>Nossos projetos são personalizados e atendem casas, apartamentos, sobrados etc. O monitoramento e alarme possibilita através de sensores de presença, sensores perimetrais, câmeras de segurança e botões de pânico garantindo a detecção de intrusos, que permite uma atuação de maneira eficaz em qualquer situação de emergência.</p>
+						</div>
+						<div class="col-50">
+
+							<img src="img/home/nossos-projetos.jpg" alt="">
+
+						</div>
+
+
+					</div>
 
 				</section>
 					

@@ -557,6 +557,22 @@ img{
 
 } */
 
+.banner{
+
+	background-image: url('img/home/banner.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin: 0 !important;
+	padding: 300px 0;
+
+}
+
+.up{
+
+	margin-top: -50px !important;
+
+}
+
 #container-icons p, #container-icons h2{
 
 
@@ -817,6 +833,12 @@ section, footer{
 
     margin: 125px 0 0 0;
     width: -webkit-fill-available;
+
+}
+
+.margin-0{
+
+	margin: 0 !important;
 
 }
 
@@ -1660,7 +1682,7 @@ form input[type="submit"]{
 	#container-icons{
 
 		flex-direction: column;
-		margin: 100px 0;
+		margin: 0 3%;
 
 	}
 

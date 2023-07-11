@@ -184,6 +184,13 @@
 						<input type="text" id="nome" name="nome" value="<?php echo $usuario['nome'] ?>" placeholder="Digite o seu nome aqui">
 
 					</div>
+
+					<div class="form-group">
+
+						<label for="cpf">CPF:</label>
+						<input type="text" id="cpf" name="cpf" value="<?php echo $usuario['cpfcnpj'] ?>" placeholder="Digite o seu CPF aqui">
+
+					</div>
 					
 
 					<div class="form-group">

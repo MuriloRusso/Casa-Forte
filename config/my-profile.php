@@ -10,7 +10,9 @@
 
 	$telefone = $mysqli->real_escape_string($_POST['telefone']);
 
-	$sql_code = "UPDATE usuario SET nome='{$nome}', data_nascimento='{$nascimento}', telefone='{$telefone}' WHERE id=".$id;
+	$cpf = $mysqli->real_escape_string($_POST['cpf']);
+
+	$sql_code = "UPDATE usuario SET nome='{$nome}', data_nascimento='{$nascimento}', telefone='{$telefone}', cpfcnpj='{$cpf}' WHERE id=".$id;
 
 	$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
 

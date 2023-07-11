@@ -55,6 +55,8 @@
 				$id;
 			
 				$nome;
+
+				$cpf;
 			
 				$email;
 			
@@ -77,8 +79,7 @@
 			
 				 if(isset($_GET['id'])){
 
-					 $id = $_GET['id'];
-					 
+					$id = $_GET['id'];					 
 
 					$sql_code = "SELECT * FROM usuario WHERE id='".$id."'";
 
@@ -89,6 +90,8 @@
 //					$id =  $user->id;
 			
 					$nome = $user->nome;
+
+					$cpf = $user->cpfcnpj;
 
 					$email = $user->email;
 
@@ -161,6 +164,8 @@
 
 									$nome = $mysqli->real_escape_string($_POST['nome-completo']);
 
+									$cpf = $mysqli->real_escape_string($_POST['cpf']);
+
 									$email = $mysqli->real_escape_string($_POST['email']);
 
 									$hash = $senha;
@@ -223,7 +228,7 @@
 																			
 										}
 
-										$sql_code = "INSERT INTO usuario (nome, email, senha, papel, genero, data_nascimento, telefone, avatar, extensao) VALUES ('{$nome}', '{$email}', '{$hash}', '{$papel}', '{$genero}',  '{$nascimento}', '{$telefone}', '{$novoNomeDoArquivo}', '{$extensao}')";
+										$sql_code = "INSERT INTO usuario (nome, cpfcnpj, email, senha, papel, genero, data_nascimento, telefone, avatar, extensao) VALUES ('{$nome}', '{$cpf}', '{$email}', '{$hash}', '{$papel}', '{$genero}',  '{$nascimento}', '{$telefone}', '{$novoNomeDoArquivo}', '{$extensao}')";
 
 										$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
 
@@ -345,6 +350,8 @@
 									
 									$nome = $mysqli->real_escape_string($_POST['nome-completo']);
 
+									$cpf = $mysqli->real_escape_string($_POST['cpf']);
+
 									$email = $mysqli->real_escape_string($_POST['email']);
 
 									// $senha = $mysqli->real_escape_string($_POST['senha']);
@@ -389,7 +396,7 @@
 
 		//									$id = $mysqli->real_escape_string($_POST['id']);
 
-										$sql_code = "UPDATE usuario SET nome='{$nome}', email='{$email}', senha='{$hash}', papel='{$papel}', genero='{$genero}', data_nascimento='{$nascimento}', telefone='{$telefone}' WHERE id=".$id;
+										$sql_code = "UPDATE usuario SET nome='{$nome}', cpfcnpj='{$cpf}', email='{$email}', senha='{$hash}', papel='{$papel}', genero='{$genero}', data_nascimento='{$nascimento}', telefone='{$telefone}' WHERE id=".$id;
 
 										$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
 
@@ -528,6 +535,13 @@
 
 						<label for="nome-completo">Nome Completo:</label>
 						<input type="text" id="nome-completo" name="nome-completo" value="<?php echo $nome; ?>" required placeholder="Digite o nome completo do usuário aqui">
+
+					</div>
+
+					<div class="form-group full-width">
+
+						<label for="cpf">CPF:</label>
+						<input type="text" id="cpf" name="cpf" value="<?php echo $cpf; ?>" required placeholder="Digite o CPF do usuário aqui">
 
 					</div>
 					

@@ -53,6 +53,9 @@
 					$email = $mysqli->real_escape_string($_POST['email']);
 
 					$senha = $mysqli->real_escape_string($_POST['password']);
+
+                    $cpfcnpj = $mysqli->real_escape_string($_POST['cpf']);
+
 					
 					$Confirmação = $mysqli->real_escape_string($_POST['confirm-password']);
 
@@ -110,7 +113,7 @@
 						
 						if(isset($_POST['email']) && isset($_POST['password']) && isset($_POST['confirm-password'])){
 
-						$sql_code = "INSERT INTO usuario (nome, email, senha, papel) VALUES ('{$nome}', '{$email}', '{$senha}', '{$papel}')";
+						$sql_code = "INSERT INTO usuario (nome, email, senha, papel, cpfcnpj) VALUES ('{$nome}', '{$email}', '{$senha}', '{$papel}', '{$cpfcnpj}')";
 
 						$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
 						
@@ -210,6 +213,14 @@
                         <input type="text" id="nome" name="nome" value="<?php echo $_POST['nome'] ?>" required placeholder="Digite seu nome completo aqui">
 
                     </div>
+
+                    <div class="form-group">
+
+                        <label for="cpf">CPF:</label>
+                        <input type="text" id="cpf" name="cpf" value="<?php echo $_POST['cpf'] ?>" required placeholder="Digite seu e-CPF aqui">
+
+                    </div>
+
 
                     <div class="form-group">
 

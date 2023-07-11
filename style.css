@@ -168,6 +168,73 @@ header .sub-menu a.btn{
 
 
 
+
+/*menu compra*/
+
+
+.menu-compra ul{
+
+	display: flex;
+	list-style: none;
+	margin: 10px 0;
+
+
+}
+.menu-compra ul li{
+
+	padding: 10px 30px;
+	border: 1px solid #ddd;
+	cursor: pointer;
+
+}
+
+.menu-compra ul li.active{
+
+	color: white !important;
+	background-color: #6571f2;
+
+
+}
+/*table*/
+
+table{
+
+	display: contents;
+	
+}
+
+table td{
+
+	border: 1px solid #ddd;
+    padding: 10px;
+
+}
+
+table img{
+
+	width: 200px;
+
+}
+
+.content{
+
+	display: none;
+
+}
+
+.content.opened{
+
+	display: block;
+
+}
+
+table.content.opened{
+
+	display: contents;
+
+}
+
+
 /*left menu*/
 
 #left-menu{

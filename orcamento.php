@@ -44,7 +44,7 @@
 
                 
 
-				<form method="post" action=""  enctype="multipart/form-data">
+				<form method="post" action=""  enctype="multipart/form-data" class="form-model">
 
                 <?php              
                 
@@ -161,7 +161,7 @@
                 ?>
 
 
-					<div class="form-group">
+					<div class="form-group full-width">
 						<h2>Orçamento</h2>
 					</div>
 
@@ -181,14 +181,14 @@
 
 					</div>
 
-                    <div class="form-group">
+                        <div class="form-group full-width">
 
-                    <label for="cep">Cep:</label>
-                    <input type="text" id="cep" name="cep" required onkeypress="$(this).mask('00000-000')"value="" required placeholder="99999-999">
-                    <a href="#" class=" btn btn-primary" onclick="buscarEndereco()">Buscar Endereço</a>
+                        <label for="cep">Cep:</label>
+                        <input type="text" id="cep" name="cep" required onkeypress="$(this).mask('00000-000')"value="" required placeholder="99999-999">
+                        <a href="#" class=" btn btn-primary actions" onclick="buscarEndereco()">Buscar Endereço</a>
 
 
-                    </div>
+                     </div>
 
 
                     <div class="form-group">
@@ -235,7 +235,7 @@
 
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group full-width">
 
 						<label for="servico">Tipo de Serviço:</label>
                         <select name="servico" id="servico">
@@ -247,7 +247,7 @@
 
 
 
-					<div class="form-submit-group flex flex-wrap justify-content-space-betwen">
+					<div class="form-submit-group flex flex-wrap justify-content-space-betwen full-width">
 
 						<input type="submit" value="Enviar" class="btn btn-primary">
 

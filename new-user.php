@@ -72,6 +72,9 @@
 
 					$emailUtilizado = false;
 
+                    $cpfUtilizado = false;
+
+
 					if($quantidade > 0) {
 
 						while($row = $sql_query->fetch_object()){
@@ -79,6 +82,12 @@
 							if($row->email == $_POST['email']){
 
 								$emailUtilizado = true;
+
+							}	
+
+                            if($row->cpfcnpj == $_POST['cpf']){
+
+								$cpfUtilizado = true;
 
 							}	
 
@@ -94,6 +103,17 @@
 
 					}
 					
+
+					else if($cpfUtilizado === true && $_POST['cpf'] != ''){				
+
+						print '<p class="btn-delete btn">CPF já utilizado</p>';
+
+//							header("Location: new-user.php");
+
+					}
+
+
+
 					else if($senha != $Confirmação){				
 
 						print '<p class="btn-delete btn">Senha e confirmação não conferem</p>';

@@ -152,6 +152,8 @@
 
 						$emailUtilizado = false;
 
+						$cpfUtilizado = false;
+
 //							$user;
 
 						if(!isset($_POST['id'])){
@@ -193,6 +195,12 @@
 
 											}	
 
+											if($user->cpfcnpj == $_POST['cpf']){
+
+												$cpfUtilizado = true;
+				
+											}	
+
 										}
 
 									}
@@ -200,6 +208,14 @@
 									if($emailUtilizado === true){		 
 
 										print '<p class="btn-delete btn">E-mail já utilizado.</p>';
+
+										// header("Location: new-user-admin.php");
+
+									}
+
+									else if($cpfUtilizado === true){		 
+
+										print '<p class="btn-delete btn">CPF já utilizado.</p>';
 
 										// header("Location: new-user-admin.php");
 
@@ -380,6 +396,12 @@
 
 											}	
 
+											if($user->cpfcnpj == $_POST['cpf'] && $user->id != $_POST['id']){
+
+												$cpfUtilizado = true;
+				
+											}	
+
 										}
 
 									}
@@ -387,6 +409,14 @@
 									if($emailUtilizado === true){		
 
 										print '<p class="btn-delete btn">E-mail já utilizado.</p>';
+
+										// header("Location: new-user-admin.php");
+
+									}
+
+									else if($cpfUtilizado === true){		
+
+										print '<p class="btn-delete btn">CPF já utilizado.</p>';
 
 										// header("Location: new-user-admin.php");
 

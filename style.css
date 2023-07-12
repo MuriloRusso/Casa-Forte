@@ -2365,6 +2365,45 @@ footer{
 
 @media (min-width: 1900px){
 
+	.banner{
+
+		padding: 400px 0;
+
+	}
+
+	.boxed{
+
+		max-width: 1500px;
+
+	}
+
+
+	.card-model-2 p, #container-icons p, #container-icons h2, h3{
+
+		font-size: 3rem;
+
+	}
+
+	.card-model-3{
+
+		height: 900px;
+
+	}
+	.card-model-3:hover > .content h3{
+
+		font-size: 4rem !important;
+
+	}
+	
+	
+
+
+	#page-index p{
+
+		font-size: 2.5rem;
+
+	}
+
 	.card{
 
 		width: 600px;
@@ -2485,7 +2524,7 @@ footer{
 	
 	h2, h1{
 		
-		font-size: 6rem;
+		font-size: 4rem;
 		
 	}
 	

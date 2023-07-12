@@ -50,13 +50,23 @@
 						
 			<div class="col-25">
 				
-				<div class="card">
+				<div class="">
 				
 					<ul class="menu-perfil">
 					
 						<li>
 							
-							<a href="#" id="btn-dates" title="Clique aqui ver seus dados">Meus Dados</a>
+							<a href="#" id="btn-dates" title="Clique aqui ver seus dados">
+							
+							<div class="icon">
+								
+								<img src="img/my-profile/user.png">
+							
+							
+							</div>
+							
+							
+							Meus Dados</a>
 							
 						</li>
 						
@@ -68,19 +78,49 @@
 
 							<li>
 								
-								<a href="#" id="btn-adress" title="Clique aqui para ver seus endereços">Endereços</a>
+								<a href="#" id="btn-adress" title="Clique aqui para ver seus endereços">
+									
+								<div class="icon">
+									
+									<img src="img/my-profile/address.png">
+								
+								
+								</div>
+									
+								Endereços</a>
 								
 							</li>
 							
 							<li>
 								
-								<a href="#" id="btn-cards" title="Clique aqui para ver seus cartões">Cartões</a>
+								<a href="#" id="btn-cards" title="Clique aqui para ver seus cartões">
+									
+								<div class="icon">
+								
+									<img src="img/my-profile/cards.png">
+								
+								
+								</div>
+								
+								
+								Cartões</a>
 								
 							</li>
 							
 							<li>
 								
-								<a href="meus-pedidos.php" title="Clique aqui para ver seus pedidos">Meus Pedidos</a>
+								<a href="meus-pedidos.php" title="Clique aqui para ver seus pedidos">
+									
+								<div class="icon">
+								
+									<img src="img/my-profile/pedidos.png">
+
+								
+								
+								</div>
+								
+								
+								Meus Pedidos</a>
 								
 							</li>
 
@@ -556,7 +596,7 @@
 				
 				let cards = document.querySelectorAll('section .card');
 				
-				for(let cont = 1; cont < cards.length; cont++){
+				for(let cont = 0; cont < cards.length; cont++){
 					
 					cards[cont].style.display = 'none';
 					

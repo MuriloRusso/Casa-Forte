@@ -548,6 +548,14 @@ img{
 
 }
 
+.text-pad{
+
+	padding-right: 2%;
+	padding-bottom: 10px;
+
+
+}
+
 .align-items-center{
 
     align-items: center;
@@ -736,7 +744,7 @@ h2.font-secondary, h2.font-primary {
 
 .bg:hover{
 
-	background-size: 120% 120%;
+	background-size: auto 120%;
 	filter: brightness(0.5);
 
 }
@@ -818,7 +826,7 @@ h2.font-secondary, h2.font-primary {
 
 	font-size: 0 !important;
 	transition: ease 2s;
-
+	margin: 0 10px;
 }
 
 .card-model-3:hover > .content h3, .card-model-3:hover > .content p{
@@ -1812,6 +1820,12 @@ form input[type="submit"]{
 
 @media (max-width: 900px){
 
+/* 
+	.bg:hover{
+
+		background-size: auto 120%;
+
+	} */
 
 	.post a {
 

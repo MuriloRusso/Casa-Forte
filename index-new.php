@@ -722,10 +722,19 @@ Desenvolvimento de projetos individualizado e especifico a necessidade de cada c
 
 					<div class="boxed flex flex-wrap">
 
-						<div class="col-50">
+						<div class="col-50 flex align-items-center">
 
-							<p>Nossos projetos são personalizados e atendem casas, apartamentos, sobrados etc. O monitoramento e alarme possibilita através de sensores de presença, sensores perimetrais, câmeras de segurança e botões de pânico garantindo a detecção de intrusos, que permite uma atuação de maneira eficaz em qualquer situação de emergência.</p>
+							<div class="text-pad">
+								<h2 class="font-primary">Nossos projetos</h2>
+								<h3 class="font-secondary">Projetos personalizados que e atendem casas, apartamentos, sobrados etc...</h3>
+
+								<p>Nossos projetos são personalizados e atendem casas, apartamentos, sobrados etc. O monitoramento e alarme possibilita através de sensores de presença, sensores perimetrais, câmeras de segurança e botões de pânico garantindo a detecção de intrusos, que permite uma atuação de maneira eficaz em qualquer situação de emergência.</p>
+
+							</div>	
+					
 						</div>
+
+
 						<div class="col-50">
 
 							<img src="img/home/nossos-projetos.jpg" alt="">

@@ -43,6 +43,22 @@
 
             <form action="">
 
+                <h1>Resumo da Compra</h1>
+
+                <nav class="menu-compra">
+
+                    <ul>
+
+                        <li class="active">01. Resumo</li>
+                        <li>02. Endereço</li>
+                        <!-- <li>03. Frete</li> -->
+                        <li>04. Pagamento</li>
+
+
+                    </ul>
+
+                </nav>
+
                 <?php 
 
 
@@ -50,6 +66,15 @@
                 if(isset($_POST['quantidade-itens'])){
 
                     $quantidadeProdutos = intval($_POST['quantidade-itens']);
+
+                    print ' <table border="1" class="content opened">
+                                <tr>
+                                    <td>Poduto</td>
+                                    <td>Descrição</td>
+                                    <td>Preço Unitário</td>
+                                    <td>Quantidade</td>
+                                    <td>Total</td>
+                                </tr>';
 
                     for($contP = 1; $contP < $quantidadeProdutos; $contP++){
 
@@ -61,52 +86,27 @@
 
                         $produto = $sql_query->fetch_object();  
 
-                        print '<div class="card text-center">                                   
-                                    
-                            <h2>Produto: '.$produto->nome.'</h2>
+                        print 
 
-                   <!--         <div class="full-width">
+                        '                        
+                            <tr>
 
-                                <img src="img/products/'.$produto->arquivo.''.$produto->extensao.'">
-                                
-                            </div>
-                                                        
-                            <p class="actions"><strong>Descrição:</strong> '.$produto->descricao.'</p>
--->
-                            <a class="btn btn-primary" href="product.php?id='.$produto->id.'">Ver Produto</a>
+                                <td><img src="img/products/'.$produto->arquivo.''.$produto->extensao.'"></td>
+                                <td>'.$produto->nome.'</td>
+                                <td>'.$produto->preco.'</td>
+                                <td>
+                                    <input type="number" min="1" name="quantidade" id="quantidade" placeholder="" value="'.$_POST['quantidade'.$contP].'">
+                                </td>
+                                <td>'.$produto->preco * $_POST['quantidade'.$contP].'</td>
 
-                            <div class="form-group">	
-
-                                <label>Preço Unitário:</label>
-
-                                <h2>R$: '.$produto->preco .'</h2>
-
-
-
-                                <input type="hidden" readonly name="preco" id="preco" value="'.$produto->preco .'">
-
-
-                            </div>
+                            </tr>                            
                             
-                            <h2>Detalhes da Compra:</h2>
+                        ';
 
-
-                            <div class="form-group">	
-
-                                <label>Quantidade:</label>
-
-
-                                <input type="number" min="1" name="quantidade" id="quantidade" placeholder="" value="'.$_POST['quantidade'.$contP].'">
-
-
-                            </div>
-
-
-                            
-                        
-                        </div>';
 
                     }
+
+                    print '</table>';
 
                     $sql_code = "SELECT * FROM usuario WHERE id=".$_SESSION['id'];
         
@@ -120,7 +120,7 @@
 
                     print '
                         
-                        <div class="card text-center">           
+                        <div class="card text-center content">           
                         
                         <h2>Endereços:</h2>
 
@@ -229,7 +229,7 @@
 
                     print '
                         
-                        <div class="card text-center">           
+                        <div class="card text-center content">           
                         
                         <h2>Pagamento:</h2>
 
@@ -488,6 +488,34 @@
                 console.log("Erro ao buscar o endereço:", error);
             });
         }
+        </script>
+
+        <script>
+
+            let steps = document.querySelectorAll('.menu-compra ul li');
+
+            let content = document.querySelectorAll('.content');
+
+
+            for(let cont in steps){
+
+                steps[cont].onclick = () => {
+
+                    document.querySelector('.opened').classList.remove('opened');
+
+                    document.querySelector('.active').classList.remove('active');
+
+                    steps[cont].classList.add('active');
+
+                    content[cont].classList.add('opened');
+
+
+
+                }
+
+
+            }
+
         </script>
 
 

@@ -237,7 +237,7 @@
                     <div class="form-group">
 
                         <label for="cpf">CPF:</label>
-                        <input type="text" id="cpf" name="cpf" value="<?php echo $_POST['cpf'] ?>" required placeholder="Digite seu e-CPF aqui">
+                        <input type="text" id="cpf" name="cpf" value="<?php echo $_POST['cpf'] ?>" required placeholder="Digite seu e-CPF aqui" onkeypress="$(this).mask('000.000.000-00')">
 
                     </div>
 

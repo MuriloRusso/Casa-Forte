@@ -188,7 +188,7 @@
 					<div class="form-group">
 
 						<label for="cpf">CPF:</label>
-						<input type="text" id="cpf" name="cpf" value="<?php echo $usuario['cpfcnpj'] ?>" placeholder="Digite o seu CPF aqui">
+						<input type="text" id="cpf" name="cpf" value="<?php echo $usuario['cpfcnpj'] ?>" placeholder="Digite o seu CPF aqui" onkeypress="$(this).mask('000.000.000-00')">
 
 					</div>
 					

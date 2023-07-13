@@ -85,12 +85,7 @@
 					
 						<li class="flex card justify-content-space-betwen flex-wrap">
 
-							<div>
-							
-                             Orçamento: '.$row->id.'
-								
-							</div>
-
+				
 							<div class="date">
 
 								<span>
@@ -114,42 +109,39 @@
 							</div>	
 
                             <div>
-                                
-                                '.$row->logradouro.'
-                                
-                            </div>	
-
-                            <div>
-                                
-                                '.$row->numero.'
+                                    
+                                '.$row->servico.'
                                 
                             </div>	
 
                             <div>
-                                
-                                '.$row->bairro.'
-                                
-                            </div>	
 
+                                Endereço:
+                                
+                                '.$row->logradouro.', 
+                                
+                         
+                                
+                                '.$row->numero.', 
+                                
+                        
+                                '.$row->bairro.', 
+                                
+                        
+                                
+                                '.$row->cidade.', 
+                                
+                    
+                                
+                                '.$row->pais.',
 
-                            <div>
-                                
-                                '.$row->cidade.'
-                                
-                            </div>	
+                                '.$row->referencia.'
 
-                            <div>
-                                
-                                '.$row->pais.'
                                 
                             </div>	
 
                             
-                            <div>
-                                
-                                '.$row->servico.'
-                                
-                            </div>	
+                           
 							
 							
 							

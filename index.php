@@ -301,6 +301,94 @@
 
 					';
 
+					$sql_code = "SELECT * orcamentos LIMIT 5";
+	
+					$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
+					
+					print '<section class="text-center painel-orcamentos painel-adm">
+					
+					<h2 class="full-width text-center">Ultimos Orçamentos</h2>
+					
+					<div class="flex flex-wrap justify-content-center">';
+	
+						while($orcamento = $sql_query->fetch_object()){	
+
+							print '
+					
+							<li class="flex card justify-content-space-betwen flex-wrap">
+	
+					
+								<div class="date">
+	
+									<span>
+								
+										'.$orcamento->data_orcamento.'
+	
+									</span>
+									
+								</div>	
+	
+								<div>
+								
+									'.$orcamento->nome.'
+									
+								</div>	
+	
+								<div>
+								
+									'.$orcamento->telefone.'
+									
+								</div>	
+	
+								<div>
+										
+									'.$orcamento->servico.'
+									
+								</div>	
+	
+								<div>
+	
+									Endereço:
+									
+									'.$orcamento->logradouro.', 
+									
+									'.$orcamento->numero.', 
+							
+									'.$orcamento->bairro.', 						
+									
+									'.$orcamento->cidade.',					
+									
+									'.$orcamento->pais.',
+	
+									'.$orcamento->referencia.'	
+									
+								</div>									
+								
+							</li>
+	
+						';
+
+						}
+
+							print '
+
+						</div>	
+						
+					</section>';
+					
+					
+				
+
+
+
+
+
+
+
+
+
+
+
 
 					$sql_code = "SELECT ID_Cliente, COUNT(*) AS total_compras
 					FROM pedido

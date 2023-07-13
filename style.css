@@ -663,6 +663,8 @@ img{
 
 }
 
+
+
 .up{
 
 	margin-top: -50px !important;
@@ -960,8 +962,9 @@ section, footer{
     margin: 20px;
     line-height: 1.2;
     font-family: "Hind Madurai", sans-serif;
-    border-radius: 16px;
-    box-shadow: rgba(0, 0, 0, 0.14) 0px 6px 10px;
+    /* border-radius: 16px; */
+	border-radius: 5px;
+    /* box-shadow: rgba(0, 0, 0, 0.14) 0px 6px 10px; */
 }
 
 

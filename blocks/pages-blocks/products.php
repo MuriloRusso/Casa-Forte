@@ -63,11 +63,13 @@
 
 				<img src="img/products/'.$row->arquivo.''.$row->extensao.'" alt="imagem do produto">
 
+				<p class="parc">Em Até '.$row->NumeroParcelas.'X no cartão.<p/>
+
+
 				<h3>'.$row->nome.'</h3>
 
 				<p class="price">R$: '.$row->preco.'<p/>
 
-				<p class="parc">Em Até '.$row->NumeroParcelas.'X no cartão.<p/>
 					
 				<p class="desc">'.$row->descricao.'<p/>    
 				

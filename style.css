@@ -657,6 +657,12 @@ img{
 
 }
 
+#banner h2, #banner h1{
+
+	font-size: 4.5rem;
+
+}
+
 .up{
 
 	margin-top: -50px !important;

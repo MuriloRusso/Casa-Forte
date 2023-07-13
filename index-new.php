@@ -438,7 +438,17 @@
 			?>
 			
 
-				<section class="banner"></section>
+				<section class="banner flex align-items-center justify-content-center">
+
+					<div>
+
+						<h1>CASA FORTE PROJETOS E  SERVIÇOS DE SEGURANÇA</h1>
+
+						<h2>Segurança, Instalação e  Monitoramento de Câmeras e Alarmes</h2>
+
+					</div>
+
+				</section>
 
 				<section class="up">
 					

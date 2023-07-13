@@ -70,9 +70,11 @@
                         $referencia = $_POST['ponto-referencia'];
                         $servico = $_POST['servico'];
 
+                        $data = date('Y-m-d');
+                        $data_orcamento = date('Y-m-d', strtotime($data));
 
 
-						$sql_code = "INSERT INTO orcamentos (nome, telefone, cep, logradouro, numero, bairro, cidade, pais, referencia, servico) VALUES ('{$nome}', '{$telefone}', '{$cep}', '{$logradouro}', '{$numero}', '{$bairro}', '{$cidade}', '{$pais}', '{$referencia}', '{$servico}')";
+						$sql_code = "INSERT INTO orcamentos (nome, telefone, cep, logradouro, numero, bairro, cidade, pais, referencia, servico, data_orcamento) VALUES ('{$nome}', '{$telefone}', '{$cep}', '{$logradouro}', '{$numero}', '{$bairro}', '{$cidade}', '{$pais}', '{$referencia}', '{$servico}', '{$data_orcamento}')";
 
 						$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
 						

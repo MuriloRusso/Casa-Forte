@@ -72,6 +72,10 @@
 
 
 
+						$sql_code = "INSERT INTO orcamentos (nome, telefone, cep, logradouro, numero, bairro, cidade, pais, referencia, servico) VALUES ('{$nome}', '{$telefone}', '{$cep}', '{$logradouro}', '{$numero}', '{$bairro}', '{$cidade}', '{$pais}', '{$referencia}', '{$servico}')";
+
+						$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
+						
 
                         $mail = new PHPMailer();
                         $mail->isSMTP();

@@ -301,7 +301,6 @@
 
 					';
 
-					// $sql_code = "SELECT * orcamentos LIMIT 5";
 					$sql_code = "SELECT * FROM orcamentos LIMIT 5";
 
 	
@@ -376,7 +375,7 @@
 
 						</div>	
 
-						<a class="btn btn-primary" href="">Ver Todos</a>
+						<a class="btn btn-primary" href="orcamentos.php">Ver Todos</a>
 						
 					</section>';
 					

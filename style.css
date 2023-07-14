@@ -72,16 +72,19 @@ header #logo p{
 
 }
 
-header #box-login img{
+header #box-login .avatar{
 
     width: 50px;
-    height: auto;
+    height: 50px;
 	margin-right: 20px;
 }
 
-header #box-login img.avatar{
+header #box-login .avatar{
 
-	border-radius: 100%
+	border-radius: 100%;
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-size: auto 100%;
     
 }
 
@@ -1917,7 +1920,7 @@ form input[type="submit"]{
 
 	}
 	
-	header #box-login img{
+	header #box-login .avatar{
 
 		margin-right: 0 !important;
 
@@ -2627,7 +2630,7 @@ footer{
 		font-size: 3.5rem;
 	}
 	
-	header #box-login img{
+	header #box-login .avatar{
 		
 		width: 100px;
 		

@@ -141,7 +141,9 @@
 
 					$extensao = $usuario['extensao'];
 
-					print '<img src="img/users/'.$avatar.'.'.$extensao.'" alt="Avatar" class="avatar" width=50 height=50>';
+					// print '<img src="img/users/'.$avatar.'.'.$extensao.'" alt="Avatar" class="avatar" width=50 height=50>';
+
+					print '<div style="background-image: url(img/users/'.$avatar.'.'.$extensao.')" class="avatar" width=50 height=50></div>';
 
 
 				}

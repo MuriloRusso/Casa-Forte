@@ -791,6 +791,7 @@ h2.font-secondary, h2.font-primary {
 	margin:20px;
 	background-color: #6571f2;
 	padding: 65px 20px;
+	min-height: 300px;
 
 }
 

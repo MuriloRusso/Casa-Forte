@@ -2464,6 +2464,12 @@ footer{
 		font-size: 2.5rem;
 	}
 
+	.panel section ul li{
+
+		flex-direction: column;
+
+	}
+
 	.banner{
 
 		padding: 400px 0;

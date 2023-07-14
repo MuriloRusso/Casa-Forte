@@ -2,6 +2,12 @@
 
 	<?php
 
+		if(!isset($_SESSION)){
+
+			session_start();
+
+		}
+
 		print '
 
 
@@ -36,8 +42,24 @@
 					</li>
 
 					<li><a href="blog.php" title="Clique nesse botão para ir a seção de blog">Blog</a></li>
-					<li><a href="orcamento.php" title="Clique nesse botão para ir a seção de Orçamento">Orçamento</a></li>
 
+					';
+
+					$sql_code = "SELECT * FROM usuario WHERE id='{$_SESSION['id']}'";	
+
+					$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
+	
+					$usuario = $sql_query->fetch_assoc();
+
+
+					if($_SESSION['papel'] == 'cliente' || $_SESSION['papel'] == ''){
+
+						print '<li><a href="orcamento.php" title="Clique nesse botão para ir a seção de Orçamento">Orçamento</a></li>';
+
+					}
+
+
+					print '
 
 				</ul>
 
@@ -72,7 +94,9 @@
 
 					$usuario = $sql_query->fetch_assoc();
 
-					if($usuario['papel'] != 'admin'){
+					// if($usuario['papel'] != 'admin'){
+
+					if(!isset($_SESSION['id']) || $_SESSION['papel'] === 'cliente'){	
 					
 						print '<li><a href="orcamento.php">Orçamento</a></li>';
 
@@ -106,11 +130,11 @@
 
 			';
 
-			if(!isset($_SESSION)){
+			// if(!isset($_SESSION)){
 
-				session_start();
+			// 	session_start();
 
-			}
+			// }
 
 			if(!isset($_SESSION['id'])){
 

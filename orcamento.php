@@ -6,6 +6,9 @@
 
          include('connect.php');
 
+         include('protect-cliente.php');
+
+
 
     ?>
 

@@ -1848,6 +1848,12 @@ form input[type="submit"]{
 
 	} */
 
+	header #logo{
+
+		width: auto;
+
+	}
+
 	.post a {
 
 		margin-top: 10px;

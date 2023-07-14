@@ -2455,6 +2455,11 @@ footer{
 
 @media (min-width: 1900px){
 
+
+	*{    
+		font-size: 2.5rem;
+	}
+
 	.banner{
 
 		padding: 400px 0;

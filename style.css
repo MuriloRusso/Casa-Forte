@@ -1848,6 +1848,16 @@ form input[type="submit"]{
 
 	} */
 
+
+	
+	table.content.opened{
+
+		overflow: auto;
+		display: block;
+		border: 1px solid #ddd;
+		border-radius: 5px;
+	}
+
 	header #logo{
 
 		width: auto;
@@ -2256,6 +2266,9 @@ footer{
 @media (max-width: 900px){
 
 
+	.menu-compra ul {
+		flex-direction: column;
+	}
 	
 	.menu-perfil{
 
@@ -2450,7 +2463,7 @@ footer{
 		max-width: 1500px;
 
 	}
-
+	
 
 	.card-model-2 p, #container-icons p, #container-icons h2, h3{
 

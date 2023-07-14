@@ -1910,7 +1910,7 @@ form input[type="submit"]{
 
 	body{
 
-		margin: 100px 0 0 0;
+		margin: 70px 0 0 0;
 
 	}
 
@@ -2021,27 +2021,31 @@ form input[type="submit"]{
 
 #btn-menu-mobile{
 
-    width: 50px;
+    /* width: 50px; */
+	width: 30px;
     height: auto;
-    margin: auto 10px;
+    margin: auto 20px;
 	display: none;
 
 }
-#btn-close-menu-mobile{	
-	
-	display: none;
-	width: 50px;
-	height: 100%;
-	text-align: center;
-	margin: auto 10px;
-    font-size: 50px;
+
+#btn-close-menu-mobile {
+
+    display: none;
+    width: 35px;
+    height: 100%;
+    text-align: center;
+    margin: auto 20px;
+    font-size: 35px;
     color: gray;
 }
 
 #btn-menu-mobile hr{
 
-    margin: 7px 0;
-    height: 7px;
+    /* margin: 7px 0;
+    height: 7px; */
+	margin: 3px 0;
+    height: 3px;
     width: 100%;
     background-color: grey;
     border-radius: 8px;

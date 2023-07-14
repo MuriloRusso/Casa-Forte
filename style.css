@@ -60,7 +60,8 @@ header{
 
 header #logo{
 
-    background-color: #ededfb;
+    /* background-color: #ededfb; */
+	background-color: black;
     padding: 10px 0;
 
 }

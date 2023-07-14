@@ -8,7 +8,7 @@
 		<header class="flex full-width justify-content-space-betwen fixed">
 
 			<a href="#" id="logo" class="flex justify-content-center align-items-center font-white">
-				<img src="img/logo.png" alt="Logo">
+				<img src="img/logo.jpeg" alt="Logo">
 
 
 			</a>

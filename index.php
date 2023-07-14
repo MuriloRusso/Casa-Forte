@@ -301,7 +301,9 @@
 
 					';
 
-					$sql_code = "SELECT * orcamentos LIMIT 5";
+					// $sql_code = "SELECT * orcamentos LIMIT 5";
+					$sql_code = "SELECT * FROM orcamentos LIMIT 5";
+
 	
 					$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
 					
@@ -373,6 +375,8 @@
 							print '
 
 						</div>	
+
+						<a class="btn btn-primary" href="">Ver Todos</a>
 						
 					</section>';
 					

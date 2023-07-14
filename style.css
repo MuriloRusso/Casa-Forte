@@ -2079,7 +2079,9 @@ header .menu-mobile ul li a{
 .painel-adm h3{
 	
 	font-size: 2rem;
-	font-weight: 200;
+	/* font-weight: 200;
+	 */
+	 font-weight: 600;
 }
 
 
@@ -2106,7 +2108,7 @@ header .menu-mobile ul li a{
 }
 .painel-adm .card p{
 	
-	
+	font-weight: 600;
 	color: gray;
 	
 }
@@ -2119,6 +2121,12 @@ header .menu-mobile ul li a{
 	
 }
 
+.vendas p, .vendas h3{
+
+	color: #30CE30 !important;
+
+}
+
 
 
 .clientes .icon{
@@ -2129,6 +2137,12 @@ header .menu-mobile ul li a{
 }
 
 
+.clientes p, .clientes h3{
+
+	color: #556CED !important;
+
+}
+
 
 .produtos .icon{
 	
@@ -2137,7 +2151,13 @@ header .menu-mobile ul li a{
 	
 }
 
-
+.produtos p, .produtos h3{
+	
+/*	border-color: red;*/
+	
+	color: #FF654C !important;
+	
+}
 
 /*Menu Perfil*/
 

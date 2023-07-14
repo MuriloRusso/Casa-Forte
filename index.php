@@ -308,7 +308,7 @@
 					
 					print '<section class="text-center painel-orcamentos painel-adm">
 					
-					<h2 class="full-width text-center">Ultimos Orçamentos</h2>
+					<h2 class="full-width text-center">Últimos Orçamentos</h2>
 					
 					<div class="flex flex-wrap justify-content-center">';
 	
@@ -316,40 +316,40 @@
 
 							print '
 					
-							<li class="flex card justify-content-space-betwen flex-wrap">
+							<li class="card justify-content-space-betwen flex-wrap">
 	
 					
-								<div class="date">
+								<div class="date full-width">
 	
 									<span>
 								
-										'.$orcamento->data_orcamento.'
+										<strong>Data:</strong> '.$orcamento->data_orcamento.'
 	
 									</span>
 									
 								</div>	
 	
-								<div>
+								<div class="full-width">
 								
-									'.$orcamento->nome.'
+									<strong>Nome:</strong> '.$orcamento->nome.'
 									
 								</div>	
 	
-								<div>
+								<div class="full-width">
 								
-									'.$orcamento->telefone.'
+									<strong>Telefone:</strong> '.$orcamento->telefone.'
 									
 								</div>	
 	
-								<div>
+								<div class="full-width">
 										
-									'.$orcamento->servico.'
+									<strong>Serviço:</strong> '.$orcamento->servico.'
 									
 								</div>	
 	
-								<div>
+								<div class="full-width">
 	
-									Endereço:
+								<strong>Endereço:</strong> 
 									
 									'.$orcamento->logradouro.', 
 									

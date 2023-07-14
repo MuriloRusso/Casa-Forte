@@ -6,7 +6,7 @@
 
          include('connect.php');
 
-         include('protect-cliente.php');
+        //  include('protect-cliente.php');
 
 
 
@@ -186,7 +186,7 @@
                     <div class="form-group">
 
 						<label for="telefone">Telefone:</label>
-						<input type="text" id="telefone" name="telefone" value="" required placeholder="(99) 99999-9999">
+						<input type="text" id="telefone" name="telefone" value="" required placeholder="(99) 99999-9999" onkeypress="$(this).mask('(99) 99999-9999')" >
 
 					</div>
 

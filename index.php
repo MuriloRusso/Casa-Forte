@@ -531,11 +531,11 @@
 
 				<section class="banner flex align-items-center justify-content-center">
 
-					<div>
+					<div class="col-50">
 
-						<h1>CASA FORTE PROJETOS E  SERVIÇOS DE SEGURANÇA</h1>
+						<h1>CASA FORTE PROJETOS E SERVIÇOS DE SEGURANÇA</h1>
 
-						<h2>Segurança, Instalação e  Monitoramento de Câmeras e Alarmes</h2>
+						<h2>Segurança, Instalação e Monitoramento de Câmeras e Alarmes</h2>
 
 					</div>
 
@@ -550,22 +550,9 @@
 							<img src="" alt="">
 
 							<div>
-								<h2>PROTECTION</h2>
+								<h2>PROTEÇÃO</h2>
 
-								<p>PRIVATE SECURITY</p>
-
-							</div>
-
-						</div>
-
-						<div class="col-33 flex item">
-
-							<img src="" alt="">
-
-							<div>
-								<h2>MONITORING</h2>
-
-								<p>BANKING SECTOR</p>
+								<p>SEGURANÇA PRIVADA</p>
 
 							</div>
 
@@ -576,9 +563,22 @@
 							<img src="" alt="">
 
 							<div>
-								<h2>FINGERPRINT</h2>
+								<h2>MONITORAMENTO</h2>
 
-								<p>EDUCATION INSTITUTE</p>
+								<p>DIVERSOS SETORES</p>
+
+							</div>
+
+						</div>
+
+						<div class="col-33 flex item">
+
+							<img src="" alt="">
+
+							<div>
+								<h2>IMPRESSÃO DIGITAL</h2>
+
+								<p>BIOMETRIA</p>
 
 							</div>
 
@@ -615,8 +615,8 @@ Desenvolvimento de projetos individualizado e especifico a necessidade de cada c
 
 							<div class="coment">
 
-								<p class="font-primary">SECURITY PROFESSIONAL </p>
-								<p class="font-secondary">Experts and Staff</p>
+								<p class="font-primary">SEGURANÇA PROFISSIONAL </p>
+								<p class="font-secondary">Especialistas e equipe</p>
 
 							</div>
 
@@ -629,8 +629,8 @@ Desenvolvimento de projetos individualizado e especifico a necessidade de cada c
 
 							<div class="coment">
 
-								<p class="font-primary">EXPLORE THE TECHNIQUE</p>
-								<p class="font-secondary">BODYGUARD SECURITY</p>
+								<p class="font-primary">EXPLORE A TÉCNICA</p>
+								<p class="font-secondary">SEGURANÇA DO GUARDA-COSTAS</p>
 
 							</div>
 
@@ -709,9 +709,9 @@ Desenvolvimento de projetos individualizado e especifico a necessidade de cada c
 						
 				<div class="text-center boxed">
 
-					<h2 class="font-primary">OUR SINGIN 1987.</h2>
+					<h2 class="font-primary">NOSSOS PRODUTOS</h2>
 
-					<h3 class="font-secondary">DISCOVER THE WORLD OF BEST CCTV SAFETY.</h3>
+					<h3 class="font-secondary">CONFIRA NOSSAS NOVIDADES.</h3>
 
 				</div>
 		
@@ -745,9 +745,9 @@ Desenvolvimento de projetos individualizado e especifico a necessidade de cada c
 						
 					<div class="text-center boxed">
 
-						<h2 class="font-primary">HOW WE WORK</h2>
+						<h2 class="font-primary">COMO TRABALHAMOS</h2>
 
-						<h3 class="font-secondary">SECURITY SURVEILLANCE SYSTEMS</h3>
+						<h3 class="font-secondary">CONFIRA AS CARACTERISTICAS DOS NOSSOS PROJETOS</h3>
 
 					</div>
 

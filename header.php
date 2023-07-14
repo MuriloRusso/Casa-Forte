@@ -96,9 +96,15 @@
 
 					// if($usuario['papel'] != 'admin'){
 
-					if(!isset($_SESSION['id']) || $_SESSION['papel'] === 'cliente'){	
+/*					if(!isset($_SESSION['id']) || $_SESSION['papel'] === 'cliente'){	
 					
 						print '<li><a href="orcamento.php">Orçamento</a></li>';
+
+					}
+*/
+					if($_SESSION['papel'] == 'cliente' || $_SESSION['papel'] == ''){
+
+						print '<li><a href="orcamento.php" title="Clique nesse botão para ir a seção de Orçamento">Orçamento</a></li>';
 
 					}
 

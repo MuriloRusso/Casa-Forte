@@ -310,11 +310,20 @@
 					
 					<h2 class="full-width text-center">Últimos Orçamentos</h2>
 					
-					<div class="flex flex-wrap justify-content-center">';
+					<div class="flex flex-wrap justify-content-center">
+					
+					<table border="1" class="content opened">
+                                <tr>
+                                    <td>Data</td>
+                                    <td>Nome</td>
+                                    <td>Telefone</td>
+                                    <td>Serviço</td>
+                                    <td>Endereço</td>
+                                </tr>';
 	
 						while($orcamento = $sql_query->fetch_object()){	
 
-							print '
+						/*	print '
 					
 							<li class="card justify-content-space-betwen flex-wrap">
 	
@@ -367,11 +376,47 @@
 								
 							</li>
 	
-						';
+						';*/
+
+						print 
+
+                        '                        
+                            <tr>
+								<td>'.$orcamento->data_orcamento.'</td>
+
+                                <td>'.$orcamento->nome.'</td>
+
+                                <td>'.$orcamento->telefone.'</td>
+
+								<td>'.$orcamento->servico.'</td>
+								
+								<td>
+	
+									
+									'.$orcamento->logradouro.', 
+									
+									'.$orcamento->numero.', 
+							
+									'.$orcamento->bairro.', 						
+									
+									'.$orcamento->cidade.',					
+									
+									'.$orcamento->pais.',
+	
+									'.$orcamento->referencia.'	
+									
+								</td>
+
+
+                            </tr>                            
+                            
+                        ';
 
 						}
 
 							print '
+
+							</table>
 
 						</div>	
 

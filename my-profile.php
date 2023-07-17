@@ -260,6 +260,66 @@
 						<input type="text" id="telefone" name="telefone" required onkeypress="$(this).mask('(99) 99999-9999')" value="<?php echo $usuario['telefone'] ?>" placeholder="(99) 99999-9999">
 						
 					</div>
+
+
+					  
+                    <div class="form-group">
+
+                        <label for="cep">Cep:</label>
+                        <input type="text" id="cep" name="cep" required onkeypress="$(this).mask('00000-000')" value="<?php echo $usuario['cep'] ?>" required placeholder="99999-999">
+                        <a class="actions btn btn-primary" onclick="buscarEndereco()">Buscar Endereço</a>
+
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="logradouro">Logradouro:</label>
+                        <input type="text" id="logradouro" name="logradouro"  value="<?php echo $usuario['rua'] ?>" required placeholder="Clique em Buscar Endereço para preencher o logradouro" readonly>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="numeroProfile">Numero:</label>
+                        <input type="text" id="numeroProfile" name="numeroProfile"  value="<?php echo $usuario['numero'] ?>" required placeholder="Digite o número do seu endereço aqui">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="bairro">Bairro:</label>
+                        <input type="text" id="bairro" name="bairro"  value="<?php echo $usuario['bairro'] ?>" required placeholder="Clique em Buscar Endereço para preencher o bairro" readonly>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="cidade">Cidade:</label>
+                        <input type="text" id="cidade" name="cidade"  value="<?php echo $usuario['cidade'] ?>" required placeholder="Clique em Buscar Endereço para preencher a cidade" readonly>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="pais">Pais:</label>
+                        <input type="text" id="pais" name="pais"  value="<?php echo $usuario['pais'] ?>" required placeholder="Clique em Buscar Endereço para preencher o pais" readonly>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="ponto-referencia">Ponto de Referência:</label>
+                        <input type="text" id="ponto-referencia" name="ponto-referencia"  value="<?php echo $usuario['complemento'] ?>" required placeholder="Digite o ponto de referência aqui">
+
+                    </div>
+
+
+
+
 					
 					<div class="form-group-submit">
 

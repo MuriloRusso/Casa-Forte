@@ -31,10 +31,23 @@
 
 		$telefone = $mysqli->real_escape_string($_POST['telefone']);
 
-
-
-
 		$cpf = $mysqli->real_escape_string($_POST['cpf']);
+
+
+		$cep = $mysqli->real_escape_string($_POST['cep']);
+
+		$logradouro = $mysqli->real_escape_string($_POST['logradouro']);
+
+		$numero = $mysqli->real_escape_string($_POST['numeroProfile']);
+
+		$bairro = $mysqli->real_escape_string($_POST['bairro']);
+
+
+		$cidade = $mysqli->real_escape_string($_POST['cidade']);
+
+		$pais = $mysqli->real_escape_string($_POST['pais']);
+
+		$referencia = $mysqli->real_escape_string($_POST['ponto-referencia']);
 
 
 		$sql_code = "SELECT * FROM usuario";
@@ -78,7 +91,7 @@
 
 		else{
 
-			$sql_code = "UPDATE usuario SET nome='{$nome}', data_nascimento='{$nascimento}', telefone='{$telefone}', cpfcnpj='{$cpf}' WHERE id=".$id;
+			$sql_code = "UPDATE usuario SET nome='{$nome}', data_nascimento='{$nascimento}', telefone='{$telefone}', cpfcnpj='{$cpf}', cep='{$cep}', rua='{$logradouro}', numero='{$numero}', bairro='{$bairro}', cidade='{$cidade}', pais='{$pais}', complemento='{$referencia}' WHERE id=".$id;
 
 			$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
 

@@ -56,6 +56,23 @@
 
                     $cpfcnpj = $mysqli->real_escape_string($_POST['cpf']);
 
+                    $cep = $mysqli->real_escape_string($_POST['cep']);
+
+                    $logradouro = $mysqli->real_escape_string($_POST['logradouro']);
+
+                    $numero = $mysqli->real_escape_string($_POST['numero']);
+
+                    $bairro = $mysqli->real_escape_string($_POST['bairro']);
+
+
+                    $cidade = $mysqli->real_escape_string($_POST['cidade']);
+
+                    $pais = $mysqli->real_escape_string($_POST['pais']);
+
+                    $referencia = $mysqli->real_escape_string($_POST['ponto-referencia']);
+
+
+
 					
 					$Confirmação = $mysqli->real_escape_string($_POST['confirm-password']);
 
@@ -133,7 +150,7 @@
 						
 						if(isset($_POST['email']) && isset($_POST['password']) && isset($_POST['confirm-password'])){
 
-						$sql_code = "INSERT INTO usuario (nome, email, senha, papel, cpfcnpj) VALUES ('{$nome}', '{$email}', '{$senha}', '{$papel}', '{$cpfcnpj}')";
+						$sql_code = "INSERT INTO usuario (nome, email, senha, papel, cpfcnpj, cep, rua, numero, bairro, cidade, pais, complemento) VALUES ('{$nome}', '{$email}', '{$senha}', '{$papel}', '{$cpfcnpj}', '{$cep}', '{$logradouro}', '{$numero}', '{$bairro}', '{$cidade}', '{$pais}', '{$referencia}')";
 
 						$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
 						
@@ -227,19 +244,7 @@
                         <h2>Preencha os campos abaixo para criar sua conta!</h2>
                     </div>
 					
-					<div class="form-group">
-
-                        <label for="nome">Nome Completo:</label>
-                        <input type="text" id="nome" name="nome" value="<?php echo $_POST['nome'] ?>" required placeholder="Digite seu nome completo aqui">
-
-                    </div>
-
-                    <div class="form-group">
-
-                        <label for="cpf">CPF:</label>
-                        <input type="text" id="cpf" name="cpf" value="<?php echo $_POST['cpf'] ?>" required placeholder="Digite seu e-CPF aqui" onkeypress="$(this).mask('000.000.000-00')">
-
-                    </div>
+					
 
 
                     <div class="form-group">
@@ -262,6 +267,82 @@
                         <input type="password" id="confirm-password" name="confirm-password" value="<?php echo $_POST['confirm-password'] ?>" required placeholder="Digite novamente sua senha aqui">
 
                     </div>
+
+
+                    <div class="form-group">
+
+                        <label for="nome">Nome Completo:</label>
+                        <input type="text" id="nome" name="nome" value="<?php echo $_POST['nome'] ?>" required placeholder="Digite seu nome completo aqui">
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="cpf">CPF:</label>
+                        <input type="text" id="cpf" name="cpf" value="<?php echo $_POST['cpf'] ?>" required placeholder="Digite seu e-CPF aqui" onkeypress="$(this).mask('000.000.000-00')">
+
+                    </div>
+
+                    
+                    <div class="form-group">
+
+                        <label for="cep">Cep:</label>
+                        <input type="text" id="cep" name="cep" required onkeypress="$(this).mask('00000-000')" value="<?php echo $_POST['cep'] ?>" required placeholder="99999-999">
+                        <a class="actions btn btn-primary" onclick="buscarEndereco()">Buscar Endereço</a>
+
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="logradouro">Logradouro:</label>
+                        <input type="text" id="logradouro" name="logradouro"  value="<?php echo $_POST['logradouro'] ?>" required placeholder="Clique em Buscar Endereço para preencher o logradouro" readonly>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="numero">Numero:</label>
+                        <input type="text" id="numero" name="numero"  value="<?php echo $_POST['numero'] ?>" required placeholder="Digite o número do seu endereço aqui">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="bairro">Bairro:</label>
+                        <input type="text" id="bairro" name="bairro"  value="<?php echo $_POST['bairro'] ?>" required placeholder="Clique em Buscar Endereço para preencher o bairro" readonly>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="cidade">Cidade:</label>
+                        <input type="text" id="cidade" name="cidade"  value="<?php echo $_POST['cidade'] ?>" required placeholder="Clique em Buscar Endereço para preencher a cidade" readonly>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="pais">Pais:</label>
+                        <input type="text" id="pais" name="pais"  value="<?php echo $_POST['pais'] ?>" required placeholder="Clique em Buscar Endereço para preencher o pais" readonly>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="ponto-referencia">Ponto de Referência:</label>
+                        <input type="text" id="ponto-referencia" name="ponto-referencia"  value="<?php echo $_POST['ponto-referencia'] ?>" required placeholder="Digite o ponto de referência aqui">
+
+                    </div>
+
+
+
+
+
+
 
                     <div class="form-submit-group flex flex-wrap justify-content-space-betwen">
 
@@ -291,8 +372,30 @@
         
 
 
-
     </body>
+
+    <script>
+  function buscarEndereco() {
+    var cep = document.getElementById("cep").value;
+    var url = "https://viacep.com.br/ws/" + cep + "/json/";
+
+    fetch(url, { method: 'GET' })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        
+        document.getElementById("logradouro").value = data.logradouro;
+        document.getElementById("bairro").value = data.bairro;
+        document.getElementById("cidade").value = data.localidade;
+		document.getElementById("pais").value = "Brasil";
+        
+      })
+      .catch(error => {
+        console.log("Erro ao buscar o endereço:", error);
+      });
+  }
+</script>
+
 
 
 

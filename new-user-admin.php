@@ -70,6 +70,19 @@
 			
 				$telefone;
 
+				$cep;
+
+				$logradouro;
+
+				$numero;
+
+				$bairro;
+
+				$cidade;
+
+				$pais;
+
+				$referencia;
 
 				$avatar = '';
 			
@@ -110,6 +123,20 @@
 					$avatar = $user->avatar;
 
 					$extensao = $user->extensao;
+
+					$cep = $user->cep;
+
+					$logradouro = $user->rua;
+
+					$numero = $user->numero;
+
+					$bairro = $user->bairro;
+
+					$cidade = $user->cidade;
+
+					$pais = $user->pais;
+
+					$referencia = $user->complemento;
 
 
 
@@ -185,6 +212,21 @@
 
 									$telefone = $mysqli->real_escape_string($_POST['telefone']);	
 
+
+									$cep =  $mysqli->real_escape_string($_POST['cep']);
+
+									$logradouro =  $mysqli->real_escape_string($_POST['logradouro']);
+
+									$numero =  $mysqli->real_escape_string($_POST['numero']);
+
+									$bairro =  $mysqli->real_escape_string($_POST['bairro']);
+
+									$cidade =  $mysqli->real_escape_string($_POST['cidade']);
+
+									$pais =  $mysqli->real_escape_string($_POST['pais']);
+
+									$referencia =  $mysqli->real_escape_string($_POST['ponto-referencia']);
+
 									if($quantidade > 0) {
 
 										while($user = $sql_query->fetch_object()){
@@ -244,7 +286,7 @@
 																			
 										}
 
-										$sql_code = "INSERT INTO usuario (nome, cpfcnpj, email, senha, papel, genero, data_nascimento, telefone, avatar, extensao) VALUES ('{$nome}', '{$cpf}', '{$email}', '{$hash}', '{$papel}', '{$genero}',  '{$nascimento}', '{$telefone}', '{$novoNomeDoArquivo}', '{$extensao}')";
+										$sql_code = "INSERT INTO usuario (nome, cpfcnpj, email, senha, papel, genero, data_nascimento, telefone, avatar, extensao, cep, rua, numero, bairro, cidade, pais, complemento) VALUES ('{$nome}', '{$cpf}', '{$email}', '{$hash}', '{$papel}', '{$genero}',  '{$nascimento}', '{$telefone}', '{$novoNomeDoArquivo}', '{$extensao}', '{$cep}', '{$logradouro}', '{$numero}', '{$bairro}', '{$cidade}', '{$pais}', '{$referencia}')";
 
 										$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
 
@@ -385,6 +427,21 @@
 									$nascimento = $mysqli->real_escape_string($_POST['data-nascimento']);
 
 									$telefone = $mysqli->real_escape_string($_POST['telefone']);	
+
+
+									$cep =  $mysqli->real_escape_string($_POST['cep']);
+
+									$logradouro =  $mysqli->real_escape_string($_POST['logradouro']);
+
+									$numero =  $mysqli->real_escape_string($_POST['numero']);
+
+									$bairro =  $mysqli->real_escape_string($_POST['bairro']);
+
+									$cidade =  $mysqli->real_escape_string($_POST['cidade']);
+
+									$pais =  $mysqli->real_escape_string($_POST['pais']);
+
+									$referencia =  $mysqli->real_escape_string($_POST['ponto-referencia']);
 								
 									if($quantidade > 0) {
 
@@ -426,7 +483,7 @@
 
 		//									$id = $mysqli->real_escape_string($_POST['id']);
 
-										$sql_code = "UPDATE usuario SET nome='{$nome}', cpfcnpj='{$cpf}', email='{$email}', senha='{$hash}', papel='{$papel}', genero='{$genero}', data_nascimento='{$nascimento}', telefone='{$telefone}' WHERE id=".$id;
+										$sql_code = "UPDATE usuario SET nome='{$nome}', cpfcnpj='{$cpf}', email='{$email}', senha='{$hash}', papel='{$papel}', genero='{$genero}', data_nascimento='{$nascimento}', telefone='{$telefone}', cep='{$cep}', rua='{$logradouro}', numero='{$numero}', bairro='{$bairro}', cidade='{$cidade}', pais='{$pais}', complemento='{$referencia}' WHERE id=".$id;
 
 										$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
 
@@ -676,6 +733,62 @@
 					</div>
 						
 
+					<div class="form-group">
+
+						<label for="cep">Cep:</label>
+						<input type="text" id="cep" name="cep" required onkeypress="$(this).mask('00000-000')" value="<?php echo $cep; ?>" required placeholder="99999-999">
+						<a class="actions btn btn-primary" onclick="buscarEndereco()">Buscar Endereço</a>
+
+
+					</div>
+
+
+					<div class="form-group">
+
+						<label for="logradouro">Logradouro:</label>
+						<input type="text" id="logradouro" name="logradouro"  value="<?php echo $logradouro; ?>" required placeholder="Clique em Buscar Endereço para preencher o logradouro" readonly>
+
+					</div>
+
+					<div class="form-group">
+
+						<label for="numero">Numero:</label>
+						<input type="text" id="numero" name="numero"  value="<?php echo $numero; ?>" required placeholder="Digite o número do seu endereço aqui">
+
+					</div>
+
+
+					<div class="form-group">
+
+						<label for="bairro">Bairro:</label>
+						<input type="text" id="bairro" name="bairro"  value="<?php echo $bairro; ?>" required placeholder="Clique em Buscar Endereço para preencher o bairro" readonly>
+
+					</div>
+
+					<div class="form-group">
+
+						<label for="cidade">Cidade:</label>
+						<input type="text" id="cidade" name="cidade"  value="<?php echo $cidade; ?>" required placeholder="Clique em Buscar Endereço para preencher a cidade" readonly>
+
+					</div>
+
+					<div class="form-group">
+
+						<label for="pais">Pais:</label>
+						<input type="text" id="pais" name="pais"  value="<?php echo $pais; ?>" required placeholder="Clique em Buscar Endereço para preencher o pais" readonly>
+
+					</div>
+
+
+					<div class="form-group full-width">
+
+						<label for="ponto-referencia">Ponto de Referência:</label>
+						<input type="text" id="ponto-referencia" name="ponto-referencia"  value="<?php echo $referencia; ?>" required placeholder="Digite o ponto de referência aqui">
+
+					</div>
+
+
+
 
 
 					<div class="form-group flex flex-wrap justify-content-space-betwen full-width">
@@ -750,6 +863,29 @@
 
 
 		</script>
+
+
+<script>
+  function buscarEndereco() {
+    var cep = document.getElementById("cep").value;
+    var url = "https://viacep.com.br/ws/" + cep + "/json/";
+
+    fetch(url, { method: 'GET' })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        
+        document.getElementById("logradouro").value = data.logradouro;
+        document.getElementById("bairro").value = data.bairro;
+        document.getElementById("cidade").value = data.localidade;
+		document.getElementById("pais").value = "Brasil";
+        
+      })
+      .catch(error => {
+        console.log("Erro ao buscar o endereço:", error);
+      });
+  }
+</script>
 
 
     </body>

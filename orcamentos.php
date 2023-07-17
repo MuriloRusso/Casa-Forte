@@ -74,13 +74,22 @@
 				
 					<h1 class="text-center full-width">Orçamentos</h1>
 					
-					<ul class="full-width">
-				
+					<ul class="full-width flex justify-content-center">
+
+					<table border="1" class="content opened">
+						<tr>
+							<td>Data</td>
+							<td>Nome</td>
+							<td>Telefone</td>
+							<td>Serviço</td>
+							<td>Endereço</td>
+						</tr>
+		
 				';
 								
 
- 				while($row = $sql_query->fetch_object()){
-
+ 				while($orcamento = $sql_query->fetch_object()){
+/*
 					print '
 					
 						<li class="flex card justify-content-space-betwen flex-wrap">
@@ -150,9 +159,46 @@
 						</li>
 
 					';
+*/
 
+
+					print 
+
+                        '                        
+                            <tr>
+								<td>'.$orcamento->data_orcamento.'</td>
+
+                                <td>'.$orcamento->nome.'</td>
+
+                                <td>'.$orcamento->telefone.'</td>
+
+								<td>'.$orcamento->servico.'</td>
+								
+								<td>
+	
+									
+									'.$orcamento->logradouro.', 
+									
+									'.$orcamento->numero.', 
+							
+									'.$orcamento->bairro.', 						
+									
+									'.$orcamento->cidade.',					
+									
+									'.$orcamento->pais.',
+	
+									'.$orcamento->referencia.'	
+									
+								</td>
+
+
+                            </tr>                            
+                            
+                        ';
                 }    	
 				
+				print '							</table>
+			';
 				
 				if($quantidade > 10){
 

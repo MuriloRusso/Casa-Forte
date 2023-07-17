@@ -267,7 +267,7 @@
 
                         <label for="cep">Cep:</label>
                         <input type="text" id="cep" name="cep" required onkeypress="$(this).mask('00000-000')" value="<?php echo $usuario['cep'] ?>" required placeholder="99999-999">
-                        <a class="actions btn btn-primary" onclick="buscarEndereco()">Buscar Endereço</a>
+                        <a class="actions btn btn-primary" onclick="buscarEndereco2()">Buscar Endereço</a>
 
 
                     </div>
@@ -740,6 +740,31 @@
 
 		
 		</script>
+
+	<script>
+	function buscarEndereco2() {
+		var cep = document.getElementById("cep").value;
+		var url = "https://viacep.com.br/ws/" + cep + "/json/";
+
+		fetch(url, { method: 'GET' })
+		.then(response => response.json())
+		.then(data => {
+			console.log(data);
+			
+			document.getElementById("logradouro").value = data.logradouro;
+			document.getElementById("bairro").value = data.bairro;
+			document.getElementById("cidade").value = data.localidade;
+			document.getElementById("pais").value = "Brasil";
+			
+		})
+		.catch(error => {
+			console.log("Erro ao buscar o endereço:", error);
+		});
+	}
+	</script>
+
+
+
 
 
     </body>
